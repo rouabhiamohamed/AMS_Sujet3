@@ -1,0 +1,171 @@
+Entités : CLÉON, Type : PER
+Entités : Empereur galactique, Type : PER
+Entités : dynastie Entun, Type : MISC
+Entités : Ère Galactique, Type : MISC
+Entités : Hari Seldon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Trantor, Type : PER
+Entités : Cléon, Type : PER
+Entités : Eto Demerzel, Type : PER
+Entités : Cléon, Type : PER
+Entités : ENCYCLOPAEDIA GALACTICA2, Type : MISC
+Entités : Cléon, Type : PER
+Entités : Demerzel, Type : PER
+Entités : Hari Seldon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Encyclopaedia Galactica, Type : MISC
+Entités : E.F., Type : MISC
+Entités : Société
+d’édition de l'Encyclopaedia Galactica, Type : MISC
+Entités : Terminus, Type : MISC
+Entités : ministre des Sciences, Type : ORG
+Entités : Hari Seldon, Type : PER
+Entités : Trantor, Type : LOC
+Entités : Demerzel, Type : PER
+Entités : ministre des
+Sciences, Type : ORG
+Entités : Demerzel, Type : PER
+Entités : Les, Type : LOC
+Entités : Sire, Type : PER
+Entités : Empire, Type : LOC
+Entités : Sire, Type : PER
+Entités : Eh, Type : MISC
+Entités : Sire, Type : PER
+Entités : Demerzel, Type : PER
+Entités : Empereur, Type : PER
+Entités : Demerzel, Type : PER
+Entités : Sire, Type : PER
+Entités : Demerzel, Type : PER
+Entités : Lieutenant Alban Wellis, Type : PER
+Entités : Wellis, Type : PER
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Palais, Type : LOC
+Entités : Disons plutôt, monsieur, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Empire, Type : LOC
+Entités : Empereur, Type : PER
+Entités : Seldon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Trantor, Type : LOC
+Entités : Hari Seldon, Type : PER
+Entités : Soleil, Type : LOC
+Entités : Astronef, Type : LOC
+Entités : Seldon, Type : PER
+Entités : Seldon, Type : PER
+Entités : la Galaxie, Type : LOC
+Entités : Seldon, Type : PER
+Entités : Hari Seldon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Sire, Type : MISC
+Entités : Asseyez, Type : PER
+Entités : Seldon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Exact, Type : MISC
+Entités : Imaginez, Type : MISC
+Entités : Empereur, Type : PER
+Entités : Seldon, Type : PER
+Entités : Debout !, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Cléon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Eh bien, Type : MISC
+Entités : Inconnus !, Type : MISC
+Entités : Cléon, Type : PER
+Entités : Si, Type : MISC
+Entités : Les, Type : LOC
+Entités : Les, Type : LOC
+Entités : Cléon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Empereur, Type : PER
+Entités : Empire
+galactique, Type : LOC
+Entités : Si, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Sire, Type : PER
+Entités : Cléon, Type : PER
+Entités : A, Type : LOC
+Entités : Seldon, Type : PER
+Entités : Exos, Type : MISC
+Entités : Empereurs, Type : MISC
+Entités : Or, Type : LOC
+Entités : Empereur, Type : PER
+Entités : Exos, Type : MISC
+Entités : Cléon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Cléon, Type : PER
+Entités : Sire, Type : PER
+Entités : L’intime, Type : MISC
+Entités : Empereurs, Type : MISC
+Entités : Empire, Type : LOC
+Entités : Demerzel, Type : PER
+Entités : Sire, Type : PER
+Entités : Trantor, Type : MISC
+Entités : Sire, Type : MISC
+Entités : Or, Type : LOC
+Entités : Demerzel, Type : PER
+Entités : Cléon, Type : PER
+Entités : Sire, Type : PER
+Entités : Empereur, Type : PER
+Entités : Seldon, Type : PER
+Entités : Demerzel, Type : PER
+Entités : Sire !, Type : MISC
+Entités : Demerzel, Type : PER
+Entités : Empire, Type : LOC
+Entités : Empire, Type : LOC
+Entités : Cléon, Type : PER
+Entités : Demerzel, Type : PER
+Entités : Sire, Type : PER
+Entités : une Galaxie, Type : LOC
+Entités : Demerzel, Type : PER
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Trantor, Type : LOC
+Entités : A, Type : LOC
+Entités : Empereur, Type : PER
+Entités : Hélicon, Type : LOC
+Entités : Vraiment, Type : LOC
+Entités : la Galaxie, Type : LOC
+Entités : Trantor, Type : LOC
+Entités : Les, Type : LOC
+Entités : Un homme, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Trantor, Type : PER
+Entités : Seldon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Un instant, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Congrès décennal, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Hummin, Type : PER
+Entités : Je hais, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Palais, Type : LOC
+Entités : Empereur, Type : PER
+Entités : Seldon, Type : PER
+Entités : Si, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Simple curiosité personnelle, Type : MISC
+Entités : Croyez, Type : MISC
+Entités : Seldon, Type : PER
+Entités : Empereur, Type : PER
+Entités : Cléon, Type : PER
+Entités : Seldon, Type : PER
+Entités : Hummin, Type : PER
+Entités : Eto
+Demerzel, Type : PER
+Entités : Eto Demerzel, Type : PER

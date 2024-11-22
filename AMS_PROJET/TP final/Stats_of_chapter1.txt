@@ -1,0 +1,3 @@
+Nombre de caractères : 25560
+Nombre de mots : 4094
+Nombre de phrase : 310

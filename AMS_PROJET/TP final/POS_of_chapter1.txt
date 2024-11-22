@@ -1,0 +1,475 @@
+                           /SPACE Mathématicien/ADV 
+
+
+     /SPACE CLÉON/NOUN Ier—/PROPN .../PUNCT dernier/ADJ Empereur/NOUN galactique/ADJ de/ADP la/DET 
+/SPACE dynastie/NOUN Entun/ADJ ./PUNCT Né/VERB en/ADP l’/NOUN an/NOUN 11988/NUM de/ADP l’/NOUN Ère/PROPN Galactique/PROPN ,/PUNCT la/DET même/ADV 
+/SPACE année/NOUN que/SCONJ Hari/PROPN Seldon/PROPN ./PUNCT (/PUNCT On/PRON pense/VERB que/SCONJ la/DET date/NOUN de/ADP naissance/NOUN de/ADP 
+/SPACE Seldon/PROPN ,/PUNCT que/PRON certains/PRON estiment/VERB douteuse/ADJ ,/PUNCT aurait/AUX pu/VERB être/AUX 
+/SPACE «/PUNCT ajustée/VERB »/PUNCT pour/ADP coïncider/VERB avec/ADP celle/PRON de/ADP Cléon/NOUN que/SCONJ Seldon/PROPN ,/PUNCT peu/ADV 
+/SPACE après/ADP son/DET arrivée/NOUN sur/ADP Trantor/NOUN ,/PUNCT est/AUX censé/ADJ avoir/AUX rencontré/VERB ./PUNCT )/PUNCT 
+     /SPACE Cléon/PRON est/AUX monté/VERB sur/ADP le/DET trône/NOUN impérial/ADJ en/ADP 12010/NUM ,/PUNCT à/ADP l’/NOUN âge/NOUN de/ADP 
+/SPACE vingt-deux/NUM ans/NOUN ,/PUNCT et/CCONJ son/DET règne/ADJ représente/VERB un/DET étrange/NOUN intervalle/ADJ 
+/SPACE de/ADP calme/PROPN dans/ADP ces/DET temps/NOUN troublés/VERB ./PUNCT Cela/PRON est/AUX dû/VERB sans/ADP aucun/DET doute/NOUN 
+/SPACE aux/ADP talents/NOUN de/ADP son/DET chef/NOUN d’/X état/NOUN -/NOUN major/NOUN ,/PUNCT Eto/PROPN Demerzel/PROPN ,/PUNCT qui/PRON sut/VERB si/SCONJ 
+/SPACE bien/ADV se/PRON dissimuler/VERB à/ADP la/DET curiosité/NOUN médiatique/ADJ que/SCONJ l’/NOUN on/PRON a/AUX fort/ADV peu/ADV 
+/SPACE de/ADP renseignements/NOUN à/ADP son/DET sujet/NOUN ./PUNCT 
+     /SPACE Cléon/PROPN ,/PUNCT quant/ADV à/ADP lui/PRON .../PUNCT 
+                                       /SPACE ENCYCLOPAEDIA/ADP GALACTICA2/NOUN 
+
+
+
+
+
+
+     /SPACE Étouffant/VERB un/DET léger/NOUN bâillement/NOUN ,/PUNCT Cléon/PROPN demanda/VERB :/PUNCT 
+/SPACE «/PROPN Demerzel/PROPN ,/PUNCT auriez/NOUN -vous/PRON ,/PUNCT par/ADP hasard/NOUN ,/PUNCT entendu/VERB parler/VERB d’/ADV un/DET 
+/SPACE certain/ADJ Hari/PROPN Seldon/PROPN ?/PUNCT »/PUNCT 
+     /SPACE Cléon/ADJ était/AUX empereur/NOUN depuis/ADP dix/NUM ans/NOUN à/ADP peine/NOUN et/CCONJ ,/PUNCT quand/SCONJ le/DET 
+/SPACE protocole/NOUN l’/ADJ exigeait/VERB ,/PUNCT il/PRON y/PRON avait/VERB des/DET moments/NOUN où/PRON ,/PUNCT pourvu/NOUN qu’/SCONJ il/PRON fût/VERB 
+/SPACE revêtu/VERB des/DET atours/NOUN et/CCONJ ornements/NOUN idoines/ADJ ,/PUNCT il/PRON réussissait/VERB à/ADP paraître/VERB 
+/SPACE majestueux/ADJ ./PUNCT Il/PRON y/PRON était/AUX arrivé/VERB ,/PUNCT par/ADP exemple/NOUN ,/PUNCT pour/ADP son/DET portrait/NOUN 
+
+     /SPACE 2/NUM Toutes/ADJ les/DET citations/NOUN de/ADP l'/DET Encyclopaedia/PROPN Galactica/PROPN reproduites/ADJ ici/ADV 
+/SPACE proviennent/NOUN de/ADP la/DET 116e/ADJ édition/NOUN ,/PUNCT publiée/VERB en/ADP 1020/NUM E.F./NOUN par/ADP la/DET Société/PROPN 
+/SPACE d’/X édition/NOUN de/ADP l'/DET Encyclopaedia/PROPN Galactica/PROPN ,/PUNCT Terminus/PROPN ,/PUNCT avec/ADP l'/DET aimable/NOUN 
+/SPACE autorisation/NOUN des/ADP éditeurs/NOUN ./PUNCT 
+/SPACE semblerait/VERB malgré/ADP tout/PRON qu’/SCONJ il/PRON puisse/VERB encore/ADV arriver/VERB des/DET choses/NOUN 
+/SPACE intéressantes/ADJ ./PUNCT Du/ADP moins/ADV ,/PUNCT à/ADP ce/PRON que/SCONJ j’/ADJ ai/AUX entendu/VERB dire/VERB ./PUNCT 
+     /SPACE —/VERB Par/ADP le/DET ministre/NOUN des/ADP Sciences/NOUN ?/PUNCT 
+     /SPACE —/PUNCT Effectivement/ADV ./PUNCT Il/PRON m’/NOUN a/AUX appris/VERB que/SCONJ ce/DET Hari/PROPN Seldon/PROPN a/AUX assisté/VERB 
+/SPACE à/ADP un/DET congrès/NOUN de/ADP mathématiciens/NOUN ici/ADV même/ADV ,/PUNCT à/ADP Trantor/PROPN –/NOUN ils/PRON 
+/SPACE l’/NOUN organisent/VERB tous/ADJ les/DET dix/NUM ans/NOUN ,/PUNCT pour/ADP je/PRON ne/ADV sais/VERB quelle/DET raison/NOUN ;/PUNCT il/PRON 
+/SPACE aurait/AUX démontré/VERB qu’/SCONJ on/PRON peut/VERB prévoir/VERB mathématiquement/ADV 
+/SPACE l’/NOUN avenir/NOUN ./PUNCT »/PUNCT 
+     /SPACE Demerzel/PROPN se/PRON permit/VERB un/DET petit/ADJ sourire/ADJ ./PUNCT «/NOUN Ou/CCONJ le/DET ministre/NOUN des/ADP 
+/SPACE Sciences/NOUN ,/PUNCT homme/NOUN sans/ADP grande/ADJ jugeote/NOUN ,/PUNCT a/AUX été/AUX induit/VERB en/ADP erreur/NOUN ,/PUNCT ou/CCONJ 
+/SPACE ce/DET mathématicien/ADJ s’/PRON est/AUX trompé/VERB ./PUNCT Il/PRON ne/ADV fait/VERB aucun/DET doute/NOUN que/SCONJ cette/DET 
+/SPACE histoire/NOUN de/ADP prédiction/NOUN de/ADP l’/NOUN avenir/NOUN relève/VERB d’/ADP un/DET puéril/NOUN rêve/NOUN de/ADP 
+/SPACE magie/NOUN ./PUNCT 
+     /SPACE —/PUNCT En/ADP êtes/ADV -vous/PRON sûr/ADJ ,/PUNCT Demerzel/PROPN ?/PUNCT Les/DET gens/NOUN croient/ADV ce/DET genre/NOUN 
+/SPACE de/ADP chose/NOUN ./PUNCT 
+     /SPACE —/PUNCT Les/DET gens/NOUN croient/VERB bien/ADV des/DET choses/NOUN ,/PUNCT Sire/NOUN !/PUNCT 
+     /SPACE —/PUNCT Mais/CCONJ particulièrement/ADV celle-ci/PRON ./PUNCT Par/ADP conséquent/NOUN ,/PUNCT peu/ADV 
+/SPACE importe/VERB que/SCONJ la/DET prédiction/NOUN de/ADP l’/NOUN avenir/NOUN soit/CCONJ ou/CCONJ non/ADV une/DET réalité/NOUN ,/PUNCT 
+/SPACE n’/NOUN est/AUX -ce/PRON pas/ADV ?/PUNCT Si/SCONJ un/DET mathématicien/NOUN devait/VERB me/PRON prédire/ADJ un/DET règne/VERB 
+/SPACE long/ADJ et/CCONJ heureux/ADJ ,/PUNCT et/CCONJ pour/ADP l’/NOUN Empire/NOUN une/DET ère/NOUN de/ADP paix/NOUN et/CCONJ de/ADP 
+/SPACE prospérité/NOUN .../PUNCT eh/INTJ bien/ADV ,/PUNCT ne/ADV serait/VERB -ce/PRON pas/ADV une/DET bonne/ADJ chose/NOUN ?/PUNCT 
+     /SPACE —/PUNCT Ce/PRON serait/AUX assurément/VERB agréable/ADJ à/ADP entendre/VERB ,/PUNCT mais/CCONJ ça/PRON nous/PRON 
+/SPACE avancerait/VERB à/ADP quoi/PRON ,/PUNCT Sire/NOUN ?/PUNCT 
+     /SPACE —/PUNCT Eh/NOUN bien/ADV ,/PUNCT si/SCONJ les/DET gens/NOUN croyaient/VERB ça/PRON ,/PUNCT ils/PRON agiraient/VERB 
+/SPACE certainement/ADV selon/ADP cette/DET croyance/NOUN ./PUNCT Bien/ADV des/DET prophéties/NOUN ,/PUNCT par/ADP la/DET 
+/SPACE seule/ADJ force/NOUN de/ADP la/DET croyance/NOUN qu’/PRON elles/PRON engendrent/VERB ,/PUNCT se/PRON sont/AUX muées/VERB en/ADP 
+/SPACE réalité/NOUN ./PUNCT Ce/PRON sont/AUX ce/PRON qu’/PRON on/PRON appelle/VERB des/DET «/NOUN prophéties/NOUN auto-/ADJ 
+/SPACE accomplissantes/NOUN »/PUNCT ./PUNCT D’/ADV ailleurs/ADV ,/PUNCT maintenant/ADV que/SCONJ j’/ADJ y/PRON pense/NOUN ,/PUNCT c’/NOUN est/AUX 
+/SPACE même/ADV vous/PRON qui/PRON me/PRON l’/NOUN avez/AUX expliqué/VERB un/DET jour/NOUN ./PUNCT 
+     /SPACE —/PUNCT Je/PRON le/PRON crois/VERB bien/ADV ,/PUNCT Sire/NOUN »/PUNCT ,/PUNCT répondit/NOUN Demerzel/PROPN ./PUNCT Ses/DET yeux/NOUN 
+/SPACE scrutaient/VERB attentivement/ADV l’/ADJ Empereur/NOUN ,/PUNCT comme/ADP pour/ADP voir/VERB jusqu’/PROPN où/PRON 
+/SPACE il/PRON pouvait/VERB se/PRON permettre/VERB d’/ADV aller/VERB ./PUNCT «/PROPN Pourtant/ADV ,/PUNCT s’/ADV il/PRON devait/VERB en/PRON être/AUX 
+/SPACE ainsi/ADV ,/PUNCT n’/NOUN importe/VERB qui/PRON pourrait/VERB prophétiser/VERB ./PUNCT 
+     /SPACE —/PUNCT Les/DET prophètes/NOUN ne/ADV seraient/AUX pas/ADV tous/ADJ également/ADV crédibles/ADJ ,/PUNCT 
+/SPACE Demerzel/PROPN ./PUNCT Pourtant/ADV un/DET mathématicien/NOUN ,/PUNCT capable/ADJ de/ADP soutenir/VERB sa/DET 
+/SPACE prophétie/NOUN à/ADP coups/NOUN de/ADP formules/NOUN et/CCONJ de/ADP terminologie/NOUN ,/PUNCT pourrait/VERB bien/ADV 
+/SPACE n’/NOUN être/AUX compréhensible/ADJ pour/ADP personne/NOUN et/CCONJ néanmoins/ADV crédible/ADJ 
+/SPACE pour/ADP tout/ADJ le/DET monde/NOUN ./PUNCT 
+     /SPACE —/PUNCT Comme/ADP toujours/ADV ,/PUNCT Sire/ADJ ,/PUNCT remarqua/NOUN Demerzel/PROPN ,/PUNCT vous/PRON faites/ADJ 
+/SPACE preuve/NOUN de/ADP bon/ADJ sens/NOUN ./PUNCT Nous/PRON vivons/VERB en/ADP des/DET temps/NOUN troublés/ADJ et/CCONJ il/PRON ne/ADV 
+      /SPACE «/NOUN Lieutenant/NOUN Alban/PROPN Wellis/PROPN ,/PUNCT dit/VERB l’/ADJ officier/NOUN de/ADP la/DET garde/NOUN 
+/SPACE impériale/ADJ avant/ADP de/ADP ranger/VERB sa/DET carte/NOUN ./PUNCT Voulez/VERB -vous/PRON bien/ADV me/PRON suivre/VERB ,/PUNCT 
+/SPACE monsieur/NOUN ?/PUNCT »/PUNCT 
+      /SPACE Wellis/NOUN était/AUX armé/VERB ,/PUNCT bien/ADV sûr/ADJ ./PUNCT Et/CCONJ deux/NUM autres/ADJ gardes/ADJ 
+/SPACE attendaient/VERB devant/ADP sa/DET porte/NOUN ./PUNCT Seldon/PROPN savait/VERB qu’/PRON il/PRON n’/PRON avait/AUX pas/ADV le/DET 
+/SPACE choix/NOUN ,/PUNCT nonobstant/VERB les/DET circonlocutions/NOUN polies/VERB de/ADP l’/NOUN autre/ADJ ,/PUNCT mais/CCONJ rien/PRON 
+/SPACE ne/ADV lui/PRON interdisait/VERB de/ADP chercher/VERB à/ADP en/PRON savoir/VERB plus/ADV :/PUNCT «/NOUN Pour/ADP voir/VERB 
+/SPACE l’/NOUN Empereur/NOUN ?/PUNCT 
+      /SPACE —/DET Pour/ADP être/AUX conduit/VERB au/ADP Palais/PROPN ,/PUNCT monsieur/NOUN ./PUNCT Tels/ADJ sont/AUX les/DET 
+/SPACE ordres/NOUN que/SCONJ j’/ADJ ai/AUX reçus/VERB ./PUNCT 
+      /SPACE —/PUNCT Mais/CCONJ pourquoi/ADV ?/PUNCT 
+      /SPACE —/PUNCT On/PRON ne/ADV me/PRON l’/NOUN a/AUX pas/ADV dit/VERB ./PUNCT Et/CCONJ mes/DET ordres/NOUN sont/AUX stricts/VERB :/PUNCT vous/PRON 
+/SPACE devez/VERB me/PRON suivre/VERB .../PUNCT d’/ADV une/DET manière/NOUN ou/CCONJ de/ADP l’/NOUN autre/ADJ ./PUNCT 
+      /SPACE —/PUNCT Mais/CCONJ cela/PRON ressemble/VERB fort/ADV à/ADP une/DET arrestation/NOUN ./PUNCT Je/PRON n’/VERB ai/AUX 
+/SPACE pourtant/ADV rien/PRON commis/VERB de/ADP répréhensible/NOUN ./PUNCT 
+      /SPACE —/PUNCT Disons/NOUN plutôt/ADV ,/PUNCT monsieur/NOUN ,/PUNCT que/SCONJ l’/NOUN on/PRON vous/PRON fournit/VERB une/DET garde/NOUN 
+/SPACE d’/PROPN honneur/NOUN ,/PUNCT si/SCONJ vous/PRON ne/ADV tardez/VERB pas/ADV davantage/ADV ./PUNCT »/PUNCT 
+      /SPACE Seldon/PROPN ne/ADV tarda/VERB pas/ADV plus/ADV ./PUNCT Il/PRON pinça/VERB les/DET lèvres/NOUN ,/PUNCT comme/ADP pour/ADP 
+/SPACE retenir/VERB de/DET nouvelles/ADJ questions/NOUN ,/PUNCT hocha/PROPN la/DET tête/NOUN ,/PUNCT avança/VERB d’/X un/DET pas/ADV ./PUNCT 
+/SPACE Même/ADV si/SCONJ c’/NOUN était/AUX pour/ADP être/AUX présenté/VERB à/ADP l’/NOUN Empereur/NOUN et/CCONJ recevoir/VERB ses/DET 
+/SPACE félicitations/NOUN ,/PUNCT il/PRON n’/VERB y/PRON trouvait/VERB aucun/DET plaisir/NOUN ./PUNCT Il/PRON était/AUX pour/ADP l’/NOUN Empire/NOUN –/ADJ 
+ /SPACE enfin/ADV ,/PUNCT pour/ADP la/DET paix/NOUN et/CCONJ l’/NOUN unité/NOUN des/ADP mondes/NOUN formant/VERB l’/NOUN humanité/PROPN –/PROPN ,/PUNCT 
+/SPACE mais/CCONJ il/PRON n’/PRON était/AUX pas/ADV pour/ADP l’/NOUN Empereur/NOUN ./PUNCT 
+      /SPACE Le/DET lieutenant/NOUN le/DET précéda/NOUN ,/PUNCT les/DET deux/NUM autres/ADJ fermant/VERB la/DET 
+/SPACE marche/NOUN ./PUNCT Seldon/PROPN sourit/VERB aux/ADP passants/NOUN qu’/PRON il/PRON croisait/VERB ,/PUNCT essayant/VERB de/ADP 
+/SPACE prendre/VERB un/DET air/NOUN dégagé/VERB ./PUNCT Une/DET fois/NOUN sortis/ADJ de/ADP l’/NOUN hôtel/ADJ ,/PUNCT ils/PRON montèrent/VERB 
+/SPACE dans/ADP un/DET véhicule/NOUN terrestre/VERB officiel/ADJ (/PUNCT Seldon/PROPN caressa/VERB de/ADP la/DET main/NOUN les/DET 
+/SPACE garnitures/ADJ intérieures/NOUN :/PUNCT jamais/ADV il/PRON n’/PRON avait/AUX vu/VERB quelque/DET chose/NOUN 
+/SPACE d’/ADV aussi/ADV ouvragé/VERB )/PUNCT ./PUNCT 
+      /SPACE Ils/PRON se/PRON trouvaient/VERB dans/ADP un/PRON des/ADP secteurs/NOUN les/DET plus/ADV opulents/ADJ de/ADP 
+/SPACE Trantor/X :/PUNCT ici/ADV ,/PUNCT le/DET dôme/NOUN était/AUX assez/ADV haut/ADJ pour/ADP vous/PRON donner/VERB 
+/SPACE l’/NOUN impression/VERB d’/VERB être/AUX à/ADP l’/NOUN air/NOUN libre/ADJ et/CCONJ l’/NOUN on/PRON aurait/AUX pu/VERB jurer/VERB –/ADJ même/ADV 
+/SPACE quelqu’/SCONJ un/PRON comme/ADP Hari/PROPN Seldon/PROPN qui/PRON était/AUX né/VERB et/CCONJ avait/VERB grandi/NOUN dans/ADP 
+/SPACE un/DET monde/NOUN ouvert/ADJ –/NOUN qu’/PRON on/PRON était/AUX à/ADP la/DET lumière/NOUN naturelle/NOUN ./PUNCT Certes/ADV ,/PUNCT il/PRON 
+/SPACE n’/NOUN y/PRON avait/VERB ni/CCONJ ombre/NOUN ni/CCONJ soleil/NOUN ,/PUNCT mais/CCONJ l’/NOUN air/NOUN était/AUX léger/ADJ et/CCONJ parfumé/VERB ./PUNCT 
+      /SPACE Et/CCONJ puis/CCONJ l’/NOUN impression/NOUN se/PRON dissipa/ADJ ,/PUNCT la/DET courbure/NOUN du/ADP dôme/NOUN 
+/SPACE s’/NOUN accentua/PRON ,/PUNCT les/DET parois/NOUN se/PRON rétrécirent/VERB et/CCONJ bientôt/ADV ils/PRON s’/PRON enfonçaient/VERB 
+/SPACE dans/ADP un/DET tunnel/NOUN confiné/NOUN ,/PUNCT balisé/VERB à/ADP intervalles/NOUN réguliers/ADJ par/ADP 
+/SPACE l’/NOUN emblème/VERB au/ADP Soleil/NOUN et/CCONJ à/ADP l’/NOUN Astronef/PROPN et/CCONJ donc/ADV réservé/VERB (/PUNCT de/ADP l’/NOUN avis/NOUN de/ADP 
+/SPACE Seldon/PROPN )/PUNCT aux/ADP véhicules/NOUN officiels/ADJ ./PUNCT 
+      /SPACE Seldon/PROPN fut/AUX introduit/VERB dans/ADP une/DET pièce/NOUN de/ADP taille/NOUN moyenne/ADJ ,/PUNCT 
+/SPACE meublée/VERB avec/ADP ostentation/NOUN ,/PUNCT où/PRON l’/NOUN attendait/VERB un/DET homme/NOUN d’/PROPN allure/VERB 
+/SPACE jeune/ADJ ,/PUNCT assis/VERB au/ADP coin/NOUN d’/ADV une/DET table/NOUN dans/ADP une/DET alcôve/NOUN devant/ADP une/DET 
+/SPACE fenêtre/NOUN ,/PUNCT un/DET pied/NOUN par/ADP terre/NOUN et/CCONJ l’/NOUN autre/ADJ ballant/NOUN ;/PUNCT il/PRON s’/AUX étonna/VERB qu’/SCONJ un/DET 
+/SPACE fonctionnaire/VERB pût/ADJ le/PRON considérer/VERB avec/ADP une/DET attitude/NOUN si/SCONJ dégagée/VERB ,/PUNCT si/SCONJ 
+/SPACE enjouée/VERB ./PUNCT Il/PRON avait/AUX déjà/ADV maintes/ADJ fois/NOUN pu/VERB constater/VERB que/SCONJ les/DET 
+/SPACE représentants/NOUN de/ADP l’/NOUN autorité/NOUN –/PROPN et/CCONJ particulièrement/ADV ceux/PRON de/ADP 
+/SPACE l’/NOUN entourage/NOUN impérial/ADJ –/NOUN avaient/VERB en/ADP permanence/NOUN l’/ADJ air/NOUN grave/ADJ ,/PUNCT 
+/SPACE comme/ADP si/SCONJ le/DET poids/NOUN de/ADP la/DET Galaxie/NOUN entière/ADJ reposait/VERB sur/ADP leurs/DET 
+/SPACE épaules/NOUN ./PUNCT Et/CCONJ il/PRON semblait/VERB que/ADV moins/ADV leur/DET rang/NOUN était/AUX élevé/ADJ ,/PUNCT plus/ADV leur/DET 
+/SPACE expression/NOUN était/AUX menaçante/VERB ./PUNCT 
+      /SPACE Il/PRON devait/VERB donc/ADV s’/VERB agir/VERB d’/ADV un/DET officier/NOUN placé/VERB si/SCONJ haut/ADJ dans/ADP la/DET 
+/SPACE hiérarchie/NOUN ,/PUNCT irradié/VERB à/ADP tel/ADJ point/NOUN par/ADP le/DET soleil/NOUN du/ADP pouvoir/NOUN ,/PUNCT qu’/SCONJ il/PRON 
+/SPACE n’/PRON éprouvait/VERB nullement/VERB le/DET besoin/NOUN de/ADP le/DET voiler/NOUN derrière/ADP une/DET 
+/SPACE physionomie/NOUN compassée/VERB ./PUNCT 
+      /SPACE Seldon/PROPN ne/ADV savait/VERB pas/ADV dans/ADP quelle/DET mesure/NOUN il/PRON devait/VERB avoir/VERB l’/NOUN air/ADJ 
+/SPACE impressionné/VERB ;/PUNCT il/PRON jugea/VERB préférable/ADJ de/ADP garder/VERB le/DET silence/NOUN et/CCONJ de/ADP 
+/SPACE laisser/VERB l’/NOUN autre/ADJ entamer/VERB la/DET conversation/NOUN ./PUNCT 
+      /SPACE Le/DET fonctionnaire/NOUN prit/VERB la/DET parole/NOUN :/PUNCT «/PROPN Vous/PRON êtes/AUX Hari/PROPN Seldon/PROPN ,/PUNCT 
+/SPACE n’/NOUN est/AUX -ce/PRON pas/ADV ?/PUNCT Le/DET mathématicien/NOUN ?/PUNCT »/PUNCT 
+      /SPACE Seldon/PROPN se/PRON contenta/VERB de/ADP répondre/VERB :/PUNCT «/NOUN Oui/PROPN ,/PUNCT monsieur/NOUN »/PUNCT ,/PUNCT puis/CCONJ 
+/SPACE attendit/ADJ ./PUNCT 
+      /SPACE Le/DET jeune/ADJ homme/NOUN fit/ADJ un/DET geste/NOUN du/ADP bras/NOUN ./PUNCT «/ADJ Ce/DET devrait/VERB être/AUX 
+/SPACE ―/NOUN Sire/NOUN ‖/ADJ ,/PUNCT mais/CCONJ j’/PROPN ai/VERB le/DET protocole/NOUN en/ADP horreur/NOUN ./PUNCT C’/ADJ est/AUX tout/ADJ ce/PRON que/PRON 
+/SPACE j’/ADJ obtiens/NOUN et/CCONJ je/PRON commence/VERB à/ADP m’/NOUN en/ADP lasser/VERB ./PUNCT Nous/PRON sommes/AUX entre/ADP 
+/SPACE nous/PRON ;/PUNCT je/PRON vais/VERB me/PRON faire/VERB plaisir/NOUN et/CCONJ laisser/VERB tomber/VERB le/DET cérémonial/NOUN ./PUNCT 
+/SPACE Asseyez/PROPN -vous/PRON donc/ADV ,/PUNCT professeur/NOUN ./PUNCT »/PUNCT 
+      /SPACE C’/ADJ est/AUX à/ADP mi-tirade/NOUN que/SCONJ Seldon/PROPN comprit/VERB qu’/PRON il/PRON s’/AUX adressait/VERB à/ADP 
+/SPACE l’/NOUN empereur/NOUN Cléon/ADJ ,/PUNCT premier/ADJ du/ADP nom/NOUN ,/PUNCT ce/PRON qui/PRON lui/PRON coupa/VERB la/DET 
+/SPACE respiration/NOUN ./PUNCT Il/PRON y/PRON avait/VERB effectivement/ADV un/DET vague/NOUN faux/ADJ air/NOUN de/ADP 
+/SPACE ressemblance/NOUN ,/PUNCT maintenant/ADV qu’/SCONJ il/PRON y/PRON regardait/VERB de/ADP plus/ADV près/ADV ,/PUNCT avec/ADP 
+/SPACE l’/NOUN hologramme/NOUN officiel/ADJ que/SCONJ l’/NOUN on/PRON voyait/VERB constamment/ADV aux/ADP 
+/SPACE informations/NOUN ,/PUNCT mais/CCONJ sur/ADP ces/DET portraits/NOUN ,/PUNCT Cléon/PROPN ,/PUNCT toujours/ADV vêtu/VERB de/ADP 
+/SPACE manière/NOUN imposante/ADJ ,/PUNCT semblait/VERB plus/ADV grand/ADJ ,/PUNCT plus/ADV noble/ADJ ,/PUNCT les/DET traits/NOUN 
+/SPACE figés/ADJ ./PUNCT 
+      /SPACE Et/CCONJ voilà/VERB qu’/SCONJ il/PRON se/PRON retrouvait/VERB devant/ADP l’/NOUN original/ADJ ,/PUNCT et/CCONJ quelque/DET part/NOUN 
+/SPACE l’/NOUN homme/NOUN lui/PRON semblait/VERB parfaitement/ADV ordinaire/ADJ ./PUNCT 
+      /SPACE Seldon/PROPN ne/ADV bougea/VERB pas/ADV ./PUNCT 
+      /SPACE L’/PROPN Empereur/NOUN esquissa/ADJ un/DET froncement/NOUN de/ADP sourcils/NOUN et/CCONJ ,/PUNCT avec/ADP 
+/SPACE cette/DET habitude/NOUN du/ADP commandement/NOUN toujours/ADV présente/ADJ même/ADV 
+     /SPACE Seldon/PROPN éprouva/ADJ soudain/ADV une/DET grande/ADJ lassitude/NOUN ./PUNCT C’/VERB était/AUX à/ADP 
+/SPACE croire/VERB que/SCONJ cette/DET erreur/NOUN d’/ADV interprétation/NOUN devrait/VERB constamment/ADV 
+/SPACE entacher/VERB sa/DET théorie/NOUN ./PUNCT Peut/ADV -/ADV être/ADV n’/NOUN aurait/AUX -il/PRON pas/ADV dû/VERB présenter/VERB son/DET 
+/SPACE article/NOUN ./PUNCT 
+     /SPACE «/NOUN Non/ADV ,/PUNCT pas/ADV exactement/ADV ,/PUNCT répondit/NOUN -il/PRON ./PUNCT Ce/PRON que/PRON j’/ADJ ai/AUX fait/VERB est/AUX bien/ADV 
+/SPACE plus/ADV limité/ADJ ./PUNCT Dans/ADP de/DET nombreux/ADJ systèmes/NOUN ,/PUNCT la/DET situation/NOUN est/AUX telle/ADJ 
+/SPACE que/SCONJ ,/PUNCT dans/ADP certaines/DET conditions/NOUN ,/PUNCT des/DET événements/NOUN chaotiques/ADJ 
+/SPACE surviennent/ADJ ./PUNCT Cela/PRON signifie/VERB que/SCONJ ,/PUNCT au-delà/ADV d’/PROPN un/DET certain/ADJ point/NOUN ,/PUNCT il/PRON 
+/SPACE devient/VERB impossible/ADJ de/ADP prédire/ADJ leur/PRON enchaînement/NOUN ./PUNCT C’/ADJ est/AUX 
+/SPACE également/ADV vrai/ADP dans/ADP le/DET cas/NOUN de/ADP systèmes/NOUN relativement/ADV simples/ADJ ,/PUNCT 
+/SPACE mais/CCONJ plus/ADV leur/DET complexité/NOUN s’/VERB accroît/NOUN ,/PUNCT plus/ADV le/DET risque/NOUN de/ADP chaos/NOUN 
+/SPACE grandit/NOUN ./PUNCT On/PRON a/AUX toujours/ADV supposé/VERB qu’/SCONJ un/DET système/NOUN aussi/ADV complexe/ADJ 
+/SPACE qu’/PRON une/DET société/NOUN humaine/ADJ était/AUX destiné/VERB à/ADP devenir/VERB rapidement/ADV 
+/SPACE chaotique/ADJ et/CCONJ ,/PUNCT par/ADP conséquent/NOUN ,/PUNCT imprévisible/ADJ ./PUNCT J’/PROPN ai/AUX seulement/ADV 
+/SPACE démontré/VERB qu’/SCONJ en/ADP étudiant/VERB la/DET société/NOUN humaine/ADJ ,/PUNCT il/PRON est/AUX possible/ADJ de/ADP 
+/SPACE choisir/VERB un/DET point/NOUN de/ADP départ/NOUN et/CCONJ de/ADP faire/VERB des/DET hypothèses/NOUN 
+/SPACE appropriées/VERB qui/PRON supprimeront/VERB le/DET chaos/NOUN ./PUNCT Cela/PRON permettra/VERB de/ADP 
+/SPACE prédire/ADJ l’/NOUN avenir/NOUN ,/PUNCT non/ADV pas/ADV en/ADP détail/NOUN ,/PUNCT bien/ADV sûr/ADJ ,/PUNCT mais/CCONJ dans/ADP ses/DET 
+/SPACE grandes/ADJ lignes/NOUN ;/PUNCT pas/ADV avec/ADP certitude/NOUN ,/PUNCT mais/CCONJ avec/ADP des/DET probabilités/NOUN 
+/SPACE calculables/NOUN ./PUNCT »/PUNCT 
+     /SPACE L’/PROPN Empereur/NOUN ,/PUNCT qui/PRON l’/NOUN avait/AUX écouté/VERB avec/ADP attention/NOUN ,/PUNCT remarqua/NOUN :/PUNCT 
+/SPACE «/PROPN Mais/CCONJ cela/PRON n’/PRON équivaut/VERB -il/PRON pas/ADV à/ADP une/DET méthode/NOUN pour/ADP prédire/ADJ 
+/SPACE l’/NOUN avenir/NOUN ?/PUNCT 
+     /SPACE —/PUNCT Encore/ADV une/DET fois/NOUN ,/PUNCT pas/ADV exactement/ADV ./PUNCT J’/PROPN ai/AUX montré/VERB que/SCONJ c’/PRON était/AUX 
+/SPACE possible/ADJ en/ADP théorie/NOUN ,/PUNCT rien/PRON de/ADP plus/ADV ./PUNCT Pour/ADP aller/VERB plus/ADV loin/ADV ,/PUNCT il/PRON nous/PRON 
+/SPACE faudrait/VERB choisir/VERB un/DET point/NOUN de/ADP départ/NOUN adéquat/PROPN ,/PUNCT poser/VERB les/DET 
+/SPACE hypothèses/NOUN correctes/ADJ et/CCONJ trouver/VERB ensuite/ADV le/DET moyen/NOUN d’/PROPN effectuer/VERB 
+/SPACE l’/NOUN ensemble/NOUN des/ADP calculs/NOUN dans/ADP un/DET temps/NOUN fini/ADJ ./PUNCT Rien/PROPN dans/ADP ma/DET 
+/SPACE démonstration/NOUN ne/ADV permet/VERB d’/ADV entrevoir/VERB la/DET solution/NOUN d’/ADV aucun/PRON de/ADP ces/DET 
+/SPACE problèmes/NOUN ./PUNCT Et/CCONJ même/ADV si/SCONJ c’/ADJ était/AUX faisable/ADJ ,/PUNCT nous/PRON pourrions/VERB ,/PUNCT au/ADP 
+/SPACE mieux/ADV ,/PUNCT calculer/VERB de/DET simples/ADJ probabilités/NOUN ./PUNCT Ce/DET n’/NOUN est/AUX pas/ADV là/ADV prédire/ADJ ,/PUNCT 
+/SPACE mais/CCONJ plutôt/ADV supposer/VERB ce/PRON qui/PRON est/AUX susceptible/ADJ d’/ADV arriver/VERB ./PUNCT Tout/ADV bon/ADJ 
+/SPACE politicien/NOUN ,/PUNCT tout/DET homme/NOUN d’/ADV affaires/NOUN ,/PUNCT tout/DET individu/NOUN de/ADP quelque/ADV 
+/SPACE influence/NOUN doit/VERB effectuer/VERB ce/DET genre/NOUN de/ADP projection/NOUN sur/ADP l’/NOUN avenir/NOUN ,/PUNCT et/CCONJ si/SCONJ 
+/SPACE possible/ADJ sans/ADP se/PRON tromper/VERB ,/PUNCT sous/ADP peine/NOUN d’/PROPN échec/PROPN ./PUNCT 
+     /SPACE —/PUNCT Ils/PRON le/PRON font/VERB sans/ADP l’/NOUN aide/NOUN des/ADP mathématiques/NOUN ./PUNCT 
+     /SPACE —/PUNCT Exact/PROPN ./PUNCT Par/ADP intuition/NOUN ./PUNCT 
+     /SPACE —/PUNCT Avec/ADP l’/NOUN outil/NOUN mathématique/ADJ adéquat/PROPN ,/PUNCT n’/NOUN importe/VERB qui/PRON serait/VERB 
+/SPACE capable/ADJ de/ADP calculer/VERB ces/DET probabilités/NOUN ./PUNCT Pas/ADV besoin/NOUN de/ADP l’/NOUN oiseau/NOUN rare/ADJ 
+/SPACE qui/PRON réussit/VERB grâce/NOUN à/ADP une/DET remarquable/ADJ intuition/NOUN ./PUNCT 
+      /SPACE —/PUNCT Peut/ADV -/ADV être/ADV ./PUNCT Mon/DET analyse/NOUN mathématique/NOUN implique/VERB que/SCONJ 
+/SPACE l’/NOUN ordre/NOUN doit/VERB être/AUX sous-jacent/VERB à/ADP toutes/DET choses/NOUN ,/PUNCT si/SCONJ désordonnées/VERB 
+/SPACE puissent/ADV -/PUNCT elles/PRON apparaître/X ,/PUNCT mais/CCONJ elle/PRON ne/ADV fournit/VERB aucun/DET indice/NOUN 
+/SPACE quant/ADV à/ADP la/DET méthode/NOUN pour/ADP le/DET découvrir/NOUN ./PUNCT Imaginez/CCONJ .../PUNCT vingt-cinq/NUM 
+/SPACE millions/NOUN de/ADP mondes/NOUN ,/PUNCT chacun/PRON avec/ADP ses/DET caractéristiques/NOUN et/CCONJ sa/DET 
+/SPACE culture/NOUN ,/PUNCT chacun/PRON significativement/ADV différent/ADV de/ADP tous/ADJ les/DET autres/ADJ ,/PUNCT 
+/SPACE chacun/PRON contenant/VERB un/DET milliard/NOUN ou/CCONJ plus/ADV d’/ADV êtres/NOUN humains/ADV dotés/ADJ 
+/SPACE d’/ADV un/DET esprit/NOUN individuel/ADJ ,/PUNCT et/CCONJ tous/ADJ ces/DET mondes/NOUN interagissant/VERB 
+/SPACE d’/X innombrables/NOUN manières/ADJ ,/PUNCT en/ADP d’/PROPN innombrables/X combinaisons/NOUN !/PUNCT 
+/SPACE Même/ADV si/SCONJ ,/PUNCT en/ADP théorie/NOUN ,/PUNCT une/DET analyse/NOUN psychohistorique/ADJ est/AUX possible/ADJ ,/PUNCT 
+/SPACE il/PRON est/AUX peu/ADV probable/ADJ que/SCONJ ce/PRON soit/AUX réalisable/ADJ en/ADP pratique/NOUN ./PUNCT 
+      /SPACE —/PUNCT Qu’/PRON entendez/VERB -vous/PRON par/ADP «/PROPN psychohistorique/ADJ »/PROPN ?/PUNCT 
+      /SPACE —/DET J’/PROPN ai/AUX donné/VERB à/ADP l’/NOUN évaluation/NOUN théorique/ADJ des/ADP probabilités/NOUN 
+/SPACE concernant/VERB l’/NOUN avenir/NOUN le/DET nom/NOUN de/ADP «/PROPN psychohistoire/ADJ »/PUNCT ./PUNCT 
+      /SPACE L’/PROPN Empereur/NOUN se/PRON leva/VERB brusquement/ADV ,/PUNCT gagna/ADV l’/NOUN autre/ADJ bout/NOUN de/ADP la/DET 
+/SPACE pièce/NOUN ,/PUNCT pivota/PROPN ,/PUNCT revint/VERB sur/ADP ses/DET pas/ADV puis/CCONJ s’/ADV arrêta/VERB devant/ADP Seldon/PROPN ,/PUNCT 
+/SPACE toujours/ADV assis/VERB ,/PUNCT immobile/NOUN ./PUNCT 
+      /SPACE «/NOUN Debout/PROPN !/PUNCT »/PROPN ordonna/VERB -t/PRON -il/PRON ./PUNCT 
+      /SPACE Seldon/PROPN obéit/VERB et/CCONJ leva/VERB les/DET yeux/NOUN vers/ADP l’/NOUN Empereur/NOUN qui/PRON le/PRON 
+/SPACE dominait/VERB quelque/ADV peu/ADV ./PUNCT Il/PRON fit/VERB un/DET effort/NOUN pour/ADP ne/ADV pas/ADV baisser/VERB le/DET 
+/SPACE regard/NOUN ./PUNCT 
+      /SPACE Enfin/ADV ,/PUNCT Cléon/PROPN reprit/VERB :/PUNCT «/NOUN Votre/DET psychohistoire/NOUN ,/PUNCT là/ADV .../PUNCT si/SCONJ on/PRON 
+/SPACE pouvait/VERB la/PRON rendre/VERB praticable/ADJ ,/PUNCT elle/PRON serait/AUX d’/ADV une/DET grande/ADJ utilité/NOUN ,/PUNCT 
+/SPACE non/ADV ?/PUNCT 
+      /SPACE —/PUNCT D’/ADV une/DET énorme/ADJ utilité/NOUN ,/PUNCT à/ADP l’/NOUN évidence/NOUN ./PUNCT Savoir/VERB ce/PRON que/PRON recèle/NOUN 
+/SPACE l’/NOUN avenir/NOUN ,/PUNCT même/ADV d’/ADV une/DET manière/NOUN très/ADV générale/ADJ et/CCONJ probabiliste/ADJ ,/PUNCT voilà/VERB 
+/SPACE qui/PRON constituerait/VERB un/DET guide/NOUN nouveau/ADJ et/CCONJ merveilleux/ADJ pour/ADP nos/DET 
+/SPACE actions/NOUN ,/PUNCT un/DET guide/VERB comme/ADP l’/NOUN humanité/NOUN n’/PROPN en/PRON a/AUX jamais/ADV eu/VERB jusqu’/PROPN à/ADP ce/DET 
+/SPACE jour/NOUN ./PUNCT Mais/CCONJ ,/PUNCT évidemment/ADV .../PUNCT »/PROPN Il/PRON s’/VERB interrompit/X ./PUNCT 
+      /SPACE «/NOUN Eh/NUM bien/ADV ?/PUNCT s’/PRON impatienta/ADJ Cléon/ADJ ./PUNCT 
+      /SPACE —/PUNCT Eh/NOUN bien/ADV ,/PUNCT il/PRON semblerait/VERB que/SCONJ ,/PUNCT hormis/VERB quelques/DET décideurs/NOUN ,/PUNCT 
+/SPACE les/DET résultats/NOUN de/ADP l’/NOUN analyse/NOUN psychohistorique/ADJ devraient/VERB demeurer/VERB 
+/SPACE inconnus/NOUN du/ADP grand/ADJ public/NOUN ./PUNCT 
+      /SPACE —/PUNCT Inconnus/NOUN !/PUNCT s’/DET exclama/ADJ Cléon/ADJ ,/PUNCT avec/ADP surprise/NOUN ./PUNCT 
+      /SPACE —/PUNCT C’/PRON est/AUX évident/ADJ ./PUNCT Laissez/ADV -moi/PRON essayer/VERB de/ADP vous/PRON expliquer/VERB ./PUNCT Si/SCONJ 
+/SPACE l’/NOUN on/PRON fait/VERB une/DET analyse/NOUN psychohistorique/ADJ et/CCONJ que/SCONJ ses/DET résultats/NOUN sont/AUX 
+/SPACE livrés/VERB au/ADP public/NOUN ,/PUNCT les/DET diverses/ADJ émotions/NOUN et/CCONJ réactions/NOUN de/ADP l’/NOUN humanité/PROPN 
+/SPACE en/ADP seront/AUX aussitôt/ADV altérées/VERB ./PUNCT L’/PROPN analyse/NOUN psychohistorique/ADJ ,/PUNCT qui/PRON se/PRON 
+/SPACE fonde/ADJ sur/ADP des/DET émotions/NOUN et/CCONJ des/DET comportements/NOUN induits/VERB dans/ADP 
+
+      /SPACE —/PUNCT Pourquoi/ADV auriez/VERB -vous/PRON besoin/NOUN de/ADP moi/PRON pour/ADP cela/PRON ?/PUNCT Les/DET 
+/SPACE spécialistes/ADJ gouvernementaux/ADJ pourraient/VERB faire/VERB ces/DET prédictions-/NOUN 
+/SPACE là/ADV eux/PRON -/PRON mêmes/ADJ en/ADP se/PRON passant/VERB d’/ADV intermédiaire/NOUN ./PUNCT 
+      /SPACE —/PUNCT Les/DET spécialistes/NOUN gouvernementaux/ADJ ne/ADV seraient/AUX pas/ADV aussi/ADV 
+/SPACE efficaces/NOUN ./PUNCT Ils/PRON font/VERB bien/ADV des/DET déclarations/NOUN de/ADP ce/DET genre/NOUN de/ADP temps/NOUN à/ADP 
+/SPACE autre/ADJ ./PUNCT On/PRON ne/ADV les/PRON croit/VERB pas/ADV pour/ADP autant/ADV ./PUNCT 
+      /SPACE —/PUNCT Pourquoi/ADV me/PRON croirait/VERB -on/PRON ,/PUNCT moi/PRON ?/PUNCT 
+      /SPACE —/VERB Vous/PRON êtes/AUX un/DET mathématicien/NOUN ./PUNCT Vous/PRON auriez/AUX calculé/VERB le/DET futur/ADJ 
+/SPACE au/ADP lieu/NOUN d’/PROPN en/PRON avoir/AUX eu/VERB ,/PUNCT disons/NOUN ,/PUNCT l’/NOUN intuition/NOUN ./PUNCT 
+      /SPACE —/PUNCT Mais/CCONJ je/PRON ne/ADV peux/VERB rien/PRON calculer/VERB de/ADP tel/ADJ !/PUNCT 
+      /SPACE —/PUNCT Et/CCONJ qui/PRON le/PRON saurait/VERB ?/PUNCT »/PUNCT Cléon/ADJ le/DET fixa/NOUN en/ADP plissant/VERB les/DET yeux/NOUN ./PUNCT 
+      /SPACE Il/PRON y/PRON eut/VERB un/DET silence/NOUN ./PUNCT Seldon/PROPN se/PRON sentait/VERB piégé/VERB ./PUNCT Devant/ADP un/DET ordre/NOUN 
+/SPACE direct/ADJ de/ADP l’/NOUN Empereur/NOUN ,/PUNCT serait/AUX -il/PRON prudent/ADJ de/ADP refuser/VERB ?/PUNCT S’/PRON il/PRON refusait/VERB ,/PUNCT 
+/SPACE il/PRON risquait/VERB d’/ADV être/AUX emprisonné/VERB ou/CCONJ exécuté/VERB ./PUNCT Non/ADV sans/ADP procès/NOUN ,/PUNCT bien/ADV 
+/SPACE sûr/ADJ ,/PUNCT mais/CCONJ que/SCONJ de/ADP difficultés/NOUN pour/ADP que/SCONJ le/DET jugement/NOUN aille/ADJ à/ADP 
+/SPACE l’/NOUN encontre/NOUN des/ADP vœux/NOUN d’/ADP une/DET bureaucratie/NOUN pesante/ADJ ,/PUNCT surtout/ADV lorsque/SCONJ 
+/SPACE celle-ci/PRON est/AUX aux/ADP ordres/NOUN de/ADP l’/NOUN Empereur/NOUN du/ADP vaste/NOUN Empire/NOUN 
+/SPACE galactique/ADJ !/PUNCT 
+      /SPACE Finalement/ADV ,/PUNCT il/PRON répondit/VERB :/PUNCT «/PROPN Ça/PRON ne/ADV marcherait/VERB pas/ADV ./PUNCT 
+      /SPACE —/PUNCT Pourquoi/ADV ?/PUNCT 
+      /SPACE —/PUNCT Si/SCONJ encore/ADV on/PRON me/PRON demandait/VERB de/ADP prédire/ADJ de/ADP vagues/NOUN 
+/SPACE généralités/NOUN qui/PRON ne/ADV pourraient/VERB raisonnablement/ADV se/PRON réaliser/VERB bien/ADV 
+/SPACE avant/ADP que/SCONJ cette/DET génération/NOUN ,/PUNCT voire/CCONJ la/DET suivante/NOUN ,/PUNCT ait/AUX disparu/VERB ,/PUNCT nous/PRON 
+/SPACE pourrions/VERB peut-être/ADV nous/PRON en/PRON sortir/VERB ;/PUNCT mais/CCONJ ,/PUNCT dans/ADP ce/DET cas/NOUN ,/PUNCT les/DET gens/NOUN 
+/SPACE n’/NOUN y/PRON prêteraient/ADV guère/ADJ attention/NOUN ./PUNCT Peu/ADV leur/DET importerait/VERB une/DET 
+/SPACE éventualité/NOUN située/VERB un/DET siècle/NOUN ou/CCONJ deux/NUM dans/ADP l’/NOUN avenir/NOUN ./PUNCT 
+      /SPACE Pour/ADP parvenir/VERB à/ADP des/DET résultats/NOUN ,/PUNCT poursuivit/NOUN Seldon/PROPN ,/PUNCT il/PRON me/PRON 
+/SPACE faudrait/VERB prédire/ADJ des/ADP événements/NOUN aux/ADP conséquences/NOUN plus/ADV 
+/SPACE directes/NOUN ,/PUNCT plus/ADV immédiates/NOUN ./PUNCT C’/ADJ est/AUX à/ADP ceux/PROPN -là/ADV seulement/ADV que/SCONJ 
+/SPACE réagirait/VERB le/DET public/NOUN ./PUNCT Tôt/ADV ou/CCONJ tard/ADV ,/PUNCT cependant/ADV –/NOUN et/CCONJ sans/ADP doute/NOUN plus/ADV 
+/SPACE tôt/ADV que/SCONJ plus/ADV tard/ADV –/PROPN ,/PUNCT l’/NOUN une/DET de/ADP ces/DET éventualités/NOUN ne/ADV se/PRON réaliserait/VERB 
+/SPACE pas/ADV ,/PUNCT ce/PRON qui/PRON mettrait/VERB aussitôt/ADV fin/NOUN à/ADP ma/DET crédibilité/NOUN ;/PUNCT qui/PRON plus/ADV est/AUX ,/PUNCT 
+/SPACE votre/DET popularité/NOUN risquerait/VERB d’/ADV en/ADP pâtir/VERB du/ADP même/ADJ coup/NOUN ,/PUNCT et/CCONJ ,/PUNCT pis/NOUN que/SCONJ 
+/SPACE tout/ADV ,/PUNCT cela/PRON mettrait/VERB un/DET terme/NOUN aux/ADP recherches/NOUN en/ADP psychohistoire/NOUN ,/PUNCT 
+/SPACE de/ADP sorte/NOUN qu’/PRON on/PRON ne/ADV pourrait/VERB plus/ADV espérer/VERB l’/NOUN améliorer/VERB ,/PUNCT même/ADV si/SCONJ les/DET 
+/SPACE progrès/NOUN futurs/ADJ en/ADP mathématiques/NOUN pouvaient/ADV contribuer/VERB à/ADP la/DET 
+/SPACE rapprocher/VERB d’/ADP une/DET application/NOUN pratique/ADJ ./PUNCT »/PUNCT 
+      /SPACE Cléon/PRON se/PRON laissa/VERB tomber/VERB dans/ADP un/DET fauteuil/NOUN et/CCONJ regarda/VERB Seldon/PROPN ,/PUNCT 
+/SPACE l’/NOUN air/NOUN renfrogné/ADJ ./PUNCT «/PROPN Est/PRON -ce/PRON là/ADV tout/ADJ ce/PRON dont/PRON vous/PRON êtes/AUX capables/ADJ ,/PUNCT vous/PRON 
+/SPACE autres/ADJ mathématiciens/NOUN ?/PUNCT Souligner/VERB les/DET impossibilités/NOUN ?/PUNCT 
+/SPACE audience/NOUN privée/VERB ./PUNCT Et/CCONJ si/SCONJ j’/ADJ avais/VERB eu/VERB l’/NOUN intention/NOUN de/ADP vous/PRON assassiner/VERB ?/PUNCT 
+/SPACE Ce/PRON qui/PRON bien/ADV sûr/ADJ n’/NOUN est/AUX pas/ADV le/DET cas/NOUN ,/PUNCT Sire/NOUN »/PUNCT ,/PUNCT s’/PRON empressa/VERB -t/PRON -il/PRON d’/ADV ajouter/VERB ./PUNCT 
+      /SPACE Cléon/PROPN sourit/VERB sans/ADP humour/PROPN ./PUNCT «/NOUN Mon/DET ami/NOUN ,/PUNCT vous/PRON oubliez/VERB notre/DET 
+/SPACE minutie/NOUN –/NOUN et/CCONJ les/DET progrès/NOUN techniques/ADJ ./PUNCT Nous/PRON avons/AUX étudié/VERB votre/DET 
+/SPACE biographie/NOUN ,/PUNCT l’/NOUN ensemble/NOUN de/ADP votre/DET dossier/NOUN ./PUNCT A/ADP votre/DET arrivée/NOUN ,/PUNCT vous/PRON 
+/SPACE avez/AUX été/AUX passé/VERB au/ADP scanner/VERB ./PUNCT Votre/DET expression/NOUN et/CCONJ vos/DET empreintes/NOUN 
+/SPACE vocales/NOUN ont/AUX été/AUX analysées/VERB ./PUNCT Nous/PRON connaissions/VERB en/ADP détail/NOUN votre/DET état/NOUN 
+/SPACE émotionnel/ADJ ;/PUNCT nous/PRON connaissions/VERB quasiment/ADV vos/DET pensées/NOUN ./PUNCT S’/PRON il/PRON y/PRON 
+/SPACE avait/AUX eu/VERB le/DET moindre/ADJ doute/NOUN sur/ADP vos/DET intentions/NOUN ,/PUNCT on/PRON ne/ADV vous/PRON aurait/VERB 
+/SPACE pas/ADV permis/VERB de/ADP m’/NOUN approcher/NOUN ./PUNCT En/ADP fait/NOUN ,/PUNCT vous/PRON ne/ADV seriez/VERB plus/ADV en/ADP vie/NOUN à/ADP 
+/SPACE l’/NOUN heure/NOUN qu’/SCONJ il/PRON est/VERB ./PUNCT »/PUNCT 
+      /SPACE Une/DET vague/NOUN de/ADP nausée/VERB submergea/VERB Seldon/PROPN mais/CCONJ il/PRON poursuivit/VERB :/PUNCT 
+/SPACE «/PROPN Les/DET Exos/X ont/AUX toujours/ADV eu/VERB des/DET difficultés/NOUN à/ADP approcher/VERB les/DET 
+/SPACE Empereurs/PROPN ,/PUNCT même/ADV lorsque/SCONJ la/DET technique/NOUN était/AUX moins/ADV avancée/VERB ./PUNCT Or/CCONJ ,/PUNCT 
+/SPACE presque/ADV tous/ADJ les/DET assassinats/NOUN sont/AUX liés/VERB à/ADP des/DET révolutions/NOUN de/ADP palais/NOUN ./PUNCT 
+/SPACE Pour/ADP l’/NOUN Empereur/NOUN ,/PUNCT ce/PRON sont/AUX les/DET proches/NOUN qui/PRON constituent/VERB le/DET plus/ADV 
+/SPACE grand/ADJ danger/NOUN ./PUNCT Contre/ADP ce/DET danger/NOUN ,/PUNCT une/DET fouille/NOUN méticuleuse/ADJ des/ADP 
+/SPACE Exos/ADV n’/PROPN est/AUX d’/ADV aucune/DET utilité/NOUN ./PUNCT Quant/ADV à/ADP vos/DET propres/ADJ fonctionnaires/NOUN ,/PUNCT 
+/SPACE vos/DET propres/ADJ gardes/ADJ ,/PUNCT vos/DET propres/ADJ intimes/NOUN ,/PUNCT vous/PRON ne/ADV pouvez/VERB les/DET 
+/SPACE traiter/VERB comme/ADP vous/PRON m’/NOUN avez/AUX traité/VERB ./PUNCT 
+      /SPACE —/PUNCT Ça/VERB aussi/ADV ,/PUNCT je/PRON le/DET sais/NOUN ,/PUNCT répondit/NOUN Cléon/ADJ ,/PUNCT et/CCONJ au/ADP moins/ADV aussi/ADV 
+/SPACE bien/ADV que/SCONJ vous/PRON ./PUNCT En/ADP fait/NOUN ,/PUNCT je/PRON traite/VERB mes/DET proches/NOUN équitablement/ADV sans/ADP 
+/SPACE leur/PRON fournir/VERB une/DET seule/ADJ cause/NOUN de/ADP ressentiment/NOUN ./PUNCT 
+      /SPACE —/PRON Quelle/ADJ absur/ADV .../PUNCT »/PUNCT ,/PUNCT commença/PROPN Seldon/PROPN ,/PUNCT mais/CCONJ il/PRON se/PRON tut/VERB 
+/SPACE aussitôt/ADV ,/PUNCT fort/ADV embarrassé/ADJ ./PUNCT 
+      /SPACE «/PROPN Continuez/PROPN ,/PUNCT fit/VERB Cléon/ADJ avec/ADP colère/NOUN ./PUNCT Je/PRON vous/PRON ai/AUX donné/VERB 
+/SPACE l’/NOUN autorisation/NOUN de/ADP parler/VERB librement/NOUN ./PUNCT Qu’/PRON ai/AUX -je/PRON dit/VERB d’/ADV absurde/PROPN ?/PUNCT 
+      /SPACE —/PUNCT Le/DET mot/NOUN m’/NOUN a/AUX échappé/VERB ,/PUNCT Sire/ADJ ./PUNCT Je/PRON voulais/VERB dire/VERB 
+/SPACE «/PUNCT inappropriée/VERB »/PUNCT ./PUNCT Cette/DET façon/NOUN de/ADP traiter/VERB vos/DET intimes/NOUN est/AUX 
+/SPACE inappropriée/VERB ./PUNCT Vous/PRON devez/VERB être/AUX soupçonneux/VERB ;/PUNCT il/PRON serait/AUX inhumain/ADJ 
+/SPACE de/ADP ne/ADV pas/ADV l’/NOUN être/AUX ./PUNCT Un/DET geste/NOUN ou/CCONJ un/DET mot/NOUN imprudent/ADV ,/PUNCT tel/ADJ que/SCONJ celui/PRON 
+/SPACE que/SCONJ je/PRON viens/VERB d’/ADV employer/VERB ,/PUNCT une/DET expression/NOUN douteuse/ADJ ,/PUNCT et/CCONJ vous/PRON voilà/VERB 
+/SPACE aussitôt/ADV sur/ADP la/DET défensive/NOUN ,/PUNCT le/DET regard/NOUN inquisiteur/ADJ ./PUNCT Et/CCONJ la/DET moindre/NOUN 
+/SPACE trace/NOUN de/ADP méfiance/NOUN met/VERB en/ADP branle/NOUN un/DET cercle/NOUN vicieux/ADJ ./PUNCT L’/PROPN intime/ADJ va/VERB 
+/SPACE déceler/VERB cette/DET méfiance/NOUN ,/PUNCT d’/X où/PRON ressentiment/ADV de/ADP sa/DET part/NOUN et/CCONJ 
+/SPACE modification/NOUN du/ADP comportement/NOUN ,/PUNCT malgré/ADP tous/ADJ ses/DET efforts/NOUN pour/ADP 
+/SPACE l’/NOUN éviter/VERB ./PUNCT Vous/PRON le/PRON décelez/VERB à/ADP votre/DET tour/NOUN ,/PUNCT ce/PRON qui/PRON accroît/VERB vos/DET soupçons/NOUN ,/PUNCT 
+/SPACE et/CCONJ en/ADP fin/NOUN de/ADP compte/NOUN ,/PUNCT votre/DET interlocuteur/NOUN est/AUX exécuté/VERB ou/CCONJ vous/PRON êtes/AUX 
+/SPACE assassiné/VERB ./PUNCT Ce/DET processus/NOUN s’/ADJ est/AUX révélé/VERB inéluctable/ADJ pour/ADP les/DET 
+/SPACE Empereurs/NOUN des/ADP quatre/NUM derniers/ADJ siècles/NOUN ,/PUNCT et/CCONJ ce/DET n’/NOUN est/AUX jamais/ADV qu’/SCONJ un/DET 
+      /SPACE —/NOUN Êtes/NOUN -vous/PRON venu/VERB pour/ADP m’/NOUN apprendre/VERB que/SCONJ l’/NOUN Empire/NOUN est/AUX 
+/SPACE vaste/ADJ ?/PUNCT Qu’/PRON entendez/VERB -vous/PRON par/ADP là/ADV ,/PUNCT en/ADP disant/VERB que/SCONJ cet/DET homme/NOUN est/VERB 
+/SPACE comme/ADP un/DET cheval/NOUN fou/ADJ ?/PUNCT 
+      /SPACE —/PUNCT Simplement/ADV qu’/SCONJ il/PRON peut/VERB faire/VERB beaucoup/ADV de/ADP mal/NOUN sans/ADP en/ADP 
+/SPACE avoir/AUX nécessairement/ADV l’/NOUN intention/NOUN ./PUNCT Il/PRON ne/ADV connaît/VERB pas/ADV sa/DET propre/ADJ 
+/SPACE force/NOUN ./PUNCT Ni/CCONJ son/DET importance/NOUN ./PUNCT 
+      /SPACE —/VERB Vous/PRON avez/AUX déduit/VERB cela/PRON tout/ADV seul/ADJ ,/PUNCT Demerzel/PROPN ?/PUNCT 
+      /SPACE —/PUNCT Oui/PROPN ,/PUNCT Sire/ADJ ./PUNCT C’/ADJ est/AUX un/DET provincial/NOUN ./PUNCT Il/PRON ne/ADV connaît/VERB pas/ADV Trantor/PROPN ,/PUNCT 
+/SPACE ni/CCONJ ses/DET usages/NOUN ./PUNCT Il/PRON n’/NOUN est/AUX encore/ADV jamais/ADV venu/VERB sur/ADP notre/DET planète/NOUN ,/PUNCT il/PRON 
+/SPACE ignore/ADV les/DET bonnes/ADJ manières/NOUN ,/PUNCT les/DET façons/NOUN d’/ADV un/DET courtisan/NOUN ./PUNCT Pourtant/ADV ,/PUNCT 
+/SPACE il/PRON vous/PRON a/AUX tenu/VERB tête/NOUN ./PUNCT 
+      /SPACE —/PUNCT Et/CCONJ pourquoi/ADV pas/ADV ?/PUNCT Je/PRON lui/PRON avais/VERB donné/VERB l’/NOUN autorisation/NOUN de/ADP 
+/SPACE parler/VERB ./PUNCT J’/ADV ai/AUX laissé/VERB tomber/VERB le/DET protocole/NOUN ./PUNCT Je/PRON l’/NOUN ai/AUX traité/VERB en/ADP égal/ADJ ./PUNCT 
+      /SPACE —/PUNCT Pas/ADV tout/ADV à/ADP fait/NOUN ,/PUNCT Sire/NOUN ./PUNCT Ce/DET n’/NOUN est/AUX pas/ADV dans/ADP votre/DET nature/NOUN de/ADP 
+/SPACE traiter/VERB les/DET autres/ADJ en/ADP égaux/ADJ ./PUNCT Vous/PRON avez/VERB l’/ADV habitude/NOUN du/ADP 
+/SPACE commandement/ADV ./PUNCT Et/CCONJ même/ADV si/SCONJ vous/PRON vouliez/VERB mettre/VERB les/DET gens/NOUN à/ADP 
+/SPACE l’/NOUN aise/PROPN ,/PUNCT peu/ADV d’/ADV entre/ADP eux/PRON parviendraient/ADV à/ADP se/PRON détendre/VERB ./PUNCT La/DET plupart/NOUN 
+/SPACE resteraient/VERB sans/ADP voix/NOUN ou/CCONJ ,/PUNCT pire/ADJ ,/PUNCT se/PRON montreraient/VERB serviles/ADJ ou/CCONJ 
+/SPACE flagorneurs/NOUN ./PUNCT Or/CCONJ ,/PUNCT cet/DET homme/NOUN vous/PRON a/AUX tenu/VERB tête/NOUN ./PUNCT 
+      /SPACE —/PUNCT Eh/NOUN bien/ADV ,/PUNCT vous/PRON pouvez/VERB admirer/VERB son/DET attitude/NOUN ,/PUNCT Demerzel/PROPN ,/PUNCT 
+/SPACE mais/CCONJ il/PRON ne/ADV me/PRON plaît/VERB pas/ADV ./PUNCT «/VERB Cléon/PRON semblait/VERB songeur/ADJ et/CCONJ mécontent/NOUN ./PUNCT 
+/SPACE «/NOUN Avez/VERB -vous/PRON remarqué/VERB qu’/SCONJ il/PRON n’/PROPN a/AUX fait/VERB aucun/DET effort/NOUN pour/ADP 
+/SPACE m’/NOUN expliquer/VERB ses/DET mathématiques/NOUN ?/PUNCT Comme/SCONJ s’/SCONJ il/PRON savait/VERB que/SCONJ je/PRON n’/VERB en/ADP 
+/SPACE saisirais/VERB pas/ADV un/DET traître/NOUN mot/PROPN ./PUNCT 
+      /SPACE —/PUNCT Ce/PRON qui/PRON aurait/AUX été/AUX le/DET cas/NOUN ,/PUNCT Sire/ADJ ./PUNCT Vous/PRON n’/NOUN êtes/AUX pas/ADV un/DET 
+/SPACE mathématicien/ADJ ,/PUNCT ni/CCONJ un/DET scientifique/NOUN ,/PUNCT ni/CCONJ un/DET artiste/NOUN ./PUNCT Il/PRON y/PRON a/VERB quantité/VERB 
+/SPACE de/ADP domaines/NOUN de/ADP la/DET connaissance/NOUN où/PRON d’/DET autres/ADJ en/PRON savent/VERB plus/ADV que/SCONJ 
+/SPACE vous/PRON ./PUNCT C’/ADJ est/AUX leur/DET tâche/NOUN d’/VERB utiliser/VERB leurs/DET connaissances/NOUN pour/ADP vous/PRON 
+/SPACE servir/VERB ./PUNCT Vous/PRON êtes/AUX l’/ADJ Empereur/NOUN ,/PUNCT ce/PRON qui/PRON vaut/VERB bien/ADV toutes/ADJ leurs/DET 
+/SPACE spécialités/VERB réunies/ADJ ./PUNCT 
+      /SPACE —/PUNCT Croyez/PROPN -vous/PRON ?/PUNCT Je/PRON ne/ADV verrais/VERB pas/ADV d’/ADV inconvénient/ADV à/ADP me/ADJ 
+/SPACE sentir/VERB ignorant/ADJ devant/ADP un/DET vieillard/NOUN ayant/AUX accumulé/VERB les/DET 
+/SPACE connaissances/NOUN au/ADP cours/NOUN des/ADP ans/NOUN ./PUNCT Mais/CCONJ cet/DET homme/NOUN ,/PUNCT Seldon/PROPN ,/PUNCT ajuste/PROPN 
+/SPACE mon/DET âge/NOUN ./PUNCT Comment/ADV peut/VERB -il/PRON en/ADP savoir/VERB autant/ADV ?/PUNCT 
+      /SPACE —/PUNCT Il/PRON n’/PRON a/AUX pas/ADV eu/VERB à/ADP apprendre/VERB l’/ADV habitude/NOUN du/ADP commandement/NOUN ,/PUNCT 
+/SPACE l’/NOUN art/NOUN de/ADP prendre/VERB une/DET décision/NOUN qui/PRON affectera/VERB la/DET vie/NOUN des/ADP autres/ADJ ./PUNCT 
+      /SPACE —/DET Parfois/ADV ,/PUNCT Demerzel/PROPN ,/PUNCT je/PRON me/PRON demande/VERB si/SCONJ vous/PRON ne/ADV vous/PRON 
+/SPACE moquez/VERB pas/ADV de/ADP moi/PRON ./PUNCT 
+      /SPACE —/PUNCT Sire/NOUN !/PUNCT protesta/NOUN Demerzel/PROPN ./PUNCT 
+
+     /SPACE —/PUNCT Oui/PROPN ,/PUNCT mais/CCONJ s’/ADV il/PRON se/PRON fait/AUX récupérer/VERB entre-temps/ADV par/ADP un/PRON de/ADP 
+/SPACE mes/DET ennemis/NOUN ,/PUNCT disons/NOUN plutôt/ADV un/DET ennemi/NOUN de/ADP l’/NOUN Empire/PROPN ,/PUNCT car/CCONJ ,/PUNCT après/ADP 
+/SPACE tout/ADV ,/PUNCT je/PRON suis/AUX l’/NOUN Empire/PROPN ,/PUNCT ou/CCONJ si/SCONJ –/NOUN de/ADP son/DET propre/ADJ chef/NOUN –/PRON il/PRON décide/VERB de/ADP 
+/SPACE servir/VERB un/DET ennemi/NOUN .../PUNCT Je/PRON n’/VERB écarte/VERB pas/ADV cette/DET hypothèse/NOUN ,/PUNCT voyez/VERB -vous/NOUN ./PUNCT 
+     /SPACE —/PUNCT Et/CCONJ vous/PRON avez/VERB parfaitement/ADV raison/PROPN ./PUNCT Je/PRON veillerai/VERB à/ADP ce/PRON que/SCONJ 
+/SPACE cela/PRON n’/PRON arrive/VERB pas/ADV ,/PUNCT mais/CCONJ si/SCONJ ,/PUNCT contre/ADP toute/DET attente/NOUN ,/PUNCT cela/PRON devait/VERB se/PRON 
+/SPACE produire/VERB ,/PUNCT mieux/ADV vaudrait/VERB encore/ADV que/SCONJ personne/NOUN ne/ADV profite/VERB de/ADP ses/DET 
+/SPACE services/NOUN plutôt/ADV que/SCONJ les/PRON voir/VERB tomber/VERB en/ADP de/DET mauvaises/NOUN mains/ADJ ./PUNCT »/PUNCT 
+     /SPACE Cléon/PRON paraissait/VERB mal/ADV à/ADP l’/NOUN aise/PROPN ./PUNCT «/NOUN Je/PRON m’/VERB en/ADP remets/NOUN entièrement/ADV 
+/SPACE à/ADP vous/PRON ,/PUNCT Demerzel/PROPN ,/PUNCT mais/CCONJ j’/ADJ espère/ADJ que/SCONJ nous/PRON n’/ADJ agirons/VERB pas/ADV avec/ADP 
+/SPACE trop/ADV de/ADP hâte/NOUN ./PUNCT Il/PRON pourrait/VERB n’/ADV être/AUX ,/PUNCT après/ADP tout/ADV ,/PUNCT que/SCONJ l’/NOUN inventeur/ADJ d’/ADV une/DET 
+/SPACE théorie/NOUN dépourvue/ADJ de/ADP toute/DET espèce/NOUN d’/ADV application/NOUN pratique/ADJ ./PUNCT 
+     /SPACE —/PUNCT C’/PRON est/AUX fort/ADV possible/ADJ ,/PUNCT Sire/ADJ ,/PUNCT mais/CCONJ il/PRON serait/AUX plus/ADV prudent/ADJ de/ADP 
+/SPACE partir/VERB de/ADP l’/NOUN idée/NOUN que/SCONJ l’/NOUN homme/NOUN est/AUX –/PRON ou/CCONJ pourrait/VERB être/AUX –/VERB important/ADJ ./PUNCT 
+/SPACE Nous/PRON n’/ADJ aurons/VERB perdu/NOUN au/ADP plus/ADV qu’/SCONJ un/DET peu/ADV de/ADP temps/NOUN si/SCONJ jamais/ADV nous/PRON 
+/SPACE découvrons/NOUN que/PRON nous/PRON nous/PRON sommes/AUX préoccupés/VERB d’/ADV une/DET non-/ADP 
+/SPACE entité/NOUN ./PUNCT Nous/PRON risquons/VERB de/ADP perdre/VERB une/DET Galaxie/NOUN si/SCONJ nous/PRON découvrons/VERB 
+/SPACE que/SCONJ nous/PRON avons/AUX ignoré/VERB quelqu’/SCONJ un/DET d’/ADV important/ADJ ./PUNCT 
+     /SPACE —/PUNCT Fort/ADV bien/ADV ,/PUNCT si/SCONJ vous/PRON le/PRON dites/PROPN .../PUNCT mais/CCONJ j’/ADJ espère/ADJ que/SCONJ je/PRON n’/VERB aurai/VERB 
+/SPACE pas/ADV à/ADP connaître/VERB les/DET détails/NOUN –/NOUN s’/VERB ils/PRON s’/VERB avéraient/VERB déplaisants/ADJ ./PUNCT 
+     /SPACE —/PUNCT Espérons/NOUN que/SCONJ ce/PRON ne/ADV sera/AUX pas/ADV le/DET cas/NOUN »/PUNCT ,/PUNCT répondit/NOUN Demerzel/PROPN ./PUNCT 
+
+
+
+      /SPACE Seldon/PROPN avait/AUX eu/VERB une/DET soirée/NOUN ,/PUNCT une/DET nuit/NOUN et/CCONJ une/DET partie/NOUN de/ADP la/DET 
+/SPACE matinée/VERB pour/ADP se/PRON remettre/VERB de/ADP son/DET entrevue/NOUN avec/ADP l’/NOUN Empereur/NOUN ./PUNCT Du/ADP 
+/SPACE moins/ADV l’/NOUN éclairage/NOUN des/ADP passages/NOUN ,/PUNCT des/DET trottoirs/NOUN roulants/NOUN ,/PUNCT des/DET places/NOUN 
+/SPACE et/CCONJ des/DET parcs/NOUN du/ADP secteur/NOUN impérial/ADJ de/ADP Trantor/PROPN s’/PRON était/AUX modifié/VERB 
+/SPACE plusieurs/DET fois/NOUN ,/PUNCT donnant/VERB l’/ADV impression/VERB qu’/SCONJ une/DET soirée/NOUN ,/PUNCT une/DET nuit/NOUN et/CCONJ 
+/SPACE une/DET partie/NOUN de/ADP la/DET matinée/NOUN s’/VERB étaient/AUX écoulés/VERB ./PUNCT 
+      /SPACE Il/PRON se/PRON trouvait/VERB à/ADP présent/NOUN dans/ADP un/DET petit/ADJ parc/NOUN ,/PUNCT installé/VERB sur/ADP un/DET 
+/SPACE siège/NOUN en/ADP plastique/ADJ qui/PRON se/PRON moulait/VERB exactement/ADV à/ADP son/DET anatomie/NOUN et/CCONJ 
+/SPACE se/PRON révélait/VERB confortable/ADJ ./PUNCT A/ADP en/PRON juger/VERB par/ADP la/DET lumière/NOUN ,/PUNCT c’/NOUN était/AUX le/DET 
+/SPACE milieu/NOUN de/ADP la/DET matinée/NOUN et/CCONJ l’/NOUN air/ADJ était/AUX juste/ADV assez/ADV frais/ADJ pour/ADP paraître/VERB 
+/SPACE vivifiant/ADJ sans/ADP pour/ADP autant/ADV être/AUX piquant/ADV ./PUNCT 
+      /SPACE En/ADP allait/VERB -il/PRON toujours/ADV ainsi/ADV ?/PUNCT Il/PRON songea/VERB au/ADP jour/NOUN gris/VERB ,/PUNCT au-/PROPN 
+/SPACE dehors/ADP ,/PUNCT quand/SCONJ il/PRON était/AUX allé/VERB voir/VERB l’/NOUN Empereur/NOUN ./PUNCT Et/CCONJ il/PRON songea/VERB à/ADP tous/ADJ les/DET 
+/SPACE jours/NOUN gris/ADJ et/CCONJ froids/ADJ ,/PUNCT aux/ADP jours/NOUN torrides/ADJ ,/PUNCT ou/CCONJ pluvieux/ADJ ,/PUNCT ou/CCONJ neigeux/NOUN ,/PUNCT 
+/SPACE sur/ADP Hélicon/PROPN ,/PUNCT sa/DET planète/NOUN ,/PUNCT et/CCONJ se/PRON demanda/VERB si/SCONJ ces/DET alternances/NOUN de/ADP 
+      /SPACE Vraiment/ADV ,/PUNCT par/ADP toute/ADJ la/DET Galaxie/NOUN on/PRON parlait/VERB de/ADP Trantor/NOUN 
+/SPACE comme/ADP d’/ADV un/DET monde/NOUN artificiel/ADJ de/ADP métal/PROPN et/CCONJ de/ADP céramique/NOUN ,/PUNCT mais/CCONJ 
+/SPACE cette/DET petite/ADJ enclave/NOUN paraissait/VERB tout/ADV à/ADP fait/NOUN rustique/ADJ ./PUNCT 
+      /SPACE Les/DET quelques/DET rares/ADJ badauds/ADJ qui/PRON profitaient/VERB du/ADP parc/NOUN 
+/SPACE portaient/NOUN tous/ADJ des/DET chapeaux/NOUN légers/ADJ ,/PUNCT parfois/ADV tout/ADV petits/ADJ ./PUNCT Il/PRON y/PRON avait/VERB 
+/SPACE également/ADV un/DET joli/NOUN brin/NOUN de/ADP jeune/ADJ femme/NOUN ,/PUNCT non/ADV loin/ADV de/ADP là/ADV ,/PUNCT mais/CCONJ elle/PRON 
+/SPACE était/AUX penchée/VERB sur/ADP un/DET visionneur/NOUN et/CCONJ il/PRON ne/ADV pouvait/VERB distinguer/VERB ses/DET 
+/SPACE traits/NOUN ./PUNCT Un/DET homme/NOUN passa/PROPN ,/PUNCT lui/PRON jeta/VERB un/DET bref/NOUN coup/VERB d’/ADV œil/ADV dénué/VERB de/ADP 
+/SPACE curiosité/NOUN ,/PUNCT puis/CCONJ s’/PRON assit/VERB sur/ADP une/DET chaise/NOUN en/ADP face/NOUN de/ADP lui/PRON et/CCONJ se/PRON plongea/VERB 
+/SPACE dans/ADP une/DET liasse/NOUN de/ADP télécopies/NOUN ,/PUNCT croisant/VERB ses/DET jambes/NOUN revêtues/ADJ d’/ADV un/DET 
+/SPACE pantalon/ADV rosé/VERB étroit/ADJ ./PUNCT Assez/ADV curieusement/VERB ,/PUNCT il/PRON y/PRON avait/VERB chez/ADP les/DET 
+/SPACE hommes/NOUN une/DET tendance/NOUN aux/ADP teintes/ADJ pastel/NOUN ,/PUNCT alors/ADV que/SCONJ les/DET femmes/NOUN 
+/SPACE étaient/AUX plutôt/ADV vêtues/ADJ de/ADP blanc/ADJ ./PUNCT Vu/ADP la/DET propreté/NOUN de/ADP 
+/SPACE l’/NOUN environnement/NOUN ,/PUNCT il/PRON était/AUX logique/ADJ de/ADP porter/VERB des/DET couleurs/NOUN claires/ADJ ./PUNCT 
+/SPACE Seldon/PROPN baissa/VERB les/DET yeux/NOUN ,/PUNCT amusé/VERB ,/PUNCT pour/ADP contempler/VERB son/DET costume/NOUN 
+/SPACE héliconien/ADJ ,/PUNCT où/PRON dominait/VERB le/DET brun/ADJ passé/VERB ./PUNCT S’/PRON il/PRON devait/VERB rester/VERB sur/ADP 
+/SPACE Trantor/NOUN –/NOUN ce/PRON qui/PRON n’/PRON était/AUX pas/ADV le/DET cas/NOUN –/ADJ ,/PUNCT il/PRON lui/PRON faudrait/VERB s’/ADV acheter/VERB une/DET 
+/SPACE garde-robe/NOUN adéquate/ADJ ,/PUNCT sous/ADP peine/NOUN de/ADP devenir/VERB un/DET objet/NOUN de/ADP 
+/SPACE curiosité/NOUN ,/PUNCT de/ADP risée/NOUN ou/CCONJ de/ADP répulsion/NOUN ./PUNCT L’/PROPN homme/NOUN aux/ADP télécopies/NOUN ,/PUNCT par/ADP 
+/SPACE exemple/NOUN ,/PUNCT l’/NOUN avait/AUX examiné/VERB ,/PUNCT cette/DET fois/NOUN -/PRON ci/NOUN avec/ADP plus/ADV de/ADP curiosité/NOUN ,/PUNCT 
+/SPACE sans/ADP doute/NOUN intrigué/VERB par/ADP sa/DET mise/NOUN exotique/ADJ ./PUNCT 
+      /SPACE Seldon/PROPN fut/AUX soulagé/VERB de/ADP ne/ADV pas/ADV le/PRON voir/VERB sourire/ADJ ./PUNCT Il/PRON pouvait/VERB 
+/SPACE accepter/VERB avec/ADP philosophie/NOUN d’/PROPN être/AUX la/DET cible/NOUN des/ADP railleurs/NOUN mais/CCONJ qu’/PROPN on/PRON 
+/SPACE n’/PROPN espère/VERB pas/ADV qu’/SCONJ il/PRON en/PRON tire/VERB plaisir/NOUN ./PUNCT 
+      /SPACE Seldon/PROPN fixa/ADJ l’/NOUN homme/NOUN sans/ADP se/PRON gêner/VERB ,/PUNCT car/CCONJ celui-ci/PRON semblait/VERB 
+/SPACE engagé/VERB dans/ADP quelque/DET débat/NOUN intérieur/ADJ ./PUNCT Un/DET instant/NOUN ,/PUNCT il/PRON donna/VERB 
+/SPACE l’/NOUN impression/VERB d’/VERB être/AUX sur/ADP le/DET point/NOUN de/ADP parler/VERB ,/PUNCT puis/CCONJ il/PRON parut/VERB se/PRON raviser/VERB ,/PUNCT 
+/SPACE puis/CCONJ sembla/NOUN vouloir/VERB prendre/VERB à/ADP nouveau/ADJ la/DET parole/NOUN ./PUNCT Seldon/PROPN se/PRON 
+/SPACE demanda/ADP quelle/DET serait/AUX sa/DET prochaine/ADJ réaction/NOUN ./PUNCT 
+      /SPACE Il/PRON étudia/X l’/ADJ homme/NOUN ./PUNCT Il/PRON était/AUX grand/ADJ ,/PUNCT les/DET épaule/NOUN larges/NOUN ,/PUNCT pas/ADV de/ADP 
+/SPACE signe/NOUN d’/ADV embonpoint/PROPN ,/PUNCT cheveux/ADJ châtains/NOUN ,/PUNCT rasé/VERB de/ADP près/ADV ,/PUNCT l’/NOUN expression/NOUN 
+/SPACE grave/ADJ ,/PUNCT un/DET air/NOUN de/ADP vigueur/NOUN bien/ADV qu’/SCONJ aucun/DET muscle/NOUN ne/ADV saillît/PROPN ,/PUNCT des/DET 
+/SPACE traits/NOUN un/DET rien/PRON burinés/ADJ –/NOUN agréables/ADJ mais/CCONJ sans/ADP rien/PRON de/ADP «/PROPN joli/ADJ »/PUNCT ./PUNCT 
+      /SPACE Alors/ADV que/SCONJ l’/NOUN homme/NOUN avait/AUX fini/VERB par/ADP perdre/VERB son/DET combat/NOUN avec/ADP 
+/SPACE lui-même/PRON (/PUNCT ou/CCONJ par/ADP le/DET gagner/NOUN peut-être/ADV )/PUNCT et/CCONJ se/PRON penchait/VERB vers/ADP lui/PRON ,/PUNCT 
+/SPACE Seldon/PROPN avait/AUX déjà/ADV décidé/VERB qu’/SCONJ il/PRON lui/PRON plaisait/VERB ./PUNCT 
+      /SPACE L’/NOUN homme/NOUN demanda/ADJ :/PUNCT «/PROPN Pardonnez/NOUN -moi/NOUN ,/PUNCT mais/CCONJ étiez/NOUN -vous/NOUN au/ADP 
+/SPACE Congrès/NOUN décennal/ADJ ?/PUNCT De/ADP mathématiques/NOUN ?/PUNCT 
+      /SPACE —/PUNCT Oui/PROPN ,/PUNCT j’/ADJ y/PRON étais/NOUN ,/PUNCT répondit/NOUN Seldon/PROPN ,/PUNCT affable/NOUN ./PUNCT 
+
+      /SPACE Hummin/PROPN acquiesça/ADJ ./PUNCT «/NOUN J’/VERB en/PRON ai/AUX ras/VERB le/DET bol/NOUN de/ADP collationner/VERB 
+/SPACE toutes/ADJ les/DET sottises/NOUN émanant/VERB de/ADP toutes/ADJ les/DET planètes/NOUN ./PUNCT Je/PRON hais/VERB cette/DET 
+/SPACE spirale/ADJ descendante/ADJ ./PUNCT »/PUNCT 
+      /SPACE Il/PRON jeta/PROPN sur/ADP Seldon/PROPN un/DET regard/NOUN spéculatif/ADJ ./PUNCT «/PROPN Parfois/ADV ,/PUNCT pourtant/ADV ,/PUNCT 
+/SPACE on/PRON pêche/VERB quelque/DET chose/NOUN d’/ADV intéressant/ADJ ./PUNCT J’/ADV ai/AUX appris/VERB qu’/SCONJ on/PRON vous/PRON 
+/SPACE avait/AUX vu/VERB en/ADP compagnie/NOUN d’/ADV un/DET garde/NOUN impérial/ADJ ,/PUNCT vous/PRON dirigeant/VERB vers/ADP 
+/SPACE la/DET porte/NOUN du/ADP Palais/PROPN ./PUNCT Vous/PRON n’/PRON auriez/VERB pas/ADV ,/PUNCT par/ADP le/DET plus/ADV grand/ADJ des/ADP 
+/SPACE hasards/NOUN ,/PUNCT été/AUX reçu/VERB par/ADP l’/NOUN Empereur/NOUN ,/PUNCT non/ADV ?/PUNCT »/PUNCT 
+      /SPACE Le/DET sourire/VERB déserta/ADJ le/DET visage/NOUN de/ADP Seldon/PROPN ./PUNCT C’/ADJ est/AUX avec/ADP lenteur/NOUN 
+/SPACE qu’/PRON il/PRON répondit/VERB :/PUNCT «/PROPN Si/SCONJ tel/ADJ avait/AUX été/AUX le/DET cas/NOUN ,/PUNCT ce/PRON ne/ADV serait/AUX certes/ADV pas/ADV un/DET 
+/SPACE sujet/NOUN que/PRON je/PRON confierais/VERB pour/ADP publication/NOUN ./PUNCT 
+      /SPACE —/PUNCT Non/ADV ,/PUNCT non/ADV ,/PUNCT pas/ADV question/NOUN de/ADP publication/NOUN ./PUNCT Si/SCONJ vous/PRON ignorez/VERB la/DET 
+/SPACE chose/NOUN ,/PUNCT Seldon/PROPN ,/PUNCT laissez/ADV -moi/PRON être/AUX le/DET premier/ADJ à/ADP vous/PRON l’/NOUN apprendre/VERB :/PUNCT la/DET 
+/SPACE règle/VERB première/ADJ du/ADP jeu/NOUN de/ADP l’/NOUN info/NOUN est/AUX qu’/SCONJ on/PRON ne/ADV dit/VERB jamais/ADV rien/PRON sur/ADP 
+/SPACE l’/NOUN Empereur/NOUN ou/CCONJ son/DET entourage/NOUN personnel/ADJ ,/PUNCT hormis/VERB ce/PRON qui/PRON émane/ADJ 
+/SPACE des/ADP communiqués/NOUN officiels/ADJ ./PUNCT C’/ADJ est/AUX une/DET erreur/NOUN ,/PUNCT bien/ADV sûr/ADJ ,/PUNCT parce/SCONJ que/SCONJ 
+/SPACE des/ADP bruits/NOUN courent/VERB et/CCONJ qu’/PRON ils/PRON sont/AUX pires/ADJ que/SCONJ la/DET vérité/NOUN ,/PUNCT mais/CCONJ les/DET 
+/SPACE choses/NOUN sont/AUX ainsi/ADV ./PUNCT 
+      /SPACE —/PUNCT Mais/CCONJ si/SCONJ vous/PRON ne/ADV pouvez/VERB pas/ADV en/PRON parler/VERB ,/PUNCT l’/NOUN ami/NOUN ,/PUNCT pourquoi/ADV me/PRON 
+/SPACE poser/VERB la/DET question/NOUN ?/PUNCT 
+      /SPACE —/PUNCT Simple/PROPN curiosité/NOUN personnelle/ADJ ./PUNCT Croyez/PROPN -moi/PRON ,/PUNCT dans/ADP mon/DET 
+/SPACE boulot/NOUN ,/PUNCT j’/ADJ en/ADP sais/VERB bien/ADV plus/ADV que/SCONJ n’/PRON en/PRON diffusent/ADV les/DET ondes/NOUN ./PUNCT Laissez-/NOUN 
+/SPACE moi/PRON deviner/VERB ./PUNCT Je/PRON n’/VERB ai/AUX pas/ADV suivi/VERB votre/DET communication/NOUN mais/CCONJ j’/PROPN ai/AUX cru/VERB 
+/SPACE comprendre/VERB que/SCONJ vous/PRON parliez/VERB de/ADP la/DET possibilité/NOUN de/ADP prédire/ADJ 
+/SPACE l’/NOUN avenir/NOUN ?/PUNCT »/PUNCT 
+      /SPACE Seldon/PROPN secoua/ADJ la/DET tête/NOUN et/CCONJ marmonna/VERB :/PUNCT «/NOUN C’/ADJ était/AUX une/DET erreur/NOUN ./PUNCT 
+      /SPACE —/PUNCT Je/PRON vous/PRON demande/VERB pardon/ADJ ?/PUNCT 
+      /SPACE —/PUNCT Rien/PROPN ./PUNCT 
+      /SPACE —/PUNCT Eh/NOUN bien/ADV ,/PUNCT la/DET prédiction/NOUN –/PUNCT une/DET prédiction/NOUN précise/VERB –/PRON 
+ /SPACE intéresserait/VERB l’/NOUN Empereur/NOUN ,/PUNCT ou/CCONJ tout/DET homme/NOUN au/ADP pouvoir/NOUN ;/PUNCT j’/ADJ en/ADP 
+/SPACE déduis/NOUN donc/ADV que/SCONJ Cléon/PROPN ,/PUNCT premier/ADJ du/ADP nom/NOUN ,/PUNCT vous/PRON a/AUX interrogé/VERB là-/DET 
+/SPACE dessus/NOUN en/ADP vous/PRON demandant/VERB si/SCONJ vous/PRON ne/ADV vouliez/VERB pas/ADV lui/PRON offrir/VERB 
+/SPACE quelques/DET prédictions/NOUN ./PUNCT 
+      /SPACE —/PUNCT Je/PRON n’/VERB ai/AUX pas/ADV l’/NOUN intention/NOUN de/ADP discuter/VERB de/ADP ça/PRON »/PUNCT ,/PUNCT fit/NOUN Seldon/PROPN ,/PUNCT 
+/SPACE crispé/NOUN ./PUNCT 
+      /SPACE Hummin/PROPN esquissa/NOUN un/DET haussement/NOUN d’/ADV épaules/ADJ ./PUNCT «/PROPN Eto/ADJ 
+/SPACE Demerzel/PROPN était/AUX là/ADV ,/PUNCT je/PRON suppose/VERB ./PUNCT 
+      /SPACE —/PROPN Qui/NUM ça/PRON ?/PUNCT 
+      /SPACE —/PROPN Vous/PRON n’/PRON avez/AUX jamais/ADV entendu/VERB parler/VERB d’/X Eto/DET Demerzel/PROPN ?/PUNCT 
+      /SPACE —/DET Jamais/ADV ./PUNCT 
+/SPACE
