@@ -10,8 +10,8 @@ stanza.download('fr')
 nlp = stanza.Pipeline('fr', processors='tokenize,mwt,pos,ner')
 
 # Traitement du texte avec spaCy
-doc = nlp(texte)
+doc = nlp("Asseyez-vous donc, professeur.")
 
 for ent in doc.ents:
-    if(ent.type=="PER"):
+    #if(ent.type=="PER"):
         print(f'Entités : {ent.text}, Type : {ent.type}')

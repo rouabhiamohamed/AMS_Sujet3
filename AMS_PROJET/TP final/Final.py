@@ -4,6 +4,7 @@ from gensim.utils import simple_preprocess
 import networkx as nx
 import pandas as pd
 from collections import defaultdict
+from unidecode import unidecode
 
 # Télécharger le modèle Stanza pour le français si nécessaire
 stanza.download('fr')
@@ -53,13 +54,15 @@ for chapters, book_code in books:
 
             ### Extraction des entités nommées de type "PER" (personne)
             for ent in doc.ents:
-                if ent.type == "PER":
+                if ent.type == "PER" and len(ent.text)>2 :
                     ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
-                    listePersonnages.append(ent.text)
+                    listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
 
             # Liste pour stocker les personnages uniques après filtrage
             listePersonnagesTrier = set(listePersonnages)  # Utiliser un set pour obtenir les personnages uniques
 
+            print(listePersonnagesTrier)
+            
             ### Bout de code pour vérifier et fusionner les listes de variantes de noms
             for nom in listePersonnagesTrier:
                 variantesNoms = {nom}  # Utiliser un set pour éviter les doublons
@@ -133,7 +136,7 @@ for chapters, book_code in books:
                         if value not in dictionnaireRelationsListe[first_element]:
                             dictionnaireRelationsListe[first_element].append(value)
 
-            print(dictionnaireRelationsListe)
+            #print(dictionnaireRelationsListe)
             
             ###Bout de code qui rempli le graphe en ajoutant les noeuds et les arrêtes via dictionnaireRelationsListe
             for source, targets in dictionnaireRelationsListe.items():
