@@ -20,6 +20,50 @@ books = [
 
 df_dict = {"ID": [], "graphml": []}
 
+
+elements_a_supprimer = [] #Liste pour stocker les éléments à supprimer
+
+for chapters, book_code in books:
+    for chapter in chapters:
+        if book_code == "paf":
+            repertory = "prelude_a_fondation"
+        else:
+            repertory = "les_cavernes_d_acier"
+        if chapter!=0:
+            with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
+                texte = file.read()
+
+            # Traitement du texte
+            doc = nlp(texte)
+
+            ### Liste pour stocker les personnages extraits
+            listePersonnages = []
+            listeLieux = []
+            listeNomsPersonnages = []
+
+            ### Extraction des entités nommées de type "PER" (personne)
+            for ent in doc.ents:
+                if ent.type == "PER" and len(ent.text)>2 :
+                    ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
+                    listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
+                if ent.type == "LOC":
+                    listeLieux.append(ent.text)
+
+            # Liste pour stocker les personnages uniques après filtrage
+            listePersonnagesTrier = set(listePersonnages)  # Utiliser un set pour obtenir les personnages uniques
+            
+            listeLieuxTrier = set(listeLieux)
+
+            for personnage in listePersonnagesTrier:
+                compteurLieux = listeLieux.count(personnage)
+                compteurPersonnages = listePersonnages.count(personnage)
+                if compteurLieux > compteurPersonnages:
+                    print(personnage)
+                    elements_a_supprimer.append(personnage)
+
+print(elements_a_supprimer)
+
+
 # Traitement des livres et chapitres
 for chapters, book_code in books:
     for chapter in chapters:
@@ -50,17 +94,19 @@ for chapters, book_code in books:
 
             ### Liste pour stocker les personnages extraits
             listePersonnages = []
+            listeLieux = []
+            listeMISC = []
             listeNomsPersonnages = []
 
             ### Extraction des entités nommées de type "PER" (personne)
             for ent in doc.ents:
-                if ent.type == "PER" and len(ent.text)>2 :
+                if ent.type == "PER" and len(ent.text)>2 and ent.text not in elements_a_supprimer:
                     ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
                     listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
 
             # Liste pour stocker les personnages uniques après filtrage
             listePersonnagesTrier = set(listePersonnages)  # Utiliser un set pour obtenir les personnages uniques
-
+            
             print(listePersonnagesTrier)
             
             ### Bout de code pour vérifier et fusionner les listes de variantes de noms
