@@ -21,7 +21,11 @@ books = [
 df_dict = {"ID": [], "graphml": []}
 
 
-elements_a_supprimer = [] #Liste pour stocker les éléments à supprimer
+lieuxASupprimer = [] #Liste pour stocker les éléments à supprimer
+
+listeFiltrePos = [] #Liste de mots qui ne sont pas des PROPN (Pronom)
+
+listeDePersonnagesCorpus = [] #Liste de personnage du corpus entier
 
 for chapters, book_code in books:
     for chapter in chapters:
@@ -32,10 +36,26 @@ for chapters, book_code in books:
         if chapter!=0:
             with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
                 texte = file.read()
-
+                
             # Traitement du texte
             doc = nlp(texte)
 
+            # with open(f"stanza_test_sentences/{repertory}_chapter_{chapter}.txt", "w") as file:
+                # for i, sentence in enumerate(doc.sentences):
+                    # file.write(f'====== Sentence {i+1} tokens =======\n')
+                    # for token in sentence.tokens:
+                        # file.write(f'id: {token.id}\ttext: {token.text}\n')
+                        
+            with open(f"stanza_test_POS/{repertory}_chapter_{chapter}.txt", "w") as file:
+                for sent in doc.sentences:
+                    for word in sent.words:
+                        # Écriture des informations sur chaque mot
+                        # if(word.upos=="NOUN"):
+                        file.write(f'word: {word.text}\tupos: {word.upos}\txpos: {word.xpos}\tfeats: {word.feats if word.feats else "_"}\n')
+                        if(word.upos!="PROPN"):
+                           listeFiltrePos.append(word.text)
+            
+            
             ### Liste pour stocker les personnages extraits
             listePersonnages = []
             listeLieux = []
@@ -43,9 +63,11 @@ for chapters, book_code in books:
 
             ### Extraction des entités nommées de type "PER" (personne)
             for ent in doc.ents:
-                if ent.type == "PER" and len(ent.text)>2 :
+                if ent.type == "PER" and len(ent.text)>2 and ent.text not in listeFiltrePos:
                     ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
-                    listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
+                    # listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
+                    listePersonnages.append(ent.text)
+                    listeDePersonnagesCorpus.append(ent.text)
                 if ent.type == "LOC":
                     listeLieux.append(ent.text)
 
@@ -59,10 +81,46 @@ for chapters, book_code in books:
                 compteurPersonnages = listePersonnages.count(personnage)
                 if compteurLieux > compteurPersonnages:
                     print(personnage)
-                    elements_a_supprimer.append(personnage)
+                    lieuxASupprimer.append(personnage)
 
-print(elements_a_supprimer)
+print(lieuxASupprimer)
 
+listeDePersonnagesCorpusTrier = set(listeDePersonnagesCorpus)
+
+listeNomsPersonnagesCorpus = []
+
+Nom = []
+for nom in listeDePersonnagesCorpusTrier:
+    if(" " not in nom and nom not in lieuxASupprimer ):
+        variantesNoms = {nom}
+        Nom.append(variantesNoms)
+
+print(Nom)
+
+### Bout de code pour vérifier et fusionner les listes de variantes de noms
+# for nom in listeDePersonnagesCorpusTrier:
+    # variantesNoms = {nom}  # Utiliser un set pour éviter les doublons
+    # for autreNom in listeDePersonnagesCorpusTrier:
+        # if autreNom != nom and (autreNom in nom or nom in autreNom) or (nom.upper()==autreNom or nom==autreNom.upper()):  # Vérifier si c'est une variante
+            # variantesNoms.add(autreNom)  # Ajouter la variante au set 
+    # if variantesNoms not in listeNomsPersonnagesCorpus:  # Vérifier si l'ensemble n'est pas déjà dans la liste
+        # listeNomsPersonnagesCorpus.append(variantesNoms)
+
+
+###Bout de code qui permet d'enlever les redondances d'ensemble, si un ensemble possède des sous-ensemble dans la liste alors on les supprime
+# for variantesNoms in listeNomsPersonnagesCorpus:
+    # for s in listeNomsPersonnagesCorpus: 
+        # if (s.issubset(variantesNoms) and s != variantesNoms) :
+            # listeNomsPersonnagesCorpus.remove(s)
+        # elif (variantesNoms.issubset(s) and s != variantesNoms):
+            # listeNomsPersonnagesCorpus.remove(variantesNoms)
+
+
+with open(f"ListeVariante.txt", "w") as file:
+    for sous_liste in listeNomsPersonnages:
+        file.write(" ".join(sous_liste) + "\n")
+print("/////////////////////VARIANTES///////////////////////\n")
+print(listeNomsPersonnages,"\n")
 
 # Traitement des livres et chapitres
 for chapters, book_code in books:
@@ -100,13 +158,23 @@ for chapters, book_code in books:
 
             ### Extraction des entités nommées de type "PER" (personne)
             for ent in doc.ents:
-                if ent.type == "PER" and len(ent.text)>2 and ent.text not in elements_a_supprimer:
+                if ent.type == "PER" and len(ent.text)>2 and ent.text not in lieuxASupprimer and ent.text not in listeFiltrePos:
                     ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
-                    listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
+                    # listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
+                    listePersonnages.append(ent.text)
+                
 
             # Liste pour stocker les personnages uniques après filtrage
             listePersonnagesTrier = set(listePersonnages)  # Utiliser un set pour obtenir les personnages uniques
             
+            ListeRetirer = []
+            for ent in doc.ents:
+                if ent.type == "PER" and len(ent.text)>2 and ent.text not in lieuxASupprimer and ent.text not in listePersonnagesTrier:
+                    ListeRetirer.append(ent.text)
+            
+            ListeRetirerTrier = set(ListeRetirer)
+            print(chapter, book_code)
+            print("CE QUI A ÉTÉ RETIRER",ListeRetirerTrier,"\n")
             print(listePersonnagesTrier)
             
             ### Bout de code pour vérifier et fusionner les listes de variantes de noms
@@ -118,6 +186,8 @@ for chapters, book_code in books:
                 if variantesNoms not in listeNomsPersonnages:  # Vérifier si l'ensemble n'est pas déjà dans la liste
                     listeNomsPersonnages.append(variantesNoms)
 
+            print("/////////////////////////////////////////////////////")
+            print(listeNomsPersonnages)
 
             ###Bout de code qui permet d'enlever les redondances d'ensemble, si un ensemble possède des sous-ensemble dans la liste alors on les supprime
             for variantesNoms in listeNomsPersonnages:
@@ -127,7 +197,9 @@ for chapters, book_code in books:
                     elif (variantesNoms.issubset(s) and s != variantesNoms):
                         listeNomsPersonnages.remove(variantesNoms)
 
-                
+            
+            
+            
             ###Bout de code qui permet d'entrainer gensim avec le chapitre en cours de traitement   
             with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
                 documents = file.readlines()
@@ -163,7 +235,6 @@ for chapters, book_code in books:
                                         dictionnaireRelationsUnique[query_nom1]=query_nom2
                                         #print(f"Document {doc_id} : {query_nom1} et {query_nom2} ont une relation dans ce passage.")
             
-            print(chapter, book_code)
             
             ###Dictionnaire qui contiendra la liste de toutes les entités aillant des relations, ainsi que leurs relations
             ### key : EntitéSource, value : Liste d'EntitéTarget
