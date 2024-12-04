@@ -46,6 +46,7 @@ for chapters, book_code in books:
                     # for token in sentence.tokens:
                         # file.write(f'id: {token.id}\ttext: {token.text}\n')
                         
+            listeFiltrePROPN = []            
             with open(f"stanza_test_POS/{repertory}_chapter_{chapter}.txt", "w") as file:
                 for sent in doc.sentences:
                     for word in sent.words:
@@ -54,7 +55,12 @@ for chapters, book_code in books:
                         file.write(f'word: {word.text}\tupos: {word.upos}\txpos: {word.xpos}\tfeats: {word.feats if word.feats else "_"}\n')
                         if(word.upos!="PROPN"):
                            listeFiltrePos.append(word.text)
+                        else :
+                            listeFiltrePROPN.append(word.text)
             
+            for wordPROPN in listeFiltrePROPN :
+                if(wordPROPN in listeFiltrePos):
+                    listeFiltrePos.remove(wordPROPN)
             
             ### Liste pour stocker les personnages extraits
             listePersonnages = []
@@ -80,40 +86,7 @@ for chapters, book_code in books:
                 compteurLieux = listeLieux.count(personnage)
                 compteurPersonnages = listePersonnages.count(personnage)
                 if compteurLieux > compteurPersonnages:
-                    print(personnage)
                     lieuxASupprimer.append(personnage)
-
-print(lieuxASupprimer)
-
-listeDePersonnagesCorpusTrier = set(listeDePersonnagesCorpus)
-
-listeNomsPersonnagesCorpus = []
-
-Nom = []
-for nom in listeDePersonnagesCorpusTrier:
-    if(" " not in nom and nom not in lieuxASupprimer ):
-        variantesNoms = {nom}
-        Nom.append(variantesNoms)
-
-print(Nom)
-
-### Bout de code pour vérifier et fusionner les listes de variantes de noms
-# for nom in listeDePersonnagesCorpusTrier:
-    # variantesNoms = {nom}  # Utiliser un set pour éviter les doublons
-    # for autreNom in listeDePersonnagesCorpusTrier:
-        # if autreNom != nom and (autreNom in nom or nom in autreNom) or (nom.upper()==autreNom or nom==autreNom.upper()):  # Vérifier si c'est une variante
-            # variantesNoms.add(autreNom)  # Ajouter la variante au set 
-    # if variantesNoms not in listeNomsPersonnagesCorpus:  # Vérifier si l'ensemble n'est pas déjà dans la liste
-        # listeNomsPersonnagesCorpus.append(variantesNoms)
-
-
-###Bout de code qui permet d'enlever les redondances d'ensemble, si un ensemble possède des sous-ensemble dans la liste alors on les supprime
-# for variantesNoms in listeNomsPersonnagesCorpus:
-    # for s in listeNomsPersonnagesCorpus: 
-        # if (s.issubset(variantesNoms) and s != variantesNoms) :
-            # listeNomsPersonnagesCorpus.remove(s)
-        # elif (variantesNoms.issubset(s) and s != variantesNoms):
-            # listeNomsPersonnagesCorpus.remove(variantesNoms)
 
 
 with open(f"ListeVariante.txt", "w") as file:
@@ -165,39 +138,44 @@ for chapters, book_code in books:
                 
 
             # Liste pour stocker les personnages uniques après filtrage
-            listePersonnagesTrier = set(listePersonnages)  # Utiliser un set pour obtenir les personnages uniques
+            listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
+            
+            print("//////////////////TRIER//////////////////")
+            print(listePersonnagesTrier)
             
             ListeRetirer = []
             for ent in doc.ents:
                 if ent.type == "PER" and len(ent.text)>2 and ent.text not in lieuxASupprimer and ent.text not in listePersonnagesTrier:
                     ListeRetirer.append(ent.text)
             
-            ListeRetirerTrier = set(ListeRetirer)
+            ListeRetirerTrier = list(dict.fromkeys(ListeRetirer))
             print(chapter, book_code)
             print("CE QUI A ÉTÉ RETIRER",ListeRetirerTrier,"\n")
             print(listePersonnagesTrier)
             
-            ### Bout de code pour vérifier et fusionner les listes de variantes de noms
             for nom in listePersonnagesTrier:
-                variantesNoms = {nom}  # Utiliser un set pour éviter les doublons
+                variantesNoms = [nom]  # Utiliser une liste pour stocker les variantes
                 for autreNom in listePersonnagesTrier:
-                    if autreNom != nom and (autreNom in nom or nom in autreNom) or (nom.upper()==autreNom or nom==autreNom.upper()):  # Vérifier si c'est une variante
-                        variantesNoms.add(autreNom)  # Ajouter la variante au set 
-                if variantesNoms not in listeNomsPersonnages:  # Vérifier si l'ensemble n'est pas déjà dans la liste
+                    if autreNom != nom and (autreNom in nom or nom in autreNom) or (nom.upper() == autreNom or nom == autreNom.upper()):  # Vérifier si c'est une variante
+                        if autreNom not in variantesNoms:  # Ajouter uniquement si ce n'est pas déjà présent
+                            variantesNoms.append(autreNom)
+                
+                # Vérifier si une liste équivalente n'est pas déjà dans listeNomsPersonnages
+                if not any(sorted(variantesNoms) == sorted(existing) for existing in listeNomsPersonnages):
                     listeNomsPersonnages.append(variantesNoms)
 
-            print("/////////////////////////////////////////////////////")
+            # Supprimer les listes qui sont des sous-listes d'autres
+            for variantesNoms in listeNomsPersonnages[:]:  # Copier pour éviter les conflits pendant la suppression
+                for s in listeNomsPersonnages[:]: 
+                    if variantesNoms != s and all(nom in s for nom in variantesNoms):  # Si variantesNoms est un sous-ensemble de s
+                        if variantesNoms in listeNomsPersonnages:  # Vérifier que variantesNoms n'a pas déjà été supprimé
+                            listeNomsPersonnages.remove(variantesNoms)
+                    elif variantesNoms != s and all(nom in variantesNoms for nom in s):  # Si s est un sous-ensemble de variantesNoms
+                        if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
+                            listeNomsPersonnages.remove(s)
+
+            print("//////////////////VARIANTS TRIER//////////////////")
             print(listeNomsPersonnages)
-
-            ###Bout de code qui permet d'enlever les redondances d'ensemble, si un ensemble possède des sous-ensemble dans la liste alors on les supprime
-            for variantesNoms in listeNomsPersonnages:
-                for s in listeNomsPersonnages: 
-                    if (s.issubset(variantesNoms) and s != variantesNoms) :
-                        listeNomsPersonnages.remove(s)
-                    elif (variantesNoms.issubset(s) and s != variantesNoms):
-                        listeNomsPersonnages.remove(variantesNoms)
-
-            
             
             
             ###Bout de code qui permet d'entrainer gensim avec le chapitre en cours de traitement   
@@ -253,7 +231,7 @@ for chapters, book_code in books:
                         if value not in dictionnaireRelationsListe[first_element]:
                             dictionnaireRelationsListe[first_element].append(value)
 
-            #print(dictionnaireRelationsListe)
+            print(dictionnaireRelationsListe)
             
             ###Bout de code qui rempli le graphe en ajoutant les noeuds et les arrêtes via dictionnaireRelationsListe
             for source, targets in dictionnaireRelationsListe.items():
