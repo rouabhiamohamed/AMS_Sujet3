@@ -26,6 +26,7 @@ books = [
 # Charger le modèle SBERT pour obtenir les embeddings
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')  # Un modèle léger pour les comparaisons de similarité
 
+Listeperso = []
 
 for chapters, book_code in books:
     for chapter in chapters:
@@ -36,7 +37,12 @@ for chapters, book_code in books:
         if chapter!=0:
             with open(f"Partie2/{repertory}_chapter_{chapter}_characters.txt", "r") as file:
                 listePersonnagesTrier = [line.strip() for line in file if line.strip()]
-            
+                
+                
+            for perso in listePersonnagesTrier:
+                Listeperso.append(perso)
+                
+                
             embeddings = model.encode(listePersonnagesTrier)
             
             similarities = cosine_similarity(embeddings)
@@ -44,7 +50,7 @@ for chapters, book_code in books:
             # Afficher la matrice de similarité
             # print(similarities)
             
-            seuil = 0.8
+            seuil = 0.7
 
             # Trouver les paires d'alias avec une similarité supérieure au seuil
             alias_pairs = []
@@ -55,8 +61,8 @@ for chapters, book_code in books:
             
             print("/////////////////",book_code,chapter,"////////////////////")
             # Afficher les alias trouvés
-            for pair in alias_pairs:
-                print(f"Alias trouvé : {pair[0]} <-> {pair[1]}")
+            # for pair in alias_pairs:
+                # print(f"Alias trouvé : {pair[0]} <-> {pair[1]}")
             
             alias_clusters = []
             
@@ -73,10 +79,43 @@ for chapters, book_code in books:
             for i, cluster in enumerate(alias_clusters):
                 print(f"Cluster {i}: {cluster}")
             
+ListeAllperso = list(dict.fromkeys(Listeperso))
+embeddings = model.encode(ListeAllperso)
             
-            
-            
-            
+similarities = cosine_similarity(embeddings)
+
+# Afficher la matrice de similarité
+# print(similarities)
+
+seuil = 0.8
+
+# Trouver les paires d'alias avec une similarité supérieure au seuil
+alias_pairs = []
+for i in range(len(ListeAllperso)):
+    for j in range(i + 1, len(ListeAllperso)):
+        if similarities[i][j] > seuil:
+            alias_pairs.append((ListeAllperso[i], ListeAllperso[j]))
+
+print("/////////////////",book_code,chapter,"////////////////////")
+# Afficher les alias trouvés
+# for pair in alias_pairs:
+    # print(f"Alias trouvé : {pair[0]} <-> {pair[1]}")
+
+alias_clusters = []
+
+db = DBSCAN(eps=0.4, min_samples=1, metric="cosine").fit(embeddings)
+# Afficher les clusters trouvés
+for cluster in set(db.labels_):
+    if cluster != -1:  # Exclure les points "bruit" (cluster -1 dans DBSCAN)
+        cluster_aliases = [
+            ListeAllperso[i] for i, label in enumerate(db.labels_) if label == cluster
+        ]
+        alias_clusters.append(cluster_aliases)
+
+# Afficher la liste de listes d'alias
+for i, cluster in enumerate(alias_clusters):
+    print(f"Cluster {i}: {cluster}")            
+                      
             
             
             

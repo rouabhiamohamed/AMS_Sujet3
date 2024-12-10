@@ -13,6 +13,9 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.cluster import DBSCAN
 
+# Définir la distance maximale pour considérer deux personnages comme étant en co-occurrence
+CO_OCCURRENCE_DISTANCE = 25
+
 # Charger le modèle NER pour le français
 tagger = SequenceTagger.load("flair/ner-french")
 
@@ -94,14 +97,18 @@ for chapters, book_code in books:
             texte = file.read()
             
         texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
-        #texte = re.sub(r'-', " ", texte)    
+        #texte = re.sub(r'-', " ", texte)
+        texte = re.sub(r'\s+', ' ', texte).strip()
         # Traitement du texte
         doc = nlp(texte)
+        
+        tokens = []
 
         ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
         listePROPN = []
         listeFiltre = []            
         for sent in doc.sentences:
+            tokens.extend([word.text for word in sent.words])
             for word in sent.words:
                 if(word.upos=="VERB" 
                 or word.upos=="AUX"
@@ -109,7 +116,9 @@ for chapters, book_code in books:
                 or word.upos=="ADJ" 
                 or word.upos=="ADP" 
                 or word.upos=="ADV" 
+                or word.upos=="X"
                 or word.upos=="PRON"
+                or word.upos=="NOUN" ##### Meh
                 or (word.upos == "NOUN" and word.feats and "Number=Plur" in word.feats)
                 or (word.upos == "PROPN" and word.feats and "Number=Plur" in word.feats)):
                     listeFiltre.append(word.text)
@@ -158,29 +167,41 @@ for chapters, book_code in books:
                 
                
         print(chapter, book_code)
-        print("////////////////Liste de Noms/////////////////")
-        print(listePersonnagesTrier)
-        print("////////////////Liste de mots retirer/////////////////")
-        print(list(dict.fromkeys(listeRetirer)))
+        # print("////////////////Liste de Noms/////////////////")
+        # print(listePersonnagesTrier)
+        # print("////////////////Liste de mots retirer/////////////////")
+        # print(list(dict.fromkeys(listeRetirer)))
         # print("////////////////Liste de lieux/////////////////")
         # print(listeLieux)
-        print("\n")
+        # print("\n")
                         
                         
                         
                         
-        embeddings = model.encode(listePersonnagesTrier)                
+        #embeddings = model.encode(listePersonnagesTrier)                
                         
         listeNomsPersonnages = []
             
-        db = DBSCAN(eps=0.4, min_samples=1, metric="cosine").fit(embeddings)
-        # Afficher les clusters trouvés
-        for cluster in set(db.labels_):
-            if cluster != -1:  # Exclure les points "bruit" (cluster -1 dans DBSCAN)
-                cluster_aliases = [
-                    listePersonnagesTrier[i] for i, label in enumerate(db.labels_) if label == cluster
-                ]
-                listeNomsPersonnages.append(cluster_aliases)
+        for nom in listePersonnagesTrier:
+            variantesNoms = [nom]  # Utiliser une liste pour stocker les variantes
+            for autreNom in listePersonnagesTrier:
+                if autreNom != nom and (autreNom in nom or nom in autreNom) or (nom.upper() == autreNom or nom == autreNom.upper()):  # Vérifier si c'est une variante
+                    if autreNom not in variantesNoms:  # Ajouter uniquement si ce n'est pas déjà présent
+                        variantesNoms.append(autreNom)
+            
+            # Vérifier si une liste équivalente n'est pas déjà dans listeNomsPersonnages
+            if not any(sorted(variantesNoms) == sorted(existing) for existing in listeNomsPersonnages):
+                listeNomsPersonnages.append(variantesNoms)
+
+        # Supprimer les listes qui sont des sous-listes d'autres
+        for variantesNoms in listeNomsPersonnages[:]:  # Copier pour éviter les conflits pendant la suppression
+            for s in listeNomsPersonnages[:]: 
+                if variantesNoms != s and all(nom in s for nom in variantesNoms):  # Si variantesNoms est un sous-ensemble de s
+                    if variantesNoms in listeNomsPersonnages:  # Vérifier que variantesNoms n'a pas déjà été supprimé
+                        listeNomsPersonnages.remove(variantesNoms)
+                elif variantesNoms != s and all(nom in variantesNoms for nom in s):  # Si s est un sous-ensemble de variantesNoms
+                    if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
+                        listeNomsPersonnages.remove(s)
         
         
         ###Bout de code qui permet d'entrainer gensim avec le chapitre en cours de traitement   
@@ -191,33 +212,30 @@ for chapters, book_code in books:
         corpus = [dictionary.doc2bow(doc) for doc in processed_docs]
         lsi = models.LsiModel(corpus, num_topics=200)
         index = similarities.MatrixSimilarity(lsi[corpus])
-
-        ###Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
+      
+        ##Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
         dictionnaireRelationsUnique = {}
         
-        ###Bout de code qui permet d'établir les relations entre deux entités et les stock dans un dictionnaire
-        ### key : EntitéSource, value : EntitéTarget
-        for i in listeNomsPersonnages:
-            for j in i :
-                query_nom1 = j
-                for k in listeNomsPersonnages:
-                    for l in k :
-                        if(k!=i):
-                            query_nom2 = l
-                            query_bow_nom1 = dictionary.doc2bow(simple_preprocess(query_nom1))
-                            query_lsi_nom1 = lsi[query_bow_nom1]
-                            sims_nom1 = index[query_lsi_nom1]
-
-                            query_bow_nom2 = dictionary.doc2bow(simple_preprocess(query_nom2))
-                            query_lsi_nom2 = lsi[query_bow_nom2]
-                            sims_nom2 = index[query_lsi_nom2]
-
-                            for doc_id, sim_nom1 in enumerate(sims_nom1):
-                                sim_nom2 = sims_nom2[doc_id]
-                                if sim_nom1 > 0.09 and sim_nom2 > 0.09:
-                                    dictionnaireRelationsUnique[query_nom1]=query_nom2
-                                    #print(f"Document {doc_id} : {query_nom1} et {query_nom2} ont une relation dans ce passage.")
+        entity_positions = defaultdict(list)
+        for i, token in enumerate(tokens):
+            for group in listePersonnagesTrier:
+                if token in group:
+                    entity_positions[group].append(i)
         
+        for i in listeNomsPersonnages:
+                for j in i :
+                    entity1 = j
+                    for k in listeNomsPersonnages:
+                        for l in k :
+                            if(k!=i):
+                                entity2 = l
+                                for pos1 in entity_positions[entity1]:
+                                    for pos2 in entity_positions[entity2]:
+                                        if abs(pos1 - pos2) <= CO_OCCURRENCE_DISTANCE: # abs : distance absolue entre deux positions est utilisée, peu importe si pos1 est plus petit ou plus grand que pos2.
+                                            dictionnaireRelationsUnique[entity1] = entity2
+        
+        print("/////////////dictionnaireRelationsUnique///////////////")
+        print(dictionnaireRelationsUnique)
         
         ###Dictionnaire qui contiendra la liste de toutes les entités aillant des relations, ainsi que leurs relations
         ### key : EntitéSource, value : Liste d'EntitéTarget
@@ -243,8 +261,8 @@ for chapters, book_code in books:
             for target in targets:
                 for group in listeNomsPersonnages:
                     if target in group: 
-                        print("//////////Relations////////////")
-                        print(source, group[0])
+                        # print("//////////Relations////////////")
+                        # print(source, group[0])
                         G.add_edge(source, group[0])
 
         for group in listeNomsPersonnages:
@@ -254,8 +272,8 @@ for chapters, book_code in books:
 
             # Ajouter le nœud avec ses attributs s'il n'est pas déjà présent
             if first_element not in G.nodes :
-                print("//////////////Gnodes////////////////////")
-                print(first_element)
+                # print("//////////////Gnodes////////////////////")
+                # print(first_element)
                 G.add_node(first_element)  # Ajouter un nœud isolé
             G.nodes[first_element]["names"] = f"{first_element};{remaining_elements}" if remaining_elements else first_element
 

@@ -1,7 +1,6 @@
+Billibotton dahl
 Hari Seldon
-Dors Venabili
 Dors
-Mère
 Hari
 Dahl
 Seldon
@@ -18,6 +17,7 @@ Mère Rittah
 Nân
 Raych
 Cinna
+Mère
 Da-Nee
 Ba-Lee
 Marron

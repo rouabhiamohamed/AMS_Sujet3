@@ -46,7 +46,7 @@ word: commençaient	upos: VERB	xpos: None	feats: Mood=Ind|Number=Plur|Person=3|T
 word: à	upos: ADP	xpos: None	feats: _
 word: marcher	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: .	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: est	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: à	upos: ADP	xpos: None	feats: ExtPos=ADV
 word: peine	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
@@ -61,7 +61,7 @@ word: le	upos: DET	xpos: None	feats: Definite=Def|Gender=Masc|Number=Sing|PronTy
 word: tapis	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: et	upos: CCONJ	xpos: None	feats: _
-word: il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: il	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: avait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: une	upos: DET	xpos: None	feats: Definite=Ind|Gender=Fem|Number=Sing|PronType=Art
 word: telle	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Sing
@@ -72,7 +72,7 @@ word: mode	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: de	upos: ADP	xpos: None	feats: _
 word: transport	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: qu’	upos: SCONJ	xpos: None	feats: _
-word: il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: il	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: ne	upos: ADV	xpos: None	feats: Polarity=Neg
 word: se	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: rendait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
@@ -83,7 +83,7 @@ word: que	upos: SCONJ	xpos: None	feats: _
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: instinctivement	upos: ADV	xpos: None	feats: _
 word: ,	upos: PUNCT	xpos: None	feats: _
-word: il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: il	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: se	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: penchait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: en	upos: ADP	xpos: None	feats: _
@@ -93,7 +93,7 @@ word: compenser	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: la	upos: DET	xpos: None	feats: Definite=Def|Gender=Fem|Number=Sing|PronType=Art
 word: force	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: qui	upos: PRON	xpos: None	feats: PronType=Rel
-word: l’	upos: PRON	xpos: None	feats: Emph=No|Number=Sing|Person=3|PronType=Prs
+word: l’	upos: PRON	xpos: None	feats: Number=Sing|Person=3|PronType=Prs
 word: entraînait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: .	upos: PUNCT	xpos: None	feats: _
 word: Il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
@@ -155,9 +155,9 @@ word: cela	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronTyp
 word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: expliquait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: .	upos: PUNCT	xpos: None	feats: _
-word: A	upos: ADP	xpos: None	feats: _
+word: a	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: quoi	upos: PRON	xpos: None	feats: PronType=Int
-word: bon	upos: ADJ	xpos: None	feats: Gender=Masc|Number=Sing
+word: bon	upos: INTJ	xpos: None	feats: _
 word: indiquer	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: ce	upos: DET	xpos: None	feats: Gender=Masc|Number=Sing|PronType=Dem
 word: chemin	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
@@ -423,7 +423,7 @@ word: les	upos: DET	xpos: None	feats: Definite=Def|Number=Plur|PronType=Art
 word: places	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Plur
 word: assises	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Plur
 word: ;	upos: PUNCT	xpos: None	feats: _
-word: il	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: avait	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: parcouru	upos: VERB	xpos: None	feats: Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
 word: pendant	upos: ADP	xpos: None	feats: _
@@ -740,7 +740,7 @@ word: appartenant	upos: VERB	xpos: None	feats: Tense=Pres|VerbForm=Part
 word: à	upos: ADP	xpos: None	feats: _
 word: la	upos: DET	xpos: None	feats: Definite=Def|Gender=Fem|Number=Sing|PronType=Art
 word: catégorie	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
-word: C.	upos: X	xpos: None	feats: ExtPos=PROPN
+word: c.	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: 5	upos: NUM	xpos: None	feats: Number=Plur
 word: n’	upos: ADV	xpos: None	feats: Polarity=Neg
 word: avait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
@@ -1064,7 +1064,7 @@ word: pouvait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=I
 word: appeler	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: cela	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: une	upos: DET	xpos: None	feats: Definite=Ind|Gender=Fem|Number=Sing|PronType=Art
-word: VILLE	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
+word: ville	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
 word: Il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: n’	upos: ADV	xpos: None	feats: Polarity=Neg
@@ -1342,7 +1342,7 @@ word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp
 word: scientifiquement	upos: ADV	xpos: None	feats: _
 word: édifiée	upos: VERB	xpos: None	feats: Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass
 word: .	upos: PUNCT	xpos: None	feats: _
-word: L’	upos: DET	xpos: None	feats: Definite=Def|Number=Sing|PronType=Art
+word: l’	upos: DET	xpos: None	feats: Definite=Def|Number=Sing|PronType=Art
 word: énorme	upos: ADJ	xpos: None	feats: Gender=Masc|Number=Sing
 word: complexe	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: de	upos: ADP	xpos: None	feats: _
@@ -1810,7 +1810,7 @@ word: produisait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tens
 word: la	upos: DET	xpos: None	feats: Definite=Def|Gender=Fem|Number=Sing|PronType=Art
 word: levure	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: une	upos: DET	xpos: None	feats: Definite=Ind|Gender=Fem|Number=Sing|PronType=Art
 word: question	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
@@ -1818,7 +1818,7 @@ word: de	upos: ADP	xpos: None	feats: _
 word: temps	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: qu’	upos: PRON	xpos: None	feats: PronType=Rel
-word: il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: il	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: fallait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: soigneusement	upos: ADV	xpos: None	feats: _
 word: calculer	upos: VERB	xpos: None	feats: VerbForm=Inf
@@ -1996,7 +1996,7 @@ word: dans	upos: ADP	xpos: None	feats: _
 word: ce	upos: DET	xpos: None	feats: Gender=Masc|Number=Sing|PronType=Dem
 word: secteur	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
-word: L’	upos: DET	xpos: None	feats: Definite=Def|Number=Sing|PronType=Art
+word: l’	upos: DET	xpos: None	feats: Definite=Def|Number=Sing|PronType=Art
 word: agent	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: qui	upos: PRON	xpos: None	feats: PronType=Rel
@@ -2006,7 +2006,7 @@ word: ,	upos: PUNCT	xpos: None	feats: _
 word: en	upos: ADP	xpos: None	feats: _
 word: faction	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
-word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
+word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs
 word: avança	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
 word: vers	upos: ADP	xpos: None	feats: _
 word: Baley	upos: PROPN	xpos: None	feats: _
@@ -2021,14 +2021,14 @@ word: un	upos: DET	xpos: None	feats: Definite=Ind|Gender=Masc|Number=Sing|PronTy
 word: geste	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: nerveux	upos: ADJ	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
-word: lui	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: lui	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: montra	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
 word: son	upos: DET	xpos: None	feats: Number=Sing|Number[psor]=Sing|Person[psor]=3|Poss=Yes|PronType=Prs
 word: insigne	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: de	upos: ADP	xpos: None	feats: _
 word: détective	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
-word: cousu	upos: VERB	xpos: None	feats: Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass
+word: cousu	upos: VERB	xpos: None	feats: Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
 word: sous	upos: ADP	xpos: None	feats: _
 word: le	upos: DET	xpos: None	feats: Definite=Def|Gender=Masc|Number=Sing|PronType=Art
 word: revers	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
@@ -2040,7 +2040,7 @@ word: aussitôt	upos: ADV	xpos: None	feats: _
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: le	upos: DET	xpos: None	feats: Definite=Def|Gender=Masc|Number=Sing|PronType=Art
 word: policier	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
-word: lui	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: lui	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: fit	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: de	upos: ADP	xpos: None	feats: _
@@ -2132,7 +2132,7 @@ word: .	upos: PUNCT	xpos: None	feats: _
 word: Il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: n’	upos: ADV	xpos: None	feats: Polarity=Neg
 word: avait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
-word: en	upos: ADP	xpos: None	feats: _
+word: en	upos: PRON	xpos: None	feats: Emph=No|Person=3|PronType=Prs
 word: réussir	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: à	upos: ADP	xpos: None	feats: _
 word: prononcer	upos: VERB	xpos: None	feats: VerbForm=Inf
@@ -2148,7 +2148,7 @@ word: langue	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: soudain	upos: ADV	xpos: None	feats: _
-word: paralysée	upos: VERB	xpos: None	feats: Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act
+word: paralysée	upos: VERB	xpos: None	feats: Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass
 word: .	upos: PUNCT	xpos: None	feats: _
 word: —	upos: PUNCT	xpos: None	feats: _
 word: Je	upos: PRON	xpos: None	feats: Emph=No|Number=Sing|Person=1|PronType=Prs
@@ -2162,7 +2162,7 @@ word: Spacien	upos: PROPN	xpos: None	feats: Gender=Masc|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
 word: Je	upos: PRON	xpos: None	feats: Emph=No|Number=Sing|Person=1|PronType=Prs
 word: suis	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r.	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: Daneel	upos: PROPN	xpos: None	feats: _
 word: Olivaw	upos: PROPN	xpos: None	feats: _
 word: .	upos: PUNCT	xpos: None	feats: _
@@ -2344,7 +2344,7 @@ word: rien	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|PronType=Neg
 word: se	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: cacher	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: .	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: est	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: pourquoi	upos: ADV	xpos: None	feats: _
 word: ,	upos: PUNCT	xpos: None	feats: _
@@ -2354,7 +2354,7 @@ word: monde	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: les	upos: DET	xpos: None	feats: Definite=Def|Number=Plur|PronType=Art
 word: associés	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Plur
-word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
+word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs
 word: appellent	upos: VERB	xpos: None	feats: Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
 word: toujours	upos: ADV	xpos: None	feats: _
 word: par	upos: ADP	xpos: None	feats: _
@@ -2362,7 +2362,7 @@ word: leur	upos: DET	xpos: None	feats: Number=Sing|Number[psor]=Plur|Person[psor
 word: petit	upos: ADJ	xpos: None	feats: Gender=Masc|Number=Sing
 word: nom	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
-word: J’	upos: PRON	xpos: None	feats: Emph=No|Number=Sing|Person=1|PronType=Prs
+word: j’	upos: PRON	xpos: None	feats: Number=Sing|Person=1|PronType=Prs
 word: ose	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 word: croire	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: que	upos: SCONJ	xpos: None	feats: _
@@ -2377,7 +2377,7 @@ word: propres	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Plur
 word: habitudes	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Plur
 word: ?	upos: PUNCT	xpos: None	feats: _
 word: —	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: est	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: que	upos: SCONJ	xpos: None	feats: _
 word: ...	upos: PUNCT	xpos: None	feats: _
@@ -2453,7 +2453,7 @@ word: les	upos: DET	xpos: None	feats: Definite=Def|Number=Plur|PronType=Art
 word: hommes	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Plur
 word: .	upos: PUNCT	xpos: None	feats: _
 word: —	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: est	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: que	upos: SCONJ	xpos: None	feats: _
 word: ...	upos: PUNCT	xpos: None	feats: _
@@ -2464,11 +2464,11 @@ word: ...	upos: PUNCT	xpos: None	feats: _
 word: eh	upos: INTJ	xpos: None	feats: _
 word: bien	upos: INTJ	xpos: None	feats: _
 word: ...	upos: PUNCT	xpos: None	feats: _
-word: on	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Ind
+word: on	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Ind
 word: peut	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: très	upos: ADV	xpos: None	feats: _
 word: bien	upos: ADV	xpos: None	feats: _
-word: les	upos: PRON	xpos: None	feats: Emph=No|Number=Plur|Person=3|PronType=Prs
+word: les	upos: PRON	xpos: None	feats: Number=Plur|Person=3|PronType=Prs
 word: reconnaître	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: .	upos: PUNCT	xpos: None	feats: _
 word: Mais	upos: CCONJ	xpos: None	feats: _
@@ -2531,7 +2531,7 @@ word: prononcées	upos: VERB	xpos: None	feats: Gender=Fem|Number=Plur|Tense=Past
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: fatidique	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Sing
 word: initiale	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Sing
-word: R	upos: X	xpos: None	feats: ExtPos=PROPN
+word: r	upos: X	xpos: None	feats: ExtPos=PROPN
 word: ;	upos: PUNCT	xpos: None	feats: _
 word: il	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: n’	upos: ADV	xpos: None	feats: Polarity=Neg
@@ -2547,14 +2547,14 @@ word: et	upos: CCONJ	xpos: None	feats: _
 word: la	upos: DET	xpos: None	feats: Definite=Def|Gender=Fem|Number=Sing|PronType=Art
 word: catégorie	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: qui	upos: PRON	xpos: None	feats: PronType=Rel
-word: y	upos: PRON	xpos: None	feats: Emph=No|Person=3|PronType=Prs
+word: y	upos: PRON	xpos: None	feats: Person=3|PronType=Prs
 word: figurait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
-word: C.	upos: PROPN	xpos: None	feats: _
+word: c.	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: 5	upos: NUM	xpos: None	feats: Number=Plur
 word: .	upos: PUNCT	xpos: None	feats: _
 word: —	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: est	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: bon	upos: ADJ	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
@@ -2625,7 +2625,8 @@ word: pas	upos: ADV	xpos: None	feats: Polarity=Neg
 word: su	upos: VERB	xpos: None	feats: Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
 word: reconnaître	upos: VERB	xpos: None	feats: VerbForm=Inf
 word: que	upos: SCONJ	xpos: None	feats: _
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r	upos: X	xpos: None	feats: _
+word: .	upos: PUNCT	xpos: None	feats: _
 word: Daneel	upos: PROPN	xpos: None	feats: _
 word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: un	upos: DET	xpos: None	feats: Definite=Ind|Gender=Masc|Number=Sing|PronType=Art
@@ -2651,12 +2652,12 @@ word: que	upos: SCONJ	xpos: None	feats: _
 word: l’on	upos: PRON	xpos: None	feats: Emph=No|Gender=Masc|Number=Sing|Person=3|PronType=Ind
 word: remît	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
 word: à	upos: ADP	xpos: None	feats: _
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r.	upos: PROPN	xpos: None	feats: _
 word: Daneel	upos: PROPN	xpos: None	feats: _
 word: une	upos: DET	xpos: None	feats: Definite=Ind|Gender=Fem|Number=Sing|PronType=Art
 word: carte	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: de	upos: ADP	xpos: None	feats: _
-word: C.	upos: PROPN	xpos: None	feats: _
+word: c.	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: 5	upos: NUM	xpos: None	feats: Number=Plur
 word: .	upos: PUNCT	xpos: None	feats: _
 word: Sa	upos: DET	xpos: None	feats: Gender=Fem|Number=Sing|Number[psor]=Sing|Person[psor]=3|Poss=Yes|PronType=Prs
@@ -2791,7 +2792,7 @@ word: toutes	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Plur
 word: les	upos: DET	xpos: None	feats: Definite=Def|Number=Plur|PronType=Art
 word: apparences	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Plur
 word: ,	upos: PUNCT	xpos: None	feats: _
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r.	upos: X	xpos: None	feats: _
 word: Daneel	upos: PROPN	xpos: None	feats: _
 word: Olivaw	upos: PROPN	xpos: None	feats: _
 word: personnifiait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
@@ -2803,14 +2804,14 @@ word: de	upos: ADP	xpos: None	feats: _
 word: le	upos: DET	xpos: None	feats: Definite=Def|Gender=Masc|Number=Sing|PronType=Art
 word: détective	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
-word: C’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
+word: c’	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
 word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: en	upos: ADP	xpos: None	feats: ExtPos=ADV
 word: fait	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: pour	upos: ADP	xpos: None	feats: _
-word: lui	upos: PRON	xpos: None	feats: Emph=Yes|Gender=Masc|Number=Sing|Person=3|PronType=Prs
+word: lui	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Prs
 word: une	upos: DET	xpos: None	feats: Definite=Ind|Gender=Fem|Number=Sing|PronType=Art
 word: nécessité	upos: NOUN	xpos: None	feats: Gender=Fem|Number=Sing
 word: inhérente	upos: ADJ	xpos: None	feats: Gender=Fem|Number=Sing
@@ -2842,7 +2843,7 @@ word: de	upos: ADP	xpos: None	feats: _
 word: le	upos: DET	xpos: None	feats: Definite=Def|Gender=Masc|Number=Sing|PronType=Art
 word: genre	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: de	upos: ADP	xpos: None	feats: _
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r.	upos: X	xpos: None	feats: _
 word: Sammy	upos: PROPN	xpos: None	feats: _
 word: ,	upos: PUNCT	xpos: None	feats: _
 word: celui	upos: PRON	xpos: None	feats: Gender=Masc|Number=Sing|Person=3|PronType=Dem
@@ -2921,7 +2922,7 @@ word: s’	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: était	upos: AUX	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
 word: produit	upos: VERB	xpos: None	feats: Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act
 word: :	upos: PUNCT	xpos: None	feats: _
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r.	upos: X	xpos: None	feats: _
 word: Daneel	upos: PROPN	xpos: None	feats: _
 word: ne	upos: ADV	xpos: None	feats: Polarity=Neg
 word: répondait	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin
@@ -2947,7 +2948,8 @@ word: son	upos: DET	xpos: None	feats: Number=Sing|Number[psor]=Sing|Person[psor]
 word: voisin	upos: NOUN	xpos: None	feats: Gender=Masc|Number=Sing
 word: .	upos: PUNCT	xpos: None	feats: _
 word: Instantanément	upos: ADV	xpos: None	feats: _
-word: R.	upos: PROPN	xpos: None	feats: _
+word: r	upos: X	xpos: None	feats: _
+word: .	upos: PUNCT	xpos: None	feats: _
 word: Daneel	upos: PROPN	xpos: None	feats: _
 word: se	upos: PRON	xpos: None	feats: Person=3|PronType=Prs|Reflex=Yes
 word: tourna	upos: VERB	xpos: None	feats: Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin

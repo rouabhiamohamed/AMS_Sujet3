@@ -74,10 +74,21 @@ for chapters, book_code in books:
                 texte = file.read()
                 
             texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
-            #texte = re.sub(r'-', " ", texte)    
+            #texte = re.sub(r'-', " ", texte)
+            texte = re.sub(r'\s+', ' ', texte).strip()
             # Traitement du texte
             doc = nlp(texte)
  
+ 
+            with open(f"stanza_test_POS/{repertory}_chapter_{chapter}.txt", "w") as file:
+                # Créer une liste de chaînes formatées pour chaque mot dans chaque phrase
+                lines = [f'word: {word.text}\tupos: {word.upos}\txpos: {word.xpos}\tfeats: {word.feats if word.feats else "_"}' 
+                         for sent in doc.sentences for word in sent.words]
+
+                # Écrire les lignes dans le fichier, chaque ligne séparée par un saut de ligne
+                file.write("\n".join(lines))
+
+            
             ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
             listePROPN = []
             listeFiltre = []            
@@ -89,6 +100,7 @@ for chapters, book_code in books:
                     or word.upos=="ADJ" 
                     or word.upos=="ADP" 
                     or word.upos=="ADV" 
+                    or word.upos=="X"
                     or word.upos=="PRON"
                     or (word.upos == "NOUN" and word.feats and "Number=Plur" in word.feats)
                     or (word.upos == "PROPN" and word.feats and "Number=Plur" in word.feats)):
