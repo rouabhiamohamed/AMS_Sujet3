@@ -46,31 +46,31 @@ for chapters, book_code in books:
             repertory = "prelude_a_fondation"
         else:
             repertory = "les_cavernes_d_acier"
-        if chapter!=0:
-            with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
-                texte = file.read()
-           
-            texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
-            # Créer une phrase à partir du texte
-            sentence = Sentence(texte)
+        
+        with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
+            texte = file.read()
+       
+        texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
+        # Créer une phrase à partir du texte
+        sentence = Sentence(texte)
 
-            # Prédire les étiquettes NER
-            tagger.predict(sentence)
+        # Prédire les étiquettes NER
+        tagger.predict(sentence)
 
-            # Afficher la phrase avec les entités
-            # print(sentence)
+        # Afficher la phrase avec les entités
+        # print(sentence)
 
-            # Liste pour stocker les entités de type LOC
-            loc_entities = []
+        # Liste pour stocker les entités de type LOC
+        loc_entities = []
 
-            # Itérer sur les entités reconnues et ajouter les LOC à la liste
-            for entity in sentence.get_spans('ner'):
-                if entity.get_label('ner').value == 'LOC':  # Vérifier si l'entité est un lieu
-                    loc_entities.append(entity.text)
-                    
-            #Pour ajouter dans la liste final de lieux 
-            for lieux in loc_entities:
-                listeLieuxAll.append(lieux)
+        # Itérer sur les entités reconnues et ajouter les LOC à la liste
+        for entity in sentence.get_spans('ner'):
+            if entity.get_label('ner').value == 'LOC':  # Vérifier si l'entité est un lieu
+                loc_entities.append(entity.text)
+                
+        #Pour ajouter dans la liste final de lieux 
+        for lieux in loc_entities:
+            listeLieuxAll.append(lieux)
 
 
 
@@ -79,19 +79,10 @@ for chapters, book_code in books:
     
         G = nx.Graph()
         
-        
         if book_code == "paf":
             repertory = "prelude_a_fondation"
         else:
             repertory = "les_cavernes_d_acier"
-
-        # if chapter==0:
-
-            # df_dict["ID"].append("{}{}".format(book_code, chapter))
-
-            # graphml = "".join(nx.generate_graphml(G))
-            # df_dict["graphml"].append(graphml)
-        # else:
         
         with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
             texte = file.read()
@@ -118,7 +109,7 @@ for chapters, book_code in books:
                 or word.upos=="ADV" 
                 or word.upos=="X"
                 or word.upos=="PRON"
-                or word.upos=="NOUN" ##### Meh
+                # or word.upos=="NOUN" ##### Meh
                 or (word.upos == "NOUN" and word.feats and "Number=Plur" in word.feats)
                 or (word.upos == "PROPN" and word.feats and "Number=Plur" in word.feats)):
                     listeFiltre.append(word.text)
@@ -167,18 +158,15 @@ for chapters, book_code in books:
                 
                
         print(chapter, book_code)
-        # print("////////////////Liste de Noms/////////////////")
-        # print(listePersonnagesTrier)
-        # print("////////////////Liste de mots retirer/////////////////")
-        # print(list(dict.fromkeys(listeRetirer)))
-        # print("////////////////Liste de lieux/////////////////")
-        # print(listeLieux)
-        # print("\n")
+        print("////////////////Liste de Noms/////////////////")
+        print(listePersonnagesTrier)
+        print("////////////////Liste de mots retirer/////////////////")
+        print(list(dict.fromkeys(listeRetirer)))
+        print("////////////////Liste de lieux/////////////////")
+        print(listeLieux)
+        print("\n")
                         
-                        
-                        
-                        
-        #embeddings = model.encode(listePersonnagesTrier)                
+
                         
         listeNomsPersonnages = []
             
@@ -204,18 +192,13 @@ for chapters, book_code in books:
                         listeNomsPersonnages.remove(s)
         
         
-        ###Bout de code qui permet d'entrainer gensim avec le chapitre en cours de traitement   
-        with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
-            documents = file.readlines()
-        processed_docs = [simple_preprocess(doc) for doc in documents]
-        dictionary = corpora.Dictionary(processed_docs)
-        corpus = [dictionary.doc2bow(doc) for doc in processed_docs]
-        lsi = models.LsiModel(corpus, num_topics=200)
-        index = similarities.MatrixSimilarity(lsi[corpus])
-      
+           
+
         ##Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
         dictionnaireRelationsUnique = {}
         
+        
+        ###Bout de code qui permet d'établir des relations entre les personnages
         entity_positions = defaultdict(list)
         for i, token in enumerate(tokens):
             for group in listePersonnagesTrier:
@@ -233,9 +216,6 @@ for chapters, book_code in books:
                                     for pos2 in entity_positions[entity2]:
                                         if abs(pos1 - pos2) <= CO_OCCURRENCE_DISTANCE: # abs : distance absolue entre deux positions est utilisée, peu importe si pos1 est plus petit ou plus grand que pos2.
                                             dictionnaireRelationsUnique[entity1] = entity2
-        
-        print("/////////////dictionnaireRelationsUnique///////////////")
-        print(dictionnaireRelationsUnique)
         
         ###Dictionnaire qui contiendra la liste de toutes les entités aillant des relations, ainsi que leurs relations
         ### key : EntitéSource, value : Liste d'EntitéTarget
@@ -261,8 +241,6 @@ for chapters, book_code in books:
             for target in targets:
                 for group in listeNomsPersonnages:
                     if target in group: 
-                        # print("//////////Relations////////////")
-                        # print(source, group[0])
                         G.add_edge(source, group[0])
 
         for group in listeNomsPersonnages:
@@ -272,8 +250,6 @@ for chapters, book_code in books:
 
             # Ajouter le nœud avec ses attributs s'il n'est pas déjà présent
             if first_element not in G.nodes :
-                # print("//////////////Gnodes////////////////////")
-                # print(first_element)
                 G.add_node(first_element)  # Ajouter un nœud isolé
             G.nodes[first_element]["names"] = f"{first_element};{remaining_elements}" if remaining_elements else first_element
 
@@ -281,7 +257,6 @@ for chapters, book_code in books:
         for node in G.nodes:
             if "names" not in G.nodes[node]:
                 G.nodes[node]["names"] = node
-        
         
         df_dict["ID"].append("{}{}".format(book_code, chapter-1))
         graphml = "".join(nx.generate_graphml(G))
