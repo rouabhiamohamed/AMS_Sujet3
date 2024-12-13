@@ -5,10 +5,6 @@ import networkx as nx
 import pandas as pd
 from collections import defaultdict
 import re
-from flair.data import Sentence
-from flair.models import SequenceTagger
-from rapidfuzz import fuzz
-from rapidfuzz import process
 from collections import defaultdict
 
 import numpy as np
@@ -50,14 +46,18 @@ for chapters, book_code in books:
             # Afficher la matrice de similarité
             # print(similarities)
             
-            seuil = 0.7
+            seuil = 0.6
 
             # Trouver les paires d'alias avec une similarité supérieure au seuil
             alias_pairs = []
             for i in range(len(listePersonnagesTrier)):
                 for j in range(i + 1, len(listePersonnagesTrier)):
+                    if(listePersonnagesTrier[i]=="Wellis" and listePersonnagesTrier[j]=="Lieutenant Alban Wellis"):
+                        print("//////////////////////////",similarities[i][j])
                     if similarities[i][j] > seuil:
                         alias_pairs.append((listePersonnagesTrier[i], listePersonnagesTrier[j]))
+                    if similarities[j][i] > seuil :
+                        alias_pairs.append((listePersonnagesTrier[j], listePersonnagesTrier[i]))
             
             print("/////////////////",book_code,chapter,"////////////////////")
             # Afficher les alias trouvés
@@ -66,7 +66,7 @@ for chapters, book_code in books:
             
             alias_clusters = []
             
-            db = DBSCAN(eps=0.4, min_samples=1, metric="cosine").fit(embeddings)
+            db = DBSCAN(eps=0.5, min_samples=1, metric="cosine").fit(embeddings)
             # Afficher les clusters trouvés
             for cluster in set(db.labels_):
                 if cluster != -1:  # Exclure les points "bruit" (cluster -1 dans DBSCAN)
@@ -113,8 +113,8 @@ for cluster in set(db.labels_):
         alias_clusters.append(cluster_aliases)
 
 # Afficher la liste de listes d'alias
-for i, cluster in enumerate(alias_clusters):
-    print(f"Cluster {i}: {cluster}")            
+#for i, cluster in enumerate(alias_clusters):
+    #print(f"Cluster {i}: {cluster}")
                       
             
             
