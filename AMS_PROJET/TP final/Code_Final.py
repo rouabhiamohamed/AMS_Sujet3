@@ -144,9 +144,7 @@ for chapters, book_code in books:
         # Liste pour stocker les personnages uniques après filtrage
         listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
         
-        
-        
-        
+
         lieux_set = set(listeLieuxAll)
 
         # Créer une copie de listePersonnagesTrier pour itérer sans modifier la liste pendant la boucle
@@ -166,7 +164,6 @@ for chapters, book_code in books:
         print(listeLieux)
         print("\n")
                         
-
                         
         listeNomsPersonnages = []
             
@@ -190,9 +187,7 @@ for chapters, book_code in books:
                 elif variantesNoms != s and all(nom in variantesNoms for nom in s):  # Si s est un sous-ensemble de variantesNoms
                     if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
                         listeNomsPersonnages.remove(s)
-        
-        
-           
+
 
         ##Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
         dictionnaireRelationsUnique = {}
