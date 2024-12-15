@@ -2,7 +2,7 @@ from collections import defaultdict
 import spacy
 
 # Charger le modèle de NLP (assurez-vous que le modèle est installé)
-nlp = spacy.load("fr_core_news_sm")  # Remplacez par le modèle approprié
+nlp = spacy.load("fr_core_news_lg")  # Remplacez par le modèle approprié
 
 # Liste des livres et chapitres
 books = [

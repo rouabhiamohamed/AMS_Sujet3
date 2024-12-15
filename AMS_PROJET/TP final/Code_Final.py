@@ -47,7 +47,7 @@ for chapters, book_code in books:
         else:
             repertory = "les_cavernes_d_acier"
         
-        with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
+        with open(f"Textes_Processed/{repertory}_chapter_{chapter}.txt", "r") as file:
             texte = file.read()
        
         texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
@@ -72,8 +72,6 @@ for chapters, book_code in books:
         for lieux in loc_entities:
             listeLieuxAll.append(lieux)
 
-
-
 for chapters, book_code in books:
     for chapter in chapters:
     
@@ -84,10 +82,10 @@ for chapters, book_code in books:
         else:
             repertory = "les_cavernes_d_acier"
         
-        with open(f"reseaux-de-personnages-de-fondation-session-2/{repertory}/chapter_{chapter}.txt.preprocessed", "r") as file:
+        with open(f"Textes_Processed/{repertory}_chapter_{chapter}.txt", "r") as file:
             texte = file.read()
             
-        texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
+        # texte = re.sub(r'\b[A-ZÀ-ÿ0-9]+\b', lambda match: match.group(0).lower(), texte)    # nettoyage des mots tout en majuscule
         #texte = re.sub(r'-', " ", texte)
         texte = re.sub(r'\s+', ' ', texte).strip()
         # Traitement du texte
@@ -109,7 +107,6 @@ for chapters, book_code in books:
                 or word.upos=="ADV" 
                 or word.upos=="X"
                 or word.upos=="PRON"
-                # or word.upos=="NOUN" ##### Meh
                 or (word.upos == "NOUN" and word.feats and "Number=Plur" in word.feats)
                 or (word.upos == "PROPN" and word.feats and "Number=Plur" in word.feats)):
                     listeFiltre.append(word.text)
@@ -137,10 +134,9 @@ for chapters, book_code in books:
                 listePersonnages.append(ent.text)
             elif ent.type == "PER" and len(ent.text)>2 and ent.text in listeFiltre:
                 listeRetirer.append(ent.text)
-            # if ent.type == "LOC":
-                # listeLieux.append(ent.text)
+            if ent.type == "LOC":
+                listeLieux.append(ent.text)
         
-       
         # Liste pour stocker les personnages uniques après filtrage
         listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
         
@@ -155,32 +151,46 @@ for chapters, book_code in books:
                 listeRetirer.append(personnage)
                 
                
-        print(chapter, book_code)
-        print("////////////////Liste de Noms/////////////////")
-        print(listePersonnagesTrier)
-        print("////////////////Liste de mots retirer/////////////////")
-        print(list(dict.fromkeys(listeRetirer)))
-        print("////////////////Liste de lieux/////////////////")
-        print(listeLieux)
-        print("\n")
-                        
+        # print(chapter, book_code)
+        # print("////////////////Liste de Noms/////////////////")
+        # print(listePersonnagesTrier)
+        # print("////////////////Liste de mots retirer/////////////////")
+        # print(list(dict.fromkeys(listeRetirer)))
+        # print("////////////////Liste de lieux/////////////////")
+        # print(listeLieux)
+        # print("\n")
+        
+        for personnage in listePersonnagesTrier[:]:
+            remove = False
+            docVerif = nlp(personnage)
+            for sent in docVerif.sentences:
+                for word in sent.words:
+                    if(word.upos=="INTJ" or word.upos=="DET"):
+                        listePersonnagesTrier.remove(personnage)
+                        listeRetirer.append(personnage)
+                    elif(word.upos=="NOUN" and word.feats and "Number=Plur" in word.feats):
+                        listePersonnagesTrier.remove(personnage)
+                        listeRetirer.append(personnage)
+                    elif(len(personnage.split()) == 1 and word.upos=="X"):
+                        listePersonnagesTrier.remove(personnage)
+                        listeRetirer.append(personnage)
                         
         listeNomsPersonnages = []
-            
+
         for nom in listePersonnagesTrier:
             variantesNoms = [nom]  # Utiliser une liste pour stocker les variantes
             for autreNom in listePersonnagesTrier:
                 if autreNom != nom and (autreNom in nom or nom in autreNom) or (nom.upper() == autreNom or nom == autreNom.upper()):  # Vérifier si c'est une variante
                     if autreNom not in variantesNoms:  # Ajouter uniquement si ce n'est pas déjà présent
                         variantesNoms.append(autreNom)
-            
+
             # Vérifier si une liste équivalente n'est pas déjà dans listeNomsPersonnages
             if not any(sorted(variantesNoms) == sorted(existing) for existing in listeNomsPersonnages):
                 listeNomsPersonnages.append(variantesNoms)
 
         # Supprimer les listes qui sont des sous-listes d'autres
         for variantesNoms in listeNomsPersonnages[:]:  # Copier pour éviter les conflits pendant la suppression
-            for s in listeNomsPersonnages[:]: 
+            for s in listeNomsPersonnages[:]:
                 if variantesNoms != s and all(nom in s for nom in variantesNoms):  # Si variantesNoms est un sous-ensemble de s
                     if variantesNoms in listeNomsPersonnages:  # Vérifier que variantesNoms n'a pas déjà été supprimé
                         listeNomsPersonnages.remove(variantesNoms)
@@ -188,6 +198,60 @@ for chapters, book_code in books:
                     if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
                         listeNomsPersonnages.remove(s)
 
+        for index, variantesNoms in enumerate(listeNomsPersonnages):
+            for variantesNoms2 in listeNomsPersonnages[:]:  # Copie de la liste pour éviter les problèmes
+                trouver = False
+                for nom in variantesNoms2:
+                    if nom in variantesNoms and not trouver:
+                        trouver = True
+                        for nomsAAjouter in variantesNoms2:
+                            if nomsAAjouter not in variantesNoms:  # Ajouter uniquement des éléments uniques
+                                listeNomsPersonnages[index].append(nomsAAjouter)
+
+        # Supprimer les listes qui sont des sous-listes d'autres
+        for variantesNoms in listeNomsPersonnages[:]:  # Copier pour éviter les conflits pendant la suppression
+            for s in listeNomsPersonnages[:]:
+                if variantesNoms != s and all(nom in s for nom in variantesNoms):  # Si variantesNoms est un sous-ensemble de s
+                    if variantesNoms in listeNomsPersonnages:  # Vérifier que variantesNoms n'a pas déjà été supprimé
+                        listeNomsPersonnages.remove(variantesNoms)
+                elif variantesNoms != s and all(nom in variantesNoms for nom in s):  # Si s est un sous-ensemble de variantesNoms
+                    if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
+                        listeNomsPersonnages.remove(s)
+                        
+        # Pour séparer les alias qui n'ont pas les même noms de famille                 
+        for variantesNoms in listeNomsPersonnages[:]:
+            for personnage in variantesNoms:
+                listeDeNoms = []
+                listeDeNomsSimple = []
+                if len(personnage.split()) >= 2 and '.' not in personnage.split()[0]:
+                    for personnageAComparer in variantesNoms:
+                        if len(personnageAComparer.split()) >= 2 and '.' not in personnageAComparer.split()[0]:
+                            if personnage.split()[-1] != personnageAComparer.split()[-1]:
+                                listeDeNoms.append(personnageAComparer)
+                for personnageARajouter in variantesNoms:
+                    if len(personnageARajouter.split()) == 1 and personnageARajouter not in listeDeNoms:
+                        # Vérifier si personnageARajouter est un sous-ensemble de nomAComparer
+                        for nomAComparer in listeDeNoms:
+                            if personnageARajouter in nomAComparer:
+                                listeDeNomsSimple.append(personnageARajouter)
+                listeDeNomsConcatenee = listeDeNoms + listeDeNomsSimple
+
+                # Enlever les éléments de listeDeNomsConcatenee de la liste originale
+                for elem in listeDeNomsConcatenee:
+                    if elem in variantesNoms:
+                        variantesNoms.remove(elem)
+                        
+                listeNomsPersonnages.append(list(dict.fromkeys(listeDeNomsConcatenee)))
+
+        #Pour nettoyer la liste des listes vides 
+        listeNomsPersonnages = [variantesNoms for variantesNoms in listeNomsPersonnages if variantesNoms]
+
+        print("/////////////////",book_code,chapter,"////////////////////")
+
+        for i in listeNomsPersonnages:
+            print(i)
+        print("/////////////////Liste d'éléments retirer de ce chapitre////////////////////")
+        print(list(dict.fromkeys(listeRetirer)))
 
         ##Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
         dictionnaireRelationsUnique = {}
@@ -229,7 +293,7 @@ for chapters, book_code in books:
                     if value not in dictionnaireRelationsListe[first_element]:
                         dictionnaireRelationsListe[first_element].append(value)
 
-        print(dictionnaireRelationsListe)
+        # print(dictionnaireRelationsListe)
         
         ###Bout de code qui rempli le graphe en ajoutant les noeuds et les arrêtes via dictionnaireRelationsListe
         for source, targets in dictionnaireRelationsListe.items():

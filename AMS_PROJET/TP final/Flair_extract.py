@@ -38,16 +38,21 @@ for chapters, book_code in books:
 
             # Liste pour stocker les entités de type LOC
             loc_entities = []
+            Per_entities = []
 
             # Itérer sur les entités reconnues et ajouter les LOC à la liste
             for entity in sentence.get_spans('ner'):
                 if entity.get_label('ner').value == 'LOC':  # Vérifier si l'entité est un lieu
                     loc_entities.append(entity.text)
+                if entity.get_label('ner').value == 'PER':  # Vérifier si l'entité est un lieu
+                    Per_entities.append(entity.text)
 
             # Afficher les entités de type LOC
             print(chapter, book_code)
-            print('Les entités de type LOC trouvées :')
-            print(loc_entities)
+            print('Les entités de type PER trouvées :')
+            print(Per_entities)
+            # print('Les entités de type LOC trouvées :')
+            # print(loc_entities)
             print("\n")
             for lieux in loc_entities:
                 listeLieuxAll.append(lieux)

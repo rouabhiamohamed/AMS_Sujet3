@@ -82,9 +82,36 @@ for chapters, book_code in books:
                     elif variantesNoms != s and all(nom in variantesNoms for nom in s):  # Si s est un sous-ensemble de variantesNoms
                         if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
                             listeNomsPersonnages.remove(s)
+            
 
+            listeDeNomsComplete = []
+            for variantesNoms in listeNomsPersonnages[:]:
+                for personnage in variantesNoms:
+                    listeDeNoms = []
+                    listeDeNomsSimple = []
+                    if len(personnage.split()) >= 2 and '.' not in personnage.split()[0]:
+                        for personnageAComparer in variantesNoms:
+                            if len(personnageAComparer.split()) >= 2 and '.' not in personnageAComparer.split()[0]:
+                                if personnage.split()[-1] != personnageAComparer.split()[-1]:
+                                    listeDeNoms.append(personnageAComparer)
+                                    listeDeNomsComplete.append(personnageAComparer)
+                    for personnageARajouter in variantesNoms:
+                        if len(personnageARajouter.split()) == 1 and personnageARajouter not in listeDeNoms:
+                            # Vérifier si personnageARajouter est un sous-ensemble de nomAComparer
+                            for nomAComparer in listeDeNoms:
+                                if personnageARajouter in nomAComparer:
+                                    listeDeNomsSimple.append(personnageARajouter)
+                    listeDeNomsConcatenee = listeDeNoms + listeDeNomsSimple
 
+                    # Enlever les éléments de listeDeNomsConcatenee de la liste originale
+                    for elem in listeDeNomsConcatenee:
+                        if elem in variantesNoms:
+                            variantesNoms.remove(elem)
+                            
+                    listeNomsPersonnages.append(listeDeNomsConcatenee)
 
+            #Pour nettoyer la liste des listes vides 
+            listeNomsPersonnages = [variantesNoms for variantesNoms in listeNomsPersonnages if variantesNoms]
 
             print("/////////////////",book_code,chapter,"////////////////////")
 

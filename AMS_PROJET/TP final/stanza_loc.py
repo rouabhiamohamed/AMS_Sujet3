@@ -17,6 +17,13 @@ locations = []
 personnages = []
 misc = []
 
+
+lieuxASupprimer = [] #Liste pour stocker les éléments à supprimer
+
+listeFiltrePos = [] #Liste de mots qui ne sont pas des PROPN (Pronom)
+
+listeDePersonnagesCorpus = [] #Liste de personnage du corpus entier
+
 # Traitement des livres et chapitres
 for chapters, book_code in books:
     for chapter in chapters:
@@ -37,41 +44,34 @@ for chapters, book_code in books:
         ### Liste pour stocker les personnages extraits
         listePersonnages = []
         listeLieux = []
-        listeMISC = []
         listeNomsPersonnages = []
 
         ### Extraction des entités nommées de type "PER" (personne)
         for ent in doc.ents:
-            if ent.type == "PER":
+            if ent.type == "PER" and len(ent.text)>2 and ent.text not in listeFiltrePos:
                 ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
+                # listePersonnages.append(unidecode(ent.text)) #Unicocde pour enlever les accents
                 listePersonnages.append(ent.text)
+                listeDePersonnagesCorpus.append(ent.text)
             if ent.type == "LOC":
                 listeLieux.append(ent.text)
-                locations.append(ent.text)
-            if ent.type == "MISC":
-                listeMISC.append(ent.text)
 
         # Liste pour stocker les personnages uniques après filtrage
-        listePersonnagesTrier = set(listePersonnages)
+        listePersonnagesTrier = set(listePersonnages)  # Utiliser un set pour obtenir les personnages uniques
 
         listeLieuxTrier = set(listeLieux)
 
-        listeMISCTrier = set(listeMISC)
+        for personnage in listePersonnagesTrier:
+            compteurLieux = listeLieux.count(personnage)
+            compteurPersonnages = listePersonnages.count(personnage)
+            if compteurLieux > compteurPersonnages:
+                lieuxASupprimer.append(personnage)
 
-        
-        # print(listePersonnagesTrier)
-        # print(listeLieuxTrier)
-        # print(listeMISCTrier)
 
-        # compteurLieux = 0
-        # compteurPersonnages = 0
-        # for personnage in listePersonnagesTrier:
-            # compteurLieux = listeLieux.count(personnage)
-            # compteurMISC = listeMISC.count(personnage)
-            # compteurPersonnages = listePersonnages.count(personnage)
-            # if(compteurLieux > compteurPersonnages or compteurMISC > compteurPersonnages):
-                # print("////////////////////////////////////////////////////")
-                # print(personnage)
-                # print("////////////////////////////////////////////////////")
 
-print(set(locations))
+
+
+
+print(set(lieuxASupprimer))
+
+
