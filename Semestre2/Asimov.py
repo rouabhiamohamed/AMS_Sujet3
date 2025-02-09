@@ -403,8 +403,13 @@ for chapters, book_code in books:
         for source, targets in dictionnaireRelationsListe.items():
             for target in targets:
                 for group in listeNomsPersonnages:
-                    if target in group: 
-                        G.add_edge(source, group[0])
+                    if target in group:
+                        if G.has_edge(source, group[0]):
+                            # Si l'arête existe déjà, augmenter son poids
+                            G[source][group[0]]['weight'] += 1
+                        else:
+                            # Sinon, créer une nouvelle arête avec poids 1
+                            G.add_edge(source, group[0], weight=1)
 
         for group in listeNomsPersonnages:
             group = list(group)  # Convertir en liste pour un accès facile

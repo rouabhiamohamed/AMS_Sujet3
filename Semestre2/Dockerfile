@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Installer les dépendances Python
-RUN pip install stanza networkx pandas flair
+RUN pip install stanza networkx pandas flair pyvis
 
 # Télécharger le modèle Stanza pour le français
 RUN python -c "import stanza; stanza.download('fr')"
