@@ -108,7 +108,6 @@ def Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages):
         # Vérifier si une liste équivalente n'est pas déjà dans listeNomsPersonnages
         if not any(sorted(variantesNoms) == sorted(existing) for existing in listeNomsPersonnages):
             listeNomsPersonnages.append(variantesNoms) 
-    return listeNomsPersonnages
     
 def Ranger_Par_Prenoms(listeNomsPersonnages):                                                                     
     for index, variantesNoms in enumerate(listeNomsPersonnages):
@@ -119,7 +118,6 @@ def Ranger_Par_Prenoms(listeNomsPersonnages):
                     if variantesNomsAAjouter[0] in nomsAComparer and not trouver:
                         trouver = True
                         listeNomsPersonnages[index].append(variantesNomsAAjouter[0])    
-    return listeNomsPersonnages
 
 # Pour séparer les alias avec les mêmes noms de famille, mais pas les mêmes prénoms    
 def Separation_Alias(listeNomsPersonnages):                                                                     
@@ -157,8 +155,6 @@ def Separation_Alias(listeNomsPersonnages):
                         variantesNoms.remove(elem)
                         
                 listeNomsPersonnages.append(listeDeNomsConcatenee)
-
-    return listeNomsPersonnages 
     
 # Supprimer les listes qui sont des sous-listes d'autres
 def Supprimer_Sous_Liste(listeNomsPersonnages):
@@ -170,7 +166,6 @@ def Supprimer_Sous_Liste(listeNomsPersonnages):
             elif variantesNoms != s and all(nom in variantesNoms for nom in s):  # Si s est un sous-ensemble de variantesNoms
                 if s in listeNomsPersonnages:  # Vérifier que s n'a pas déjà été supprimé
                     listeNomsPersonnages.remove(s)
-    return listeNomsPersonnages
 
 
 def Association_Position_personnage(tokens,listePersonnagesTrier):
@@ -194,7 +189,6 @@ def Relations(listeNomsPersonnages, entity_positions, dictionnaireRelationsUniqu
                             for pos2 in entity_positions[entity2]:
                                 if abs(pos1 - pos2) <= 25: # abs : distance absolue entre deux positions est utilisée, peu importe si pos1 est plus petit ou plus grand que pos2.
                                     dictionnaireRelationsUnique[entity1] = entity2
-    return dictionnaireRelationsUnique
                                        
 
 #Liste de tout les lieux de l'entièreté du corpus
@@ -274,25 +268,25 @@ for chapters, book_code in books:
     listeNomsPersonnages = []
 
     #D'abord les noms de famille
-    listeNomsPersonnages = Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages)
+    Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages)
    
     # Supprimer les listes qui sont des sous-listes d'autres
-    listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+    Supprimer_Sous_Liste(listeNomsPersonnages)
                     
     #Puis rajouter les prénoms isoler dans une liste
-    listeNomsPersonnages = Ranger_Par_Prenoms(listeNomsPersonnages)
+    Ranger_Par_Prenoms(listeNomsPersonnages)
     
     # Supprimer les listes qui sont des sous-listes d'autres
-    listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+    Supprimer_Sous_Liste(listeNomsPersonnages)
 
     # Pour séparer les alias avec les mêmes noms de famille, mais pas les mêmes prénoms
-    listeNomsPersonnages = Separation_Alias(listeNomsPersonnages)
+    Separation_Alias(listeNomsPersonnages)
     
     #Pour nettoyer la liste des listes vides 
     listeNomsPersonnages = [variantesNoms for variantesNoms in listeNomsPersonnages if variantesNoms]
     
     # Supprimer les listes qui sont des sous-listes d'autres
-    listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+    Supprimer_Sous_Liste(listeNomsPersonnages)
 
 print("//////////////////Répertorisation de tout les noms dans une liste : Fait !/////////////////////")
 
@@ -332,25 +326,25 @@ for chapters, book_code in books:
         listeNomsPersonnages = []
         
         #D'abord les noms de famille
-        listeNomsPersonnages = Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages)
+        Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages)
 
         # Supprimer les listes qui sont des sous-listes d'autres
-        listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+        Supprimer_Sous_Liste(listeNomsPersonnages)
                         
         #Puis rajouter les prénoms isoler dans une liste
-        listeNomsPersonnages = Ranger_Par_Prenoms(listeNomsPersonnages)
+        Ranger_Par_Prenoms(listeNomsPersonnages)
 
         # Supprimer les listes qui sont des sous-listes d'autres
-        listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+        Supprimer_Sous_Liste(listeNomsPersonnages)
                         
         # Pour séparer les alias avec les mêmes noms de famille, mais pas les mêmes prénoms
-        listeNomsPersonnages = Separation_Alias(listeNomsPersonnages)
+        Separation_Alias(listeNomsPersonnages)
 
         #Pour nettoyer la liste des listes vides 
         listeNomsPersonnages = [variantesNoms for variantesNoms in listeNomsPersonnages if variantesNoms]
 
         # Supprimer les listes qui sont des sous-listes d'autres
-        listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+        Supprimer_Sous_Liste(listeNomsPersonnages)
         
         if book_code == "paf":
             listeAllName = listeNomsPersonnagesPaf
@@ -367,7 +361,7 @@ for chapters, book_code in books:
                                 break # On trouve une correspondance, on sort de la boucle.
         
         # Supprimer les listes qui sont des sous-listes d'autres
-        listeNomsPersonnages = Supprimer_Sous_Liste(listeNomsPersonnages)
+        Supprimer_Sous_Liste(listeNomsPersonnages)
                                     
         ##Pour nettoyer les doublons apparu                
         for i in range(len(listeNomsPersonnages)):
@@ -385,7 +379,7 @@ for chapters, book_code in books:
         
         entity_positions = Association_Position_personnage(tokens,listePersonnagesTrier)
         
-        dictionnaireRelationsUnique = Relations(listeNomsPersonnages,entity_positions,dictionnaireRelationsUnique)
+        Relations(listeNomsPersonnages,entity_positions,dictionnaireRelationsUnique)
         
         
         ###Dictionnaire qui contiendra la liste de toutes les entités aillant des relations, ainsi que leurs relations
