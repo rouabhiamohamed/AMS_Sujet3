@@ -6,6 +6,7 @@ import re
 from flair.data import Sentence
 from flair.models import SequenceTagger
 import numpy as np
+from pyvis.network import Network
 
 # Charger le modèle NER pour le français
 tagger = SequenceTagger.load("flair/ner-french")
@@ -26,10 +27,8 @@ df_dict = {"ID": [], "graphml": []}
 
 
 ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
-def Filtre_Ner_Pos(doc):    
+def Filtre_Ner_Pos(doc,listeFiltre,tokens):    
     listePROPN = []
-    listeFiltre = []
-    tokens = []
     for sent in doc.sentences:
         tokens.extend([word.text for word in sent.words])
         for word in sent.words:
@@ -51,20 +50,15 @@ def Filtre_Ner_Pos(doc):
     for wordPROPN in listePROPN :
         if(wordPROPN in listeFiltre):
             listeFiltre.remove(wordPROPN)
-    return listeFiltre, tokens
 
 ### Extraction des entités nommées de type "PER" (personne)
-def Extraction_Per(doc,listeFiltre):
-    listePersonnages = []
-    listeRetirer = []
+def Extraction_Per(doc,listePersonnages,listeFiltre):
     for ent in doc.ents:
         if ent.type == "PER" and len(ent.text)>2 and ent.text not in listeFiltre:
             ent.text = ent.text.replace("\n", " ").strip() ###Certaines entités ont des \n, on les enlève
             listePersonnages.append(ent.text)
         elif ent.type == "PER" and len(ent.text)>2 and ent.text in listeFiltre:
             listeRetirer.append(ent.text)
-            
-    return listePersonnages, listeRetirer
 
 ### Tri des entités détecté Per mais qui sont des lieux 
 def Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer):
@@ -76,7 +70,6 @@ def Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer):
         if personnage in lieux_set:
             listePersonnagesTrier.remove(personnage)
             listeRetirer.append(personnage)
-    return listePersonnagesTrier, listeRetirer
 
 ### Tri des personnages "Parasites" qui n'ont pas été enlever 
 def Tri_Parasite(listePersonnagesTrier,listeRetirer): 
@@ -95,7 +88,6 @@ def Tri_Parasite(listePersonnagesTrier,listeRetirer):
                 elif(len(personnage.split()) == 1 and word.upos=="X"):
                     listePersonnagesTrier.remove(personnage)
                     listeRetirer.append(personnage)
-    return listePersonnagesTrier, listeRetirer
 
 def Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages):                                    
     for nom in listePersonnagesTrier:
@@ -244,17 +236,22 @@ for chapters, book_code in books:
         # Traitement du texte
         doc = nlp(texte)
 
+        listePersonnages = []
+        listeRetirer = []
+        listeFiltre = []
+        tokens = []
+
         ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
-        listeFiltre, tokens = Filtre_Ner_Pos(doc)
+        Filtre_Ner_Pos(doc,listeFiltre,tokens)
               
         ### Liste pour stocker les personnages extraits
-        listePersonnages, listeRetirer = Extraction_Per(doc,listeFiltre)
+        Extraction_Per(doc,listePersonnages,listeFiltre)
         
         # Liste pour stocker les personnages uniques après filtrage
         listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
         
         ### Tri des entités détecté Per mais qui sont des lieux 
-        listePersonnagesTrier, listeRetirer = Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer)
+        Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer)
 
         for perso in listePersonnagesTrier:
             Listeperso.append(perso)
@@ -263,7 +260,7 @@ for chapters, book_code in books:
     listePersonnagesTrier = list(dict.fromkeys(Listeperso))
     
     ### Tri des personnages "Parasites" qui n'ont pas été enlever 
-    listePersonnagesTrier, listeRetirer = Tri_Parasite(listePersonnagesTrier,listeRetirer)
+    Tri_Parasite(listePersonnagesTrier,listeRetirer)
 
     listeNomsPersonnages = []
 
@@ -305,23 +302,26 @@ for chapters, book_code in books:
             
         # Traitement du texte
         doc = nlp(texte)
-        
+
+        listePersonnages = []
+        listeRetirer = []
+        listeFiltre = []
         tokens = []
 
         ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
-        listeFiltre, tokens = Filtre_Ner_Pos(doc)
+        Filtre_Ner_Pos(doc,listeFiltre,tokens)
   
         ### Liste pour stocker les personnages extraits
-        listePersonnages, listeRetirer = Extraction_Per(doc,listeFiltre)
+        Extraction_Per(doc,listePersonnages,listeFiltre)
         
         # Liste pour stocker les personnages uniques après filtrage
         listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
         
         ### Tri des entités détecté Per mais qui sont des lieux 
-        listePersonnagesTrier, listeRetirer = Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer)
+        Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer)
                 
         ### Tri des personnages "Parasites" qui n'ont pas été enlever 
-        listePersonnagesTrier, listeRetirer = Tri_Parasite(listePersonnagesTrier,listeRetirer)
+        Tri_Parasite(listePersonnagesTrier,listeRetirer)
           
         listeNomsPersonnages = []
         
@@ -420,6 +420,11 @@ for chapters, book_code in books:
         for node in G.nodes:
             if "names" not in G.nodes[node]:
                 G.nodes[node]["names"] = node
+            
+        # Visualisation du graphe avec pyvis
+        net = Network(notebook=True)
+        net.from_nx(G)
+        net.show(f"graphes/{book_code}_chapter_{chapter}.html")
         
         df_dict["ID"].append("{}{}".format(book_code, chapter-1))
         graphml = "".join(nx.generate_graphml(G))
