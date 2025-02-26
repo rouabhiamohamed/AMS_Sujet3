@@ -88,8 +88,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon;Hari", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jennat", "label": "Jennat", "names": "Jennat", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "S\u0153ur", "label": "S\u0153ur", "names": "S\u0153ur", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Goutte-de-Pluie", "label": "Goutte-de-Pluie", "names": "Goutte-de-Pluie", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dors Venabili", "label": "Dors Venabili", "names": "Dors Venabili", "shape": "dot", "size": 10}]);
-                  edges = new vis.DataSet([{"from": "Hari Seldon", "to": "Jennat", "width": 1}, {"from": "Jennat", "to": "S\u0153ur", "width": 1}, {"from": "Jennat", "to": "Goutte-de-Pluie", "width": 1}, {"from": "Jennat", "to": "Dors Venabili", "width": 2}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Hari", "label": "Hari", "names": "Hari;Hari Seldon;Seldon", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jennat", "label": "Jennat", "names": "Jennat", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Fr\u00e8re", "label": "Fr\u00e8re", "names": "Fr\u00e8re", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "S\u0153ur", "label": "S\u0153ur", "names": "S\u0153ur", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Goutte-de-Pluie", "label": "Goutte-de-Pluie", "names": "Goutte-de-Pluie", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dors Venabili", "label": "Dors Venabili", "names": "Dors Venabili", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Hari", "to": "Jennat", "width": 1}, {"from": "Jennat", "to": "Fr\u00e8re", "width": 1}, {"from": "Jennat", "to": "S\u0153ur", "width": 1}, {"from": "Jennat", "to": "Goutte-de-Pluie", "width": 1}, {"from": "Jennat", "to": "Dors Venabili", "width": 2}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

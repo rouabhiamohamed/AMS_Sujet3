@@ -34,8 +34,8 @@ def Filtre_Ner_Pos(doc,listeFiltre,tokens):
         for word in sent.words:
             if word.upos == "PROPN":
                 listePROPN.append(word.text)
-            elif word.upos in ["VERB", "AUX", "INTJ", "ADJ", "ADP", "ADV", "X", "PRON", "NOUN"] or 
-            (word.upos == "NOUN" and word.feats and "Number=Plur" in word.feats):
+            elif word.upos in ["VERB", "AUX", "INTJ", "ADJ", "ADP", "ADV", "X", "PRON", "NOUN"] or \
+                (word.upos == "NOUN" and word.feats and "Number=Plur" in word.feats):
                 listePROPN = [x for x in listePROPN if x != word.text]
 
 
@@ -95,41 +95,22 @@ def Ranger_Par_Prenoms(listeNomsPersonnages):
                         listeNomsPersonnages[index].append(variantesNomsAAjouter[0])    
 
 # Pour séparer les alias avec les mêmes noms de famille, mais pas les mêmes prénoms    
-def Separation_Alias(listeNomsPersonnages):                                                                     
-    fin=False
-    while(fin==False):
-        fin=True
-        for variantesNoms in listeNomsPersonnages[:]:
-            for personnage in variantesNoms:
-                listeDeNoms = []
-                listeDeNomsSimple = []
-                nomDeFamille = ""
-                if len(personnage.split()) >= 2 and len(personnage.split()[0])>2:
-                    for personnageAComparer in variantesNoms:
-                        if len(personnageAComparer.split()) >= 2 and len(personnageAComparer.split()[0])>2 and personnage!=personnageAComparer:
-                            docPrenom1 = nlp(personnage)
-                            tokenPrenom1 = [word.upos for sent in docPrenom1.sentences for word in sent.words]
-                            docPrenom2 = nlp(personnageAComparer)
-                            tokenPrenom2 = [word.upos for sent in docPrenom2.sentences for word in sent.words]
-                            if personnage.split()[0] != personnageAComparer.split()[0] and \
-                                ("PROPN" in tokenPrenom1[0] and "PROPN" in tokenPrenom2[0]):
-                                listeDeNoms.append(personnageAComparer)
-                                nomDeFamille = personnageAComparer.split()[-1]
-                                fin=False
-                                
-                for personnageARajouter in variantesNoms:
-                    if len(personnageARajouter.split()) == 1 and personnageARajouter not in listeDeNoms:
-                        # Vérifier si personnageARajouter est un sous-ensemble de nomAComparer
-                        for nomAComparer in listeDeNoms:
-                            if personnageARajouter in nomAComparer:
-                                listeDeNomsSimple.append(personnageARajouter)
-                listeDeNomsConcatenee = listeDeNoms + listeDeNomsSimple
-                # Enlever les éléments de listeDeNomsConcatenee de la liste originale
-                for elem in listeDeNomsConcatenee:
-                    if elem in variantesNoms and elem != nomDeFamille:
-                        variantesNoms.remove(elem)
-                        
-                listeNomsPersonnages.append(listeDeNomsConcatenee)
+def Separation_Alias(listeNomsPersonnages):
+    """Sépare les alias des personnages qui ont le même nom de famille mais pas le même prénom"""
+    listeNomsPersonnagesCopy = listeNomsPersonnages.copy()
+    for variantesNoms in listeNomsPersonnagesCopy:
+        for personnage in variantesNoms[:]:
+            if len(personnage.split()) >= 2 and len(personnage.split()[0]) > 2:
+                for personnageAComparer in variantesNoms[:]:
+                    if len(personnageAComparer.split()) >= 2 and len(personnageAComparer.split()[0]) > 2 and personnage != personnageAComparer:
+                        docPrenom1 = nlp(personnage)
+                        tokenPrenom1 = [word.upos for sent in docPrenom1.sentences for word in sent.words]
+                        docPrenom2 = nlp(personnageAComparer)
+                        tokenPrenom2 = [word.upos for sent in docPrenom2.sentences for word in sent.words]
+                        if personnage.split()[0] != personnageAComparer.split()[0] and \
+                            ("PROPN" in tokenPrenom1[0] and "PROPN" in tokenPrenom2[0]):
+                            variantesNoms.remove(personnageAComparer)
+                            listeNomsPersonnages.append([personnageAComparer])
     
 # Supprimer les listes qui sont des sous-listes d'autres
 def Supprimer_Sous_Liste(listeNomsPersonnages):
