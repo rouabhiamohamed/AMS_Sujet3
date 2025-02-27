@@ -20,10 +20,10 @@ nlp = stanza.Pipeline('fr', processors='tokenize,mwt,pos,ner')
 ###Liste des livres        
 books = [
     "Fondation_et_empire_sample",
-    "Fondation_foudroyée_sample",
     "Fondation_sample",
     "Seconde_Fondation_sample",
-    "Terre_et_Fondation_sample"
+    "Terre_et_Fondation_sample",
+    "Fondation_foudroyée_sample"
 ]
 
 df_dict = {"ID": [], "graphml": []}
@@ -171,11 +171,11 @@ def Supprimer_Sous_Liste(listeNomsPersonnages):
                     listeNomsPersonnages.remove(s)
 
 
-def Association_Position_personnage(tokens,listePersonnagesTrier):
+def Association_Position_personnage(pages,listePersonnagesTrier):
     entity_positions = defaultdict(list)
-    for i, token in enumerate(tokens):
+    for i, page in enumerate(pages):
         for group in listePersonnagesTrier:
-            if token in group:
+            if(group in page):
                 entity_positions[group].append(i)
     return entity_positions
                 
@@ -190,7 +190,7 @@ def Relations(listeNomsPersonnages, entity_positions, dictionnaireRelationsUniqu
                         entity2 = l
                         for pos1 in entity_positions[entity1]:
                             for pos2 in entity_positions[entity2]:
-                                if abs(pos1 - pos2) <= 25: # abs : distance absolue entre deux positions est utilisée, peu importe si pos1 est plus petit ou plus grand que pos2.
+                                if (pos1 == pos2):
                                     dictionnaireRelationsUnique[entity1] = entity2
                                        
 
@@ -199,6 +199,8 @@ listeLieuxAll = []
 
 ##Bout de code qui permet de mettre dans une liste tout les lieux du Corpus grâce à Flair
 for book in books:
+    print(f"////////////////////////////////////Livre {book}////////////////////////////////////")
+
     pages = load_and_split_text(f"Textes_Processed/{book}.txt")
     for page in pages:
     
@@ -226,26 +228,25 @@ for book in books:
 
 
     G = nx.Graph()
-
-    with open(f"Textes_Processed/{book}.txt", "r") as file:
-        texte = file.read()
-        
-    # Traitement du texte
-    doc = nlp(texte)
-
     listePersonnages = []
     listeRetirer = []
     listeFiltre = []
     tokens = []
+    print(f"////////////////////////////////////Livre {book}////////////////////////////////////")
+    pages = load_and_split_text(f"Textes_Processed/{book}.txt")
+    for page in pages:
 
-    ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
-    Filtre_Ner_Pos(doc,listeFiltre,tokens)
+        # Traitement du texte
+        doc = nlp(page)
 
-    ### Liste pour stocker les personnages extraits
-    Extraction_Per(doc,listePersonnages,listeFiltre)
-    
-    # Liste pour stocker les personnages uniques après filtrage
-    listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
+        ##Bout de code pour enlever les faux noms détecter par le ner, grâce aux POS
+        Filtre_Ner_Pos(doc,listeFiltre,tokens)
+
+        ### Liste pour stocker les personnages extraits
+        Extraction_Per(doc,listePersonnages,listeFiltre)
+        
+        # Liste pour stocker les personnages uniques après filtrage
+        listePersonnagesTrier = list(dict.fromkeys(listePersonnages))  # Utiliser un set pour obtenir les personnages uniques
     
     ### Tri des entités détecté Per mais qui sont des lieux 
     Tri_Lieux(listePersonnagesTrier,listeLieuxAll,listeRetirer)
@@ -290,7 +291,7 @@ for book in books:
     ##Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
     dictionnaireRelationsUnique = {}
     
-    entity_positions = Association_Position_personnage(tokens,listePersonnagesTrier)
+    entity_positions = Association_Position_personnage(pages,listePersonnagesTrier)
     
     Relations(listeNomsPersonnages,entity_positions,dictionnaireRelationsUnique)
     
@@ -344,7 +345,7 @@ for book in books:
     net.from_nx(G)
     net.show(f"graphes/{book}.html")
     
-    df_dict["ID"].append("{}{}".format(book))
+    df_dict["ID"].append(book)
     graphml = "".join(nx.generate_graphml(G))
     df_dict["graphml"].append(graphml)
                 

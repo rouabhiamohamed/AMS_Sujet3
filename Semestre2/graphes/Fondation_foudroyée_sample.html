@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Asimov", "label": "Asimov", "names": "Asimov", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Isaac   Fondation", "label": "Isaac   Fondation", "names": "Isaac   Fondation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hannis", "label": "Hannis", "names": "Hannis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Conseiller Compor", "label": "Conseiller Compor", "names": "Conseiller Compor;Compor;Agent    Munn Li Compor;Munn Li Compor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Salvor  Hardin", "label": "Salvor  Hardin", "names": "Salvor  Hardin;Salvor Hardin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hober Mallow", "label": "Hober Mallow", "names": "Hober Mallow", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Golan Trevize", "label": "Golan Trevize", "names": "Golan Trevize;grommela Trevize;Golan  Trevize;Trev", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Janov Pelorat", "label": "Janov Pelorat", "names": "Janov Pelorat;Janov  Pelorat;Janov;Jan", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Orateur Gendibal", "label": "Orateur Gendibal", "names": "Orateur Gendibal;Gendibal;Stor Gendibal;Orateur  Gendibal;Orateur Stor Gendibal", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gendibal  Fondation Foudroyee", "label": "Gendibal  Fondation Foudroyee", "names": "Gendibal  Fondation Foudroyee;Gendibal", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Foudroyee  Gendibal", "label": "Foudroyee  Gendibal", "names": "Foudroyee  Gendibal;Gendibal", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Tope", "label": "Tope", "names": "Tope", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jendippurus Khoratt", "label": "Jendippurus Khoratt", "names": "Jendippurus Khoratt", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Maire Branno", "label": "Maire Branno", "names": "Maire Branno;Harlan Branno;Branno;Brann", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hari  Seldon", "label": "Hari  Seldon", "names": "Hari  Seldon;Seldon;Hari Seldon", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Liono Kodell", "label": "Liono Kodell", "names": "Liono Kodell;Kodell;Liono", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bayta Darell", "label": "Bayta Darell", "names": "Bayta Darell;Darell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Quindor Shandess", "label": "Quindor Shandess", "names": "Quindor Shandess;Shandess;Premier Orateur Shandess", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Oratrice Delarmi", "label": "Oratrice Delarmi", "names": "Oratrice Delarmi;Oratrice  Delarmi;Delarmi;Oratrice", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Premier  Orateur", "label": "Premier  Orateur", "names": "Premier  Orateur;Orateur Gendibal;Premier Orateur;Orateur Cheng;Premier Orateur Shandess;Orateur  Delarmi;Orateur  Gendibal;Orateur Oendibal;Orateur Stor Gendibal", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Preem Pal  ver", "label": "Preem Pal  ver", "names": "Preem Pal  ver;Preem Palver;Palver", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hamien", "label": "Hamien", "names": "Hamien", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Rufirant", "label": "Rufirant", "names": "Rufirant", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Delora Delarmi", "label": "Delora Delarmi", "names": "Delora Delarmi;Delarmi;Oratrice Delora Delarmi;Delora  Delarmi;Oratrice Delora  Delarmi;Orateur  Delarmi", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Premier Fondateur", "label": "Premier Fondateur", "names": "Premier Fondateur", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "mademoiselle Sura", "label": "mademoiselle Sura", "names": "mademoiselle Sura;Sura;Sura Novi", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sura Novi", "label": "Sura Novi", "names": "Sura Novi;Novi.", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Leslim Gianni", "label": "Leslim Gianni", "names": "Leslim Gianni", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ma\u00eetre Cherchieur", "label": "Ma\u00eetre Cherchieur", "names": "Ma\u00eetre Cherchieur", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Janov !", "label": "Janov !", "names": "Janov !", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Mamie Supernova", "label": "Mamie Supernova", "names": "Mamie Supernova", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Leonis Cheng", "label": "Leonis Cheng", "names": "Leonis Cheng;Orateur Cheng", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hamienne", "label": "Hamienne", "names": "Hamienne", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Prononce-les", "label": "Prononce-les", "names": "Prononce-les", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Primo", "label": "Primo", "names": "Primo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dom", "label": "Dom", "names": "Dom", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Tertio", "label": "Tertio", "names": "Tertio", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ga\u00ef\u0027a", "label": "Ga\u00ef\u0027a", "names": "Ga\u00ef\u0027a", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Arkady Darell", "label": "Arkady Darell", "names": "Arkady Darell;Darell;Arkady", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Evander Sopellor", "label": "Evander Sopellor", "names": "Evander Sopellor;Sopellor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Flavella", "label": "Flavella", "names": "Flavella", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hmmm", "label": "Hmmm", "names": "Hmmm", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Askone", "label": "Askone", "names": "Askone", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "J.p.", "label": "J.p.", "names": "J.p.", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Professeur Quintesetz", "label": "Professeur Quintesetz", "names": "Professeur Quintesetz", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Kallo", "label": "Kallo", "names": "Kallo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lachic", "label": "Lachic", "names": "Lachic", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Thoobing", "label": "Thoobing", "names": "Thoobing", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Eriden", "label": "Eriden", "names": "Eriden", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bel  Riose", "label": "Bel  Riose", "names": "Bel  Riose", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ebling Mis", "label": "Ebling Mis", "names": "Ebling Mis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dornick", "label": "Dornick", "names": "Dornick", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sapristi", "label": "Sapristi", "names": "Sapristi", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Godhisavatta", "label": "Godhisavatta", "names": "Godhisavatta", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sobhaddartha", "label": "Sobhaddartha", "names": "Sobhaddartha", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ga\u00efens", "label": "Ga\u00efens", "names": "Ga\u00efens", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lionokodell", "label": "Lionokodell", "names": "Lionokodell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ga\u00efen", "label": "Ga\u00efen", "names": "Ga\u00efen", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dom-via-Ga\u00efa", "label": "Dom-via-Ga\u00efa", "names": "Dom-via-Ga\u00efa", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dom.", "label": "Dom.", "names": "Dom.", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Liebel Gennerat", "label": "Liebel Gennerat", "names": "Liebel Gennerat;Gennerat", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Olanjen", "label": "Olanjen", "names": "Olanjen", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "S.  Q.", "label": "S.  Q.", "names": "S.  Q.;S.   Q.", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "J.  P.", "label": "J.  P.", "names": "J.  P.", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Asimov", "to": "Isaac   Fondation", "width": 2}, {"from": "Hannis", "to": "Conseiller Compor", "width": 1}, {"from": "Conseiller Compor", "to": "Salvor  Hardin", "width": 1}, {"from": "Conseiller Compor", "to": "Hober Mallow", "width": 1}, {"from": "Conseiller Compor", "to": "Golan Trevize", "width": 1}, {"from": "Conseiller Compor", "to": "Janov Pelorat", "width": 1}, {"from": "Conseiller Compor", "to": "Orateur Gendibal", "width": 1}, {"from": "Conseiller Compor", "to": "Gendibal  Fondation Foudroyee", "width": 1}, {"from": "Conseiller Compor", "to": "Foudroyee  Gendibal", "width": 1}, {"from": "Conseiller Compor", "to": "Tope", "width": 1}, {"from": "Conseiller Compor", "to": "Jendippurus Khoratt", "width": 1}, {"from": "Maire Branno", "to": "Orateur Gendibal", "width": 1}, {"from": "Maire Branno", "to": "Gendibal  Fondation Foudroyee", "width": 1}, {"from": "Maire Branno", "to": "Foudroyee  Gendibal", "width": 1}, {"from": "Orateur Gendibal", "to": "Hari  Seldon", "width": 1}, {"from": "Orateur Gendibal", "to": "Golan Trevize", "width": 1}, {"from": "Orateur Gendibal", "to": "Liono Kodell", "width": 1}, {"from": "Orateur Gendibal", "to": "Bayta Darell", "width": 1}, {"from": "Orateur Gendibal", "to": "Janov Pelorat", "width": 1}, {"from": "Orateur Gendibal", "to": "Quindor Shandess", "width": 1}, {"from": "Orateur Gendibal", "to": "Orateur Gendibal", "width": 1}, {"from": "Orateur Gendibal", "to": "Gendibal  Fondation Foudroyee", "width": 2}, {"from": "Orateur Gendibal", "to": "Foudroyee  Gendibal", "width": 1}, {"from": "Orateur Gendibal", "to": "Oratrice Delarmi", "width": 2}, {"from": "Orateur Gendibal", "to": "Premier  Orateur", "width": 1}, {"from": "Orateur Gendibal", "to": "Preem Pal  ver", "width": 1}, {"from": "Orateur Gendibal", "to": "Hamien", "width": 1}, {"from": "Orateur Gendibal", "to": "Rufirant", "width": 1}, {"from": "Orateur Gendibal", "to": "Delora Delarmi", "width": 1}, {"from": "Orateur Gendibal", "to": "Premier Fondateur", "width": 1}, {"from": "Orateur Gendibal", "to": "mademoiselle Sura", "width": 1}, {"from": "Orateur Gendibal", "to": "Sura Novi", "width": 1}, {"from": "Orateur Gendibal", "to": "Leslim Gianni", "width": 1}, {"from": "Orateur Gendibal", "to": "Ma\u00eetre Cherchieur", "width": 1}, {"from": "Orateur Gendibal", "to": "Janov !", "width": 1}, {"from": "Orateur Gendibal", "to": "Mamie Supernova", "width": 1}, {"from": "Orateur Gendibal", "to": "Leonis Cheng", "width": 1}, {"from": "Orateur Gendibal", "to": "Hamienne", "width": 1}, {"from": "Orateur Gendibal", "to": "Prononce-les", "width": 1}, {"from": "Orateur Gendibal", "to": "Primo", "width": 1}, {"from": "Orateur Gendibal", "to": "Dom", "width": 1}, {"from": "Orateur Gendibal", "to": "Tertio", "width": 1}, {"from": "Orateur Gendibal", "to": "Ga\u00ef\u0027a", "width": 1}, {"from": "Orateur Gendibal", "to": "Arkady Darell", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Hari  Seldon", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Golan Trevize", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Liono Kodell", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Bayta Darell", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Janov Pelorat", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Quindor Shandess", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Premier  Orateur", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Preem Pal  ver", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Hamien", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Rufirant", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Delora Delarmi", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Premier Fondateur", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "mademoiselle Sura", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Sura Novi", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Leslim Gianni", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Ma\u00eetre Cherchieur", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Janov !", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Mamie Supernova", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Leonis Cheng", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Hamienne", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Prononce-les", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Primo", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Dom", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Tertio", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Ga\u00ef\u0027a", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Arkady Darell", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Oratrice Delarmi", "width": 2}, {"from": "Gendibal  Fondation Foudroyee", "to": "Gendibal  Fondation Foudroyee", "width": 1}, {"from": "Gendibal  Fondation Foudroyee", "to": "Foudroyee  Gendibal", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Hari  Seldon", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Golan Trevize", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Liono Kodell", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Bayta Darell", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Janov Pelorat", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Quindor Shandess", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Premier  Orateur", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Preem Pal  ver", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Hamien", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Rufirant", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Delora Delarmi", "width": 2}, {"from": "Foudroyee  Gendibal", "to": "Premier Fondateur", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "mademoiselle Sura", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Sura Novi", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Leslim Gianni", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Ma\u00eetre Cherchieur", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Janov !", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Mamie Supernova", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Leonis Cheng", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Hamienne", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Prononce-les", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Primo", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Dom", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Tertio", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Ga\u00ef\u0027a", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Arkady Darell", "width": 1}, {"from": "Foudroyee  Gendibal", "to": "Oratrice Delarmi", "width": 3}, {"from": "Golan Trevize", "to": "Evander Sopellor", "width": 1}, {"from": "Golan Trevize", "to": "Flavella", "width": 1}, {"from": "Golan Trevize", "to": "Janov Pelorat", "width": 1}, {"from": "Golan Trevize", "to": "Hmmm", "width": 1}, {"from": "Golan Trevize", "to": "Askone", "width": 1}, {"from": "Golan Trevize", "to": "J.p.", "width": 1}, {"from": "Golan Trevize", "to": "Professeur Quintesetz", "width": 1}, {"from": "Golan Trevize", "to": "Kallo", "width": 1}, {"from": "Golan Trevize", "to": "Lachic", "width": 1}, {"from": "Liono Kodell", "to": "Thoobing", "width": 2}, {"from": "Liono Kodell", "to": "Eriden", "width": 1}, {"from": "Bel  Riose", "to": "Arkady Darell", "width": 1}, {"from": "Arkady Darell", "to": "Ebling Mis", "width": 2}, {"from": "Arkady Darell", "to": "Dom", "width": 1}, {"from": "Janov Pelorat", "to": "Anacr\u00e9on", "width": 1}, {"from": "Janov Pelorat", "to": "Dornick", "width": 1}, {"from": "Sapristi", "to": "Janov !", "width": 1}, {"from": "Godhisavatta", "to": "Sobhaddartha", "width": 2}, {"from": "Ga\u00efens", "to": "Lionokodell", "width": 1}, {"from": "Lionokodell", "to": "Ga\u00efen", "width": 2}, {"from": "Dom-via-Ga\u00efa", "to": "Dom.", "width": 1}, {"from": "Dom.", "to": "Liebel Gennerat", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

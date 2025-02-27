@@ -338,7 +338,7 @@ for book in books:
     net.from_nx(G)
     net.show(f"graphes/{book}.html")
     
-    df_dict["ID"].append("{}{}".format(book))
+    df_dict["ID"].append(book)
     graphml = "".join(nx.generate_graphml(G))
     df_dict["graphml"].append(graphml)
                 
