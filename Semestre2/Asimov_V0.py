@@ -193,11 +193,14 @@ def Sentiment_page(page):
         return -1
     else:
         return 0
-    
 
-def Relations(listeNomsPersonnages, entity_positions, dictionnaireRelationsUnique,page_sentiment):
+def Relations(listeNomsPersonnages, entity_positions):
+    dictionnaireRelations = {}
     # Parcourir les noms de chaque personnage
     for i in listeNomsPersonnages:
+        first_element = list(i)[0] if isinstance(i, set) else i[0]
+        if first_element not in dictionnaireRelations:
+            dictionnaireRelations[first_element] = []
         for j in i:  # Parcourt chaque alias (variantes) du personnage
             entity1 = j
             for k in listeNomsPersonnages:
@@ -207,9 +210,11 @@ def Relations(listeNomsPersonnages, entity_positions, dictionnaireRelationsUniqu
                         for pos1 in entity_positions[entity1]:
                             for pos2 in entity_positions[entity2]:
                                 if (pos1 == pos2):
-                                    relation = page_sentiment[pos1]
-                                    dictionnaireRelationsUnique[entity1] = entity2
-                                    #add_edges_with_sentiment_relation(G, entity1, entity2,relation)
+                                    if entity1 in i:
+                                        if entity2 not in dictionnaireRelations[first_element]:
+                                            dictionnaireRelations[first_element].append(entity2)
+    return dictionnaireRelations
+                                    
 
     
 def add_edges_with_sentiment_relation(G, source, target, relation):
@@ -329,39 +334,16 @@ for book in books:
     print("/////////////////Liste d'éléments retirer de ce chapitre////////////////////")
     print(list(dict.fromkeys(listeRetirer)))
     
-    ##Dictionnaire qui contiendra la liste de toutes les relations entre toutes les entités
-    dictionnaireRelationsUnique = {}
-    
     entity_positions = Association_Position_personnage(pages,listePersonnagesTrier)
     
-    Relations(listeNomsPersonnages,entity_positions,dictionnaireRelationsUnique,page_sentiment)
-    
-    
-    print("//////////dictionnaire unique///////////////")
-    print(dictionnaireRelationsUnique)
-    print("/////////////////////////")
-
-    ###Dictionnaire qui contiendra la liste de toutes les entités aillant des relations, ainsi que leurs relations
-    ### key : EntitéSource, value : Liste d'EntitéTarget
-    dictionnaireRelationsListe = {} 
-
-    # Remplissage du dictionnaire de relations à partir de dictionnaireRelationsUnique
-    for i in listeNomsPersonnages:
-        first_element = list(i)[0] if isinstance(i, set) else i[0]
-        if first_element not in dictionnaireRelationsListe:
-            dictionnaireRelationsListe[first_element] = []
-        
-        for key, value in dictionnaireRelationsUnique.items():
-            if key in i:
-                if value not in dictionnaireRelationsListe[first_element]:
-                    dictionnaireRelationsListe[first_element].append(value)
+    dictionnaireRelations = Relations(listeNomsPersonnages,entity_positions)
 
     print("/////////////////////////")
-    print(dictionnaireRelationsListe)
+    print(dictionnaireRelations)
     print("/////////////////////////")
 
     # Remplissage du graphe avec les relations
-    for source, targets in dictionnaireRelationsListe.items():
+    for source, targets in dictionnaireRelations.items():
         for target in targets:
             for group in listeNomsPersonnages:
                 if target in group:
