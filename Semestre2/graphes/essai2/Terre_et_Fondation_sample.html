@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Dom", "label": "Dom", "names": "Dom", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Janov", "label": "Janov", "names": "Janov", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Trev", "label": "Trev", "names": "Trev", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lichen  66  Trevize", "label": "Lichen  66  Trevize", "names": "Lichen  66  Trevize;Trev", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Janov Pelorat", "label": "Janov Pelorat", "names": "Janov Pelorat", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Golan Trevize", "label": "Golan Trevize", "names": "Golan Trevize;monsieur  Trevize;Sieur Golan Trevize", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sapristi", "label": "Sapristi", "names": "Sapristi", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Fondation  II", "label": "Fondation  II", "names": "Fondation  II", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Seldon", "label": "Seldon", "names": "Seldon", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Kendray", "label": "Kendray", "names": "Kendray", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Vasil Deniador", "label": "Vasil Deniador", "names": "Vasil Deniador;Deniador;docteur Deniador", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Deniador", "label": "Deniador", "names": "Deniador", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "docteur Deniador", "label": "docteur Deniador", "names": "docteur Deniador", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ancien", "label": "Ancien", "names": "Ancien", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bander", "label": "Bander", "names": "Bander", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jemby", "label": "Jemby", "names": "Jemby", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Fallom", "label": "Fallom", "names": "Fallom", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Fallorn", "label": "Fallorn", "names": "Fallorn", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Janov.", "label": "Janov.", "names": "Janov.", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pel 1", "label": "Pel 1", "names": "Pel 1", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Mademoiselle Hiroko", "label": "Mademoiselle Hiroko", "names": "Mademoiselle Hiroko;Hiroko", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hiroko", "label": "Hiroko", "names": "Hiroko", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Monolee", "label": "Monolee", "names": "Monolee", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Elijah Baley", "label": "Elijah Baley", "names": "Elijah Baley;Baley", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Baley", "label": "Baley", "names": "Baley", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Kandar V", "label": "Kandar V", "names": "Kandar V", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Daneel", "label": "Daneel", "names": "Daneel", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Primo", "label": "Primo", "names": "Primo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "monsieur  Trevize", "label": "monsieur  Trevize", "names": "monsieur  Trevize", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sieur Golan Trevize", "label": "Sieur Golan Trevize", "names": "Sieur Golan Trevize", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Maire Branno", "label": "Maire Branno", "names": "Maire Branno", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pu\u00e9ril", "label": "Pu\u00e9ril", "names": "Pu\u00e9ril", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Munn Li Compor", "label": "Munn Li Compor", "names": "Munn Li Compor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "monsieur Kendray", "label": "monsieur Kendray", "names": "monsieur Kendray", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gravi-tique", "label": "Gravi-tique", "names": "Gravi-tique", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Mitza Lizalor", "label": "Mitza Lizalor", "names": "Mitza Lizalor;Lizalor;madame Lizalor;Mitza", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lizalor", "label": "Lizalor", "names": "Lizalor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "madame Lizalor", "label": "madame Lizalor", "names": "madame Lizalor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Mitza", "label": "Mitza", "names": "Mitza", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "MinTrans", "label": "MinTrans", "names": "MinTrans", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "mademoiselle Joie", "label": "mademoiselle Joie", "names": "mademoiselle Joie;madame Joie", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "madame Joie", "label": "madame Joie", "names": "madame Joie", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hoquetant", "label": "Hoquetant", "names": "Hoquetant", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ch\u00e2tie", "label": "Ch\u00e2tie", "names": "Ch\u00e2tie", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Yariff", "label": "Yariff", "names": "Yariff", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Termi-nien", "label": "Termi-nien", "names": "Termi-nien", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ga\u0027\u00efen", "label": "Ga\u0027\u00efen", "names": "Ga\u0027\u00efen", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Icelui", "label": "Icelui", "names": "Icelui", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ga\u00ef\u0027a", "label": "Ga\u00ef\u0027a", "names": "Ga\u00ef\u0027a", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sarton Bander", "label": "Sarton Bander", "names": "Sarton Bander;Bander;Ma\u00eetre  Bander;Ma\u00eetre Bander", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ma\u00eetre  Bander", "label": "Ma\u00eetre  Bander", "names": "Ma\u00eetre  Bander", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ma\u00eetre Bander", "label": "Ma\u00eetre Bander", "names": "Ma\u00eetre Bander", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ma\u00eetre Fallom", "label": "Ma\u00eetre Fallom", "names": "Ma\u00eetre Fallom;Fallom", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Terra", "label": "Terra", "names": "Terra", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Erda", "label": "Erda", "names": "Erda", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jembly", "label": "Jembly", "names": "Jembly", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Unpetitpeu", "label": "Unpetitpeu", "names": "Unpetitpeu", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Alphan", "label": "Alphan", "names": "Alphan", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Alphane", "label": "Alphane", "names": "Alphane", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jaser", "label": "Jaser", "names": "Jaser", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gaia", "label": "Gaia", "names": "Gaia", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Daneel Olivaw", "label": "Daneel Olivaw", "names": "Daneel Olivaw;Daneel  Olivaw;Daneel", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Daneel  Olivaw", "label": "Daneel  Olivaw", "names": "Daneel  Olivaw", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gatis", "label": "Gatis", "names": "Gatis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "A.  Kendray", "label": "A.  Kendray", "names": "A.  Kendray;Kendray;monsieur Kendray", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Isaac Asimov  Terre", "label": "Isaac Asimov  Terre", "names": "Isaac Asimov  Terre", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Dom", "to": "Janov", "width": 2}, {"color": "red", "from": "Dom", "to": "Trev", "width": 8}, {"color": "green", "from": "Dom", "to": "Lichen  66  Trevize", "width": 4}, {"color": "red", "from": "Janov", "to": "Janov Pelorat", "width": 6}, {"color": "red", "from": "Janov", "to": "Golan Trevize", "width": 4}, {"color": "red", "from": "Janov", "to": "Sapristi", "width": 2}, {"color": "red", "from": "Janov", "to": "Fondation  II", "width": 2}, {"color": "red", "from": "Janov", "to": "Hari Seldon", "width": 6}, {"color": "red", "from": "Janov", "to": "Seldon", "width": 8}, {"color": "red", "from": "Janov", "to": "Kendray", "width": 2}, {"color": "red", "from": "Janov", "to": "Vasil Deniador", "width": 2}, {"color": "red", "from": "Janov", "to": "Deniador", "width": 6}, {"color": "red", "from": "Janov", "to": "docteur Deniador", "width": 2}, {"color": "red", "from": "Janov", "to": "Ancien", "width": 2}, {"color": "red", "from": "Janov", "to": "Bander", "width": 4}, {"color": "red", "from": "Janov", "to": "Jemby", "width": 2}, {"color": "red", "from": "Janov", "to": "Fallom", "width": 18}, {"color": "red", "from": "Janov", "to": "Fallorn", "width": 2}, {"color": "red", "from": "Janov", "to": "Janov.", "width": 58}, {"color": "red", "from": "Janov", "to": "Pel 1", "width": 2}, {"color": "red", "from": "Janov", "to": "Mademoiselle Hiroko", "width": 2}, {"color": "red", "from": "Janov", "to": "Hiroko", "width": 6}, {"color": "red", "from": "Janov", "to": "Monolee", "width": 6}, {"color": "red", "from": "Janov", "to": "Elijah Baley", "width": 2}, {"color": "red", "from": "Janov", "to": "Baley", "width": 2}, {"color": "red", "from": "Janov", "to": "Kandar V", "width": 2}, {"color": "red", "from": "Janov", "to": "Daneel", "width": 2}, {"color": "red", "from": "Janov", "to": "Lichen  66  Trevize", "width": 52}, {"color": "red", "from": "Janov", "to": "Trev", "width": 100}, {"color": "red", "from": "Trev", "to": "Janov Pelorat", "width": 6}, {"color": "red", "from": "Trev", "to": "Primo", "width": 4}, {"color": "red", "from": "Trev", "to": "Golan Trevize", "width": 12}, {"color": "red", "from": "Trev", "to": "monsieur  Trevize", "width": 2}, {"color": "red", "from": "Trev", "to": "Sieur Golan Trevize", "width": 2}, {"color": "red", "from": "Trev", "to": "Maire Branno", "width": 4}, {"color": "red", "from": "Trev", "to": "Pu\u00e9ril", "width": 2}, {"color": "red", "from": "Trev", "to": "Munn Li Compor", "width": 2}, {"color": "red", "from": "Trev", "to": "Sapristi", "width": 2}, {"color": "red", "from": "Trev", "to": "Fondation  II", "width": 2}, {"color": "red", "from": "Trev", "to": "Hari Seldon", "width": 10}, {"color": "red", "from": "Trev", "to": "Seldon", "width": 14}, {"color": "red", "from": "Trev", "to": "Kendray", "width": 12}, {"color": "red", "from": "Trev", "to": "monsieur Kendray", "width": 4}, {"color": "red", "from": "Trev", "to": "Gravi-tique", "width": 2}, {"color": "red", "from": "Trev", "to": "Mitza Lizalor", "width": 6}, {"color": "red", "from": "Trev", "to": "Lizalor", "width": 20}, {"color": "red", "from": "Trev", "to": "madame Lizalor", "width": 2}, {"color": "red", "from": "Trev", "to": "Mitza", "width": 8}, {"color": "red", "from": "Trev", "to": "MinTrans", "width": 2}, {"color": "red", "from": "Trev", "to": "mademoiselle Joie", "width": 2}, {"color": "red", "from": "Trev", "to": "madame Joie", "width": 2}, {"color": "red", "from": "Trev", "to": "Hoquetant", "width": 2}, {"color": "red", "from": "Trev", "to": "Vasil Deniador", "width": 4}, {"color": "red", "from": "Trev", "to": "Deniador", "width": 24}, {"color": "red", "from": "Trev", "to": "docteur Deniador", "width": 4}, {"color": "red", "from": "Trev", "to": "Ancien", "width": 10}, {"color": "red", "from": "Trev", "to": "Ch\u00e2tie", "width": 4}, {"color": "red", "from": "Trev", "to": "Yariff", "width": 4}, {"color": "red", "from": "Trev", "to": "Termi-nien", "width": 2}, {"color": "red", "from": "Trev", "to": "Ga\u0027\u00efen", "width": 2}, {"color": "red", "from": "Trev", "to": "Icelui", "width": 2}, {"color": "red", "from": "Trev", "to": "Ga\u00ef\u0027a", "width": 6}, {"color": "red", "from": "Trev", "to": "Sarton Bander", "width": 2}, {"color": "red", "from": "Trev", "to": "Bander", "width": 44}, {"color": "red", "from": "Trev", "to": "Ma\u00eetre  Bander", "width": 2}, {"color": "red", "from": "Trev", "to": "Ma\u00eetre Bander", "width": 2}, {"color": "red", "from": "Trev", "to": "Jemby", "width": 14}, {"color": "red", "from": "Trev", "to": "Ma\u00eetre Fallom", "width": 2}, {"color": "red", "from": "Trev", "to": "Fallom", "width": 88}, {"color": "red", "from": "Trev", "to": "Terra", "width": 2}, {"color": "red", "from": "Trev", "to": "Erda", "width": 2}, {"color": "red", "from": "Trev", "to": "Janov.", "width": 52}, {"color": "red", "from": "Trev", "to": "Pel 1", "width": 2}, {"color": "red", "from": "Trev", "to": "Jembly", "width": 2}, {"color": "red", "from": "Trev", "to": "Unpetitpeu", "width": 2}, {"color": "red", "from": "Trev", "to": "Alphan", "width": 16}, {"color": "red", "from": "Trev", "to": "Mademoiselle Hiroko", "width": 4}, {"color": "red", "from": "Trev", "to": "Hiroko", "width": 32}, {"color": "red", "from": "Trev", "to": "Alphane", "width": 4}, {"color": "red", "from": "Trev", "to": "Monolee", "width": 8}, {"color": "red", "from": "Trev", "to": "Jaser", "width": 2}, {"color": "red", "from": "Trev", "to": "Elijah Baley", "width": 2}, {"color": "red", "from": "Trev", "to": "Baley", "width": 4}, {"color": "red", "from": "Trev", "to": "Kandar V", "width": 2}, {"color": "red", "from": "Trev", "to": "Gaia", "width": 2}, {"color": "red", "from": "Trev", "to": "Daneel Olivaw", "width": 2}, {"color": "red", "from": "Trev", "to": "Daneel  Olivaw", "width": 2}, {"color": "red", "from": "Trev", "to": "Daneel", "width": 18}, {"color": "red", "from": "Janov Pelorat", "to": "Golan Trevize", "width": 4}, {"color": "red", "from": "Janov Pelorat", "to": "Seldon", "width": 2}, {"color": "red", "from": "Janov Pelorat", "to": "Vasil Deniador", "width": 2}, {"color": "red", "from": "Janov Pelorat", "to": "Deniador", "width": 2}, {"color": "red", "from": "Janov Pelorat", "to": "docteur Deniador", "width": 2}, {"color": "green", "from": "Janov Pelorat", "to": "Lichen  66  Trevize", "width": 3}, {"color": "red", "from": "Golan Trevize", "to": "Primo", "width": 2}, {"color": "red", "from": "Golan Trevize", "to": "Vasil Deniador", "width": 2}, {"color": "red", "from": "Golan Trevize", "to": "Deniador", "width": 2}, {"color": "red", "from": "Golan Trevize", "to": "docteur Deniador", "width": 2}, {"color": "red", "from": "Golan Trevize", "to": "Hiroko", "width": 2}, {"color": "green", "from": "Golan Trevize", "to": "Lichen  66  Trevize", "width": 6}, {"color": "red", "from": "Seldon", "to": "Maire Branno", "width": 2}, {"color": "red", "from": "Seldon", "to": "Deniador", "width": 2}, {"color": "red", "from": "Seldon", "to": "Janov.", "width": 4}, {"color": "red", "from": "Seldon", "to": "Daneel", "width": 2}, {"color": "red", "from": "Vasil Deniador", "to": "Lizalor", "width": 2}, {"color": "red", "from": "Vasil Deniador", "to": "Ch\u00e2tie", "width": 2}, {"color": "red", "from": "Vasil Deniador", "to": "Lichen  66  Trevize", "width": 2}, {"color": "red", "from": "Deniador", "to": "Hari Seldon", "width": 2}, {"color": "red", "from": "Deniador", "to": "Mitza Lizalor", "width": 2}, {"color": "red", "from": "Deniador", "to": "Lizalor", "width": 6}, {"color": "red", "from": "Deniador", "to": "Mitza", "width": 2}, {"color": "red", "from": "Deniador", "to": "Ancien", "width": 2}, {"color": "red", "from": "Deniador", "to": "Ch\u00e2tie", "width": 4}, {"color": "red", "from": "Deniador", "to": "Baley", "width": 2}, {"color": "red", "from": "docteur Deniador", "to": "Ch\u00e2tie", "width": 2}, {"color": "red", "from": "Sapristi", "to": "Lichen  66  Trevize", "width": 1}, {"color": "red", "from": "Fondation  II", "to": "Maire Branno", "width": 2}, {"color": "red", "from": "Fondation  II", "to": "Lichen  66  Trevize", "width": 1}, {"color": "red", "from": "Hari Seldon", "to": "Janov.", "width": 4}, {"color": "green", "from": "Hari Seldon", "to": "Lichen  66  Trevize", "width": 5}, {"color": "red", "from": "Kendray", "to": "monsieur  Trevize", "width": 2}, {"color": "red", "from": "Kendray", "to": "Gravi-tique", "width": 2}, {"color": "red", "from": "Kendray", "to": "Gatis", "width": 2}, {"color": "red", "from": "Ancien", "to": "Lizalor", "width": 2}, {"color": "red", "from": "Ancien", "to": "Mitza", "width": 2}, {"color": "red", "from": "Ancien", "to": "Termi-nien", "width": 2}, {"color": "red", "from": "Ancien", "to": "Janov.", "width": 2}, {"color": "red", "from": "Ancien", "to": "Alphan", "width": 2}, {"color": "red", "from": "Ancien", "to": "Hiroko", "width": 2}, {"color": "red", "from": "Ancien", "to": "Alphane", "width": 2}, {"color": "green", "from": "Ancien", "to": "Lichen  66  Trevize", "width": 5}, {"color": "red", "from": "Bander", "to": "Ga\u00ef\u0027a", "width": 2}, {"color": "red", "from": "Bander", "to": "Jemby", "width": 4}, {"color": "red", "from": "Bander", "to": "Ma\u00eetre Fallom", "width": 2}, {"color": "red", "from": "Bander", "to": "Fallom", "width": 12}, {"color": "red", "from": "Bander", "to": "Janov.", "width": 2}, {"color": "red", "from": "Bander", "to": "Gaia", "width": 2}, {"color": "red", "from": "Jemby", "to": "Fallom", "width": 16}, {"color": "red", "from": "Jemby", "to": "Janov.", "width": 2}, {"color": "red", "from": "Jemby", "to": "Alphan", "width": 2}, {"color": "red", "from": "Jemby", "to": "Hiroko", "width": 2}, {"color": "red", "from": "Jemby", "to": "Daneel Olivaw", "width": 2}, {"color": "red", "from": "Jemby", "to": "Daneel", "width": 6}, {"color": "green", "from": "Jemby", "to": "Lichen  66  Trevize", "width": 7}, {"color": "red", "from": "Fallom", "to": "Lizalor", "width": 2}, {"color": "red", "from": "Fallom", "to": "Ma\u00eetre  Bander", "width": 2}, {"color": "red", "from": "Fallom", "to": "Ma\u00eetre Bander", "width": 2}, {"color": "red", "from": "Fallom", "to": "Fallorn", "width": 2}, {"color": "red", "from": "Fallom", "to": "Janov.", "width": 12}, {"color": "red", "from": "Fallom", "to": "Jembly", "width": 2}, {"color": "red", "from": "Fallom", "to": "Unpetitpeu", "width": 2}, {"color": "red", "from": "Fallom", "to": "Alphan", "width": 10}, {"color": "red", "from": "Fallom", "to": "Mademoiselle Hiroko", "width": 2}, {"color": "red", "from": "Fallom", "to": "Hiroko", "width": 16}, {"color": "red", "from": "Fallom", "to": "Alphane", "width": 2}, {"color": "red", "from": "Fallom", "to": "Monolee", "width": 2}, {"color": "red", "from": "Fallom", "to": "Gaia", "width": 2}, {"color": "red", "from": "Fallom", "to": "Daneel Olivaw", "width": 2}, {"color": "red", "from": "Fallom", "to": "Daneel", "width": 8}, {"color": "red", "from": "Fallom", "to": "Lichen  66  Trevize", "width": 2}, {"color": "red", "from": "Fallorn", "to": "Janov.", "width": 3}, {"color": "red", "from": "Janov.", "to": "Pel 1", "width": 2}, {"color": "red", "from": "Janov.", "to": "Mademoiselle Hiroko", "width": 2}, {"color": "red", "from": "Janov.", "to": "Hiroko", "width": 6}, {"color": "red", "from": "Janov.", "to": "Monolee", "width": 4}, {"color": "red", "from": "Janov.", "to": "Elijah Baley", "width": 2}, {"color": "red", "from": "Janov.", "to": "Baley", "width": 2}, {"color": "red", "from": "Janov.", "to": "Daneel", "width": 2}, {"color": "red", "from": "Janov.", "to": "Lichen  66  Trevize", "width": 29}, {"color": "red", "from": "Pel 1", "to": "Lichen  66  Trevize", "width": 1}, {"color": "red", "from": "Mademoiselle Hiroko", "to": "Alphan", "width": 2}, {"color": "green", "from": "Mademoiselle Hiroko", "to": "Lichen  66  Trevize", "width": 2}, {"color": "red", "from": "Hiroko", "to": "Sieur Golan Trevize", "width": 2}, {"color": "red", "from": "Hiroko", "to": "Lizalor", "width": 2}, {"color": "red", "from": "Hiroko", "to": "madame Joie", "width": 4}, {"color": "red", "from": "Hiroko", "to": "Alphan", "width": 10}, {"color": "red", "from": "Hiroko", "to": "Alphane", "width": 2}, {"color": "red", "from": "Hiroko", "to": "Monolee", "width": 2}, {"color": "red", "from": "Hiroko", "to": "Jaser", "width": 2}, {"color": "red", "from": "Monolee", "to": "madame Joie", "width": 2}, {"color": "red", "from": "Monolee", "to": "Jaser", "width": 2}, {"color": "red", "from": "Monolee", "to": "Elijah Baley", "width": 2}, {"color": "red", "from": "Monolee", "to": "Baley", "width": 2}, {"color": "red", "from": "Monolee", "to": "Lichen  66  Trevize", "width": 4}, {"color": "red", "from": "Elijah Baley", "to": "Lichen  66  Trevize", "width": 1}, {"color": "red", "from": "Kandar V", "to": "Lichen  66  Trevize", "width": 1}, {"color": "green", "from": "Lichen  66  Trevize", "to": "Primo", "width": 2}, {"color": "green", "from": "Lichen  66  Trevize", "to": "Maire Branno", "width": 2}, {"color": "grey", "from": "Lichen  66  Trevize", "to": "Pu\u00e9ril", "width": 1}, {"color": "grey", "from": "Lichen  66  Trevize", "to": "Munn Li Compor", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Gravi-tique", "width": 1}, {"color": "grey", "from": "Lichen  66  Trevize", "to": "Mitza Lizalor", "width": 3}, {"color": "grey", "from": "Lichen  66  Trevize", "to": "MinTrans", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "mademoiselle Joie", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Hoquetant", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Ch\u00e2tie", "width": 2}, {"color": "green", "from": "Lichen  66  Trevize", "to": "Yariff", "width": 2}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Termi-nien", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Ga\u0027\u00efen", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Icelui", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Ga\u00ef\u0027a", "width": 3}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Sarton Bander", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Ma\u00eetre Fallom", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Terra", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Erda", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Jembly", "width": 1}, {"color": "green", "from": "Lichen  66  Trevize", "to": "Unpetitpeu", "width": 1}, {"color": "green", "from": "Lichen  66  Trevize", "to": "Alphan", "width": 8}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Alphane", "width": 2}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Jaser", "width": 1}, {"color": "red", "from": "Lichen  66  Trevize", "to": "Gaia", "width": 1}, {"color": "green", "from": "Lichen  66  Trevize", "to": "Daneel Olivaw", "width": 1}, {"color": "red", "from": "Pu\u00e9ril", "to": "Munn Li Compor", "width": 2}, {"color": "green", "from": "Gatis", "to": "A.  Kendray", "width": 1}, {"color": "red", "from": "Mitza Lizalor", "to": "MinTrans", "width": 2}, {"color": "red", "from": "MinTrans", "to": "Lizalor", "width": 2}, {"color": "red", "from": "MinTrans", "to": "Mitza", "width": 2}, {"color": "red", "from": "Lizalor", "to": "Ch\u00e2tie", "width": 2}, {"color": "red", "from": "Lizalor", "to": "Alphan", "width": 2}, {"color": "red", "from": "Alphan", "to": "Alphane", "width": 4}, {"color": "red", "from": "Mitza", "to": "Termi-nien", "width": 2}, {"color": "red", "from": "madame Joie", "to": "Jaser", "width": 2}, {"color": "red", "from": "Ma\u00eetre Fallom", "to": "Ma\u00eetre  Bander", "width": 2}, {"color": "red", "from": "Ma\u00eetre Fallom", "to": "Ma\u00eetre Bander", "width": 2}, {"color": "red", "from": "Terra", "to": "Erda", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

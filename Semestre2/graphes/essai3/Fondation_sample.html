@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon;Hari  Seldon;Docteur Seldon", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Tomas Sutt", "label": "Tomas Sutt", "names": "Tomas Sutt;Sutt", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jorane Sutt", "label": "Jorane Sutt", "names": "Jorane Sutt;Jorane  Sutt;Sutt", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Salvor Hardin", "label": "Salvor Hardin", "names": "Salvor Hardin;VII    Hardin;Salvor Hardin !;VI    Salvor Hardin;Ma\u00eetre Salvor Hardin;Salvor  Hardin;Salvor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jord Fara", "label": "Jord Fara", "names": "Jord Fara;Fara;Jord", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jord Parma", "label": "Jord Parma", "names": "Jord Parma;Parma;Jord", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lundin Crast", "label": "Lundin Crast", "names": "Lundin Crast;Crast", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Yate Fulham", "label": "Yate Fulham", "names": "Yate Fulham", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dorwin", "label": "Dorwin", "names": "Dorwin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Askone", "label": "Askone", "names": "Askone", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hober Mallow", "label": "Hober Mallow", "names": "Hober Mallow;Ma\u00eetre Mallow", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Smyrnien", "label": "Smyrnien", "names": "Smyrnien", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jaim Twer", "label": "Jaim Twer", "names": "Jaim Twer;Twer", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Korell", "label": "Korell", "names": "Korell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Commodore", "label": "Commodore", "names": "Commodore", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ankor Jael", "label": "Ankor Jael", "names": "Ankor Jael;Jael", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gu\u00e8re", "label": "Gu\u00e8re", "names": "Gu\u00e8re", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Publis Manlio", "label": "Publis Manlio", "names": "Publis Manlio;Manlio", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Grand Pr\u00eatre", "label": "Grand Pr\u00eatre", "names": "Grand Pr\u00eatre", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Asper Argo", "label": "Asper Argo", "names": "Asper Argo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "monsieur Jerril", "label": "monsieur Jerril", "names": "monsieur Jerril;Jerril", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gaal Dornick", "label": "Gaal Dornick", "names": "Gaal Dornick;Gaal  Dornick;Gaal", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Cl\u00e9on II", "label": "Cl\u00e9on II", "names": "Cl\u00e9on II;III;S.  - II;VIII;II    Anselme Haut Rodric;VII    Hardin;III    Eskel Gorov;Anselme", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "prince Lefkin", "label": "prince Lefkin", "names": "prince Lefkin;Lefkin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Drawt", "label": "Drawt", "names": "Drawt", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Avakim", "label": "Avakim", "names": "Avakim", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Linge Chen", "label": "Linge Chen", "names": "Linge Chen;Chen", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Cellomet", "label": "Cellomet", "names": "Cellomet", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lepold", "label": "Lepold", "names": "Lepold", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Yohan Lee", "label": "Yohan Lee", "names": "Yohan Lee;Lee;marmonna Lee", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Atomo", "label": "Atomo", "names": "Atomo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lewis Pirenne", "label": "Lewis Pirenne", "names": "Lewis Pirenne;Pirenne", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "II    Anselme Haut Rodric", "label": "II    Anselme Haut Rodric", "names": "II    Anselme Haut Rodric;Haut  Rodric;Haut Rodric;Anselme", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Wienis", "label": "Wienis", "names": "Wienis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Poly Verisof", "label": "Poly Verisof", "names": "Poly Verisof;Verisof", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Limmar Ponyets", "label": "Limmar Ponyets", "names": "Limmar Ponyets", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Grand Ma\u00eetre", "label": "Grand Ma\u00eetre", "names": "Grand Ma\u00eetre;Ma\u00eetre Salvor Hardin;Ma\u00eetre Marchand;Ma\u00eetre Mallow;Salvor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Stannel VI", "label": "Stannel VI", "names": "Stannel VI;VIII;VII    Hardin;VI    Salvor Hardin;Salvor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Renvoie-les", "label": "Renvoie-les", "names": "Renvoie-les", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sef Sermak", "label": "Sef Sermak", "names": "Sef Sermak;Sermak", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Glyptal IV", "label": "Glyptal IV", "names": "Glyptal IV", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Askonien", "label": "Askonien", "names": "Askonien", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pherl", "label": "Pherl", "names": "Pherl", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Wiscard", "label": "Wiscard", "names": "Wiscard", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bor  Alurin", "label": "Bor  Alurin", "names": "Bor  Alurin;Alurin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Tinter", "label": "Tinter", "names": "Tinter", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lameth", "label": "Lameth", "names": "Lameth", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Muller  Holk", "label": "Muller  Holk", "names": "Muller  Holk", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ha\u0027din", "label": "Ha\u0027din", "names": "Ha\u0027din", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pi\u0027enne", "label": "Pi\u0027enne", "names": "Pi\u0027enne", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lem Tarki", "label": "Lem Tarki", "names": "Lem Tarki", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Walto", "label": "Walto", "names": "Walto", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Orsy", "label": "Orsy", "names": "Orsy", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Jan Smite", "label": "Jan Smite", "names": "Jan Smite", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lucr\u00e8ce", "label": "Lucr\u00e8ce", "names": "Lucr\u00e8ce", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Th\u00e9o Aporat", "label": "Th\u00e9o Aporat", "names": "Th\u00e9o Aporat;Aporat", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lepold Ier", "label": "Lepold Ier", "names": "Lepold Ier", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gorm", "label": "Gorm", "names": "Gorm", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Eskel Gorov", "label": "Eskel Gorov", "names": "Eskel Gorov;III    Eskel Gorov;Gorov", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Loris", "label": "Loris", "names": "Loris", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Licia", "label": "Licia", "names": "Licia", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hmm", "label": "Hmm", "names": "Hmm", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Onum Barr", "label": "Onum Barr", "names": "Onum Barr;Barr", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Stannell", "label": "Stannell", "names": "Stannell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Isaac Asimov    Fondation", "label": "Isaac Asimov    Fondation", "names": "Isaac Asimov    Fondation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Primo", "label": "Primo", "names": "Primo", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Hari Seldon", "to": "Tomas Sutt", "width": 2}, {"color": "red", "from": "Hari Seldon", "to": "Jorane Sutt", "width": 2}, {"color": "red", "from": "Tomas Sutt", "to": "Salvor Hardin", "width": 1}, {"color": "green", "from": "Tomas Sutt", "to": "Anacr\u00e9on", "width": 2}, {"color": "green", "from": "Tomas Sutt", "to": "Jord Fara", "width": 2}, {"color": "green", "from": "Tomas Sutt", "to": "Jord Parma", "width": 1}, {"color": "green", "from": "Tomas Sutt", "to": "Lundin Crast", "width": 2}, {"color": "green", "from": "Tomas Sutt", "to": "Yate Fulham", "width": 2}, {"color": "green", "from": "Tomas Sutt", "to": "Dorwin", "width": 2}, {"color": "red", "from": "Tomas Sutt", "to": "Askone", "width": 1}, {"color": "red", "from": "Tomas Sutt", "to": "Hober Mallow", "width": 3}, {"color": "red", "from": "Tomas Sutt", "to": "Smyrnien", "width": 1}, {"color": "green", "from": "Tomas Sutt", "to": "Jaim Twer", "width": 5}, {"color": "red", "from": "Tomas Sutt", "to": "Korell", "width": 7}, {"color": "red", "from": "Tomas Sutt", "to": "Commodore", "width": 2}, {"color": "red", "from": "Tomas Sutt", "to": "Ankor Jael", "width": 2}, {"color": "red", "from": "Tomas Sutt", "to": "Gu\u00e8re", "width": 1}, {"color": "green", "from": "Tomas Sutt", "to": "Publis Manlio", "width": 2}, {"color": "green", "from": "Tomas Sutt", "to": "Grand Pr\u00eatre", "width": 1}, {"color": "red", "from": "Tomas Sutt", "to": "Asper Argo", "width": 1}, {"color": "red", "from": "Jorane Sutt", "to": "Salvor Hardin", "width": 1}, {"color": "green", "from": "Jorane Sutt", "to": "Anacr\u00e9on", "width": 2}, {"color": "green", "from": "Jorane Sutt", "to": "Jord Fara", "width": 1}, {"color": "green", "from": "Jorane Sutt", "to": "Lundin Crast", "width": 2}, {"color": "green", "from": "Jorane Sutt", "to": "Yate Fulham", "width": 2}, {"color": "green", "from": "Jorane Sutt", "to": "Dorwin", "width": 2}, {"color": "red", "from": "Jorane Sutt", "to": "Askone", "width": 1}, {"color": "red", "from": "Jorane Sutt", "to": "Hober Mallow", "width": 3}, {"color": "red", "from": "Jorane Sutt", "to": "Smyrnien", "width": 1}, {"color": "green", "from": "Jorane Sutt", "to": "Jaim Twer", "width": 5}, {"color": "red", "from": "Jorane Sutt", "to": "Korell", "width": 7}, {"color": "red", "from": "Jorane Sutt", "to": "Commodore", "width": 2}, {"color": "red", "from": "Jorane Sutt", "to": "Ankor Jael", "width": 2}, {"color": "red", "from": "Jorane Sutt", "to": "Gu\u00e8re", "width": 2}, {"color": "green", "from": "Jorane Sutt", "to": "Publis Manlio", "width": 2}, {"color": "green", "from": "Jorane Sutt", "to": "Grand Pr\u00eatre", "width": 2}, {"color": "red", "from": "Jorane Sutt", "to": "Asper Argo", "width": 1}, {"color": "green", "from": "monsieur Jerril", "to": "Gaal Dornick", "width": 2}, {"color": "red", "from": "Gaal Dornick", "to": "Cl\u00e9on II", "width": 1}, {"color": "grey", "from": "Cl\u00e9on II", "to": "prince Lefkin", "width": 1}, {"color": "green", "from": "Cl\u00e9on II", "to": "Drawt", "width": 1}, {"color": "green", "from": "Avakim", "to": "Linge Chen", "width": 2}, {"color": "red", "from": "Avakim", "to": "Cellomet", "width": 1}, {"color": "green", "from": "Salvor Hardin", "to": "Lepold", "width": 7}, {"color": "green", "from": "Salvor Hardin", "to": "Yohan Lee", "width": 3}, {"color": "green", "from": "Salvor Hardin", "to": "Atomo", "width": 2}, {"color": "red", "from": "Salvor Hardin", "to": "Lewis Pirenne", "width": 1}, {"color": "green", "from": "Salvor Hardin", "to": "II    Anselme Haut Rodric", "width": 1}, {"color": "green", "from": "Salvor Hardin", "to": "Wienis", "width": 4}, {"color": "green", "from": "Salvor Hardin", "to": "Poly Verisof", "width": 1}, {"color": "red", "from": "Salvor Hardin", "to": "Limmar Ponyets", "width": 1}, {"color": "green", "from": "Lepold", "to": "Grand Ma\u00eetre", "width": 4}, {"color": "green", "from": "Lepold", "to": "Stannel VI", "width": 4}, {"color": "green", "from": "Lepold", "to": "Renvoie-les", "width": 1}, {"color": "green", "from": "Yohan Lee", "to": "Grand Ma\u00eetre", "width": 1}, {"color": "green", "from": "Yohan Lee", "to": "Stannel VI", "width": 1}, {"color": "red", "from": "Yohan Lee", "to": "Sef Sermak", "width": 1}, {"color": "green", "from": "Atomo", "to": "Grand Ma\u00eetre", "width": 1}, {"color": "green", "from": "Atomo", "to": "Stannel VI", "width": 1}, {"color": "red", "from": "Lewis Pirenne", "to": "Grand Ma\u00eetre", "width": 1}, {"color": "red", "from": "Lewis Pirenne", "to": "Stannel VI", "width": 1}, {"color": "green", "from": "Grand Ma\u00eetre", "to": "II    Anselme Haut Rodric", "width": 1}, {"color": "green", "from": "Grand Ma\u00eetre", "to": "Wienis", "width": 4}, {"color": "green", "from": "Grand Ma\u00eetre", "to": "Poly Verisof", "width": 1}, {"color": "green", "from": "Grand Ma\u00eetre", "to": "Glyptal IV", "width": 1}, {"color": "green", "from": "Grand Ma\u00eetre", "to": "Askonien", "width": 2}, {"color": "red", "from": "Grand Ma\u00eetre", "to": "Limmar Ponyets", "width": 1}, {"color": "green", "from": "Grand Ma\u00eetre", "to": "Pherl", "width": 10}, {"color": "green", "from": "Stannel VI", "to": "II    Anselme Haut Rodric", "width": 1}, {"color": "green", "from": "Stannel VI", "to": "Wienis", "width": 4}, {"color": "green", "from": "Stannel VI", "to": "Poly Verisof", "width": 1}, {"color": "grey", "from": "Stannel VI", "to": "prince Lefkin", "width": 1}, {"color": "red", "from": "Stannel VI", "to": "Limmar Ponyets", "width": 1}, {"color": "green", "from": "Stannel VI", "to": "Drawt", "width": 1}, {"color": "red", "from": "Stannel VI", "to": "Wiscard", "width": 2}, {"color": "green", "from": "Jord Fara", "to": "Bor  Alurin", "width": 1}, {"color": "green", "from": "Jord Fara", "to": "Tinter", "width": 1}, {"color": "green", "from": "Jord Parma", "to": "Tinter", "width": 1}, {"color": "red", "from": "Jord Parma", "to": "Ankor Jael", "width": 1}, {"color": "green", "from": "Dorwin", "to": "Lameth", "width": 1}, {"color": "red", "from": "Dorwin", "to": "Muller  Holk", "width": 1}, {"color": "red", "from": "Ha\u0027din", "to": "Pi\u0027enne", "width": 4}, {"color": "green", "from": "Sef Sermak", "to": "Lem Tarki", "width": 1}, {"color": "red", "from": "Sef Sermak", "to": "Walto", "width": 1}, {"color": "red", "from": "Sef Sermak", "to": "Orsy", "width": 1}, {"color": "green", "from": "Sef Sermak", "to": "Korell", "width": 1}, {"color": "red", "from": "Jan Smite", "to": "Poly Verisof", "width": 1}, {"color": "green", "from": "Poly Verisof", "to": "Lucr\u00e8ce", "width": 1}, {"color": "green", "from": "Poly Verisof", "to": "Th\u00e9o Aporat", "width": 1}, {"color": "green", "from": "Lepold Ier", "to": "Renvoie-les", "width": 1}, {"color": "red", "from": "Gorm", "to": "Askone", "width": 1}, {"color": "green", "from": "Eskel Gorov", "to": "Limmar Ponyets", "width": 1}, {"color": "green", "from": "Loris", "to": "Korell", "width": 1}, {"color": "green", "from": "Commodore", "to": "Licia", "width": 1}, {"color": "red", "from": "Commodore", "to": "Hmm", "width": 1}, {"color": "red", "from": "Onum Barr", "to": "Stannell", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
