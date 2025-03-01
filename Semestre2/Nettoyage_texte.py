@@ -20,7 +20,7 @@ def traiter_texte(texte):
     texte = re.sub(r'(?<!-)\n', ' ', texte)  # Remplacer les sauts de ligne (\n) par des espaces, sauf quand précédé par un tiret
     texte = re.sub(r'-\n', '-', texte)  # Conserver les tirets avec les mots suivants
     texte = re.sub(r'—', "", texte)  # Supprimer les tirets longs "—"
-
+    
     # Remplacer la ponctuation (points, points d'interrogation, etc.)
     texte = re.sub(r'\.(?!\s\»|\.|[^\s]\.| [a-z])', '.\n', texte)
     texte = re.sub(r'\?(?!\s\»)','?\n', texte)
@@ -28,6 +28,14 @@ def traiter_texte(texte):
     texte = re.sub(r'\)(?!\s\»)',')\n', texte)
     texte = re.sub(r'\»(?!\.)','»\n', texte)
     
+    #pour retirer les nombres des chapitres
+    texte = re.sub(r'\s{6}(\S+)', '', texte)
+    
+    # Supprimer les espaces multiples et remplacer par un seul espace
+    texte = re.sub(r'[ ]+', ' ', texte)
+
+    # Supprimer le contenu entre les deux premières balises <->, y compris ce qui est à l'intérieur
+    texte = re.sub(r'(<->)(.*?)(<->)', '', texte, count=1, flags=re.DOTALL)  # count=1 pour ne remplacer que la première occurrence, re.DOTALL pour inclure les sauts de ligne
     return texte
 
 stanza.download('fr')  # Télécharge et installe le modèle Stanza pour le français
