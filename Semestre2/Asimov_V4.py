@@ -17,11 +17,11 @@ analyzer = SentimentIntensityAnalyzer()#Pour Vader
 
 #Liste des livres        
 books = [
-    "Fondation_et_empire_sample"
-    #"Fondation_sample",
-    #"Seconde_Fondation_sample",
-    #"Terre_et_Fondation_sample",
-    #"Fondation_foudroyée_sample"
+    "Fondation_et_empire_sample",
+    "Fondation_sample",
+    "Seconde_Fondation_sample",
+    "Terre_et_Fondation_sample",
+    "Fondation_foudroyée_sample"
 ]
 
 df_dict = {"ID": [], "graphml": []}
@@ -148,26 +148,25 @@ def Supprimer_Sous_Liste(listeNomsPersonnages):
                 break
 
 ##Bout de code qui permet de mettre dans une liste tout les lieux du Corpus grâce à Flair
-def AnalyseLieux():
+def AnalyseLieux(book):
+    print(f"//////////////////Répertorisation de tout les Lieux dans {book} : En cours... /////////////////////")
     listeLieux = [] #Liste de tout les lieux de l'entièreté du corpus
-    for book in books:
-        print(f"////////////////////////////////////Livre {book}////////////////////////////////////")
-        pages = DecoupageTexteEnPages(f"Textes_Processed/{book}.txt")
-        for page in pages:
-            sentence = Sentence(page) # Créer une phrase à partir du texte
-            tagger.predict(sentence) # Prédire les étiquettes NER
-            entite_LOC = [] # Liste pour stocker les entités de type LOC
-            for entitee in sentence.get_spans('ner'): # Itérer sur les entités reconnues et ajouter les LOC à la liste
-                if entitee.get_label('ner').value == 'LOC':  # Vérifier si l'entité est un lieu
-                    entite_LOC.append(entitee.text)
-            for lieux in entite_LOC: #Pour ajouter dans la liste final de lieux 
-                listeLieux.append(lieux)
+    pages = DecoupageTexteEnPages(f"Textes_Processed/{book}.txt")
+    for page in pages:
+        sentence = Sentence(page) # Créer une phrase à partir du texte
+        tagger.predict(sentence) # Prédire les étiquettes NER
+        entite_LOC = [] # Liste pour stocker les entités de type LOC
+        for entitee in sentence.get_spans('ner'): # Itérer sur les entités reconnues et ajouter les LOC à la liste
+            if entitee.get_label('ner').value == 'LOC':  # Vérifier si l'entité est un lieu
+                entite_LOC.append(entitee.text)
+        for lieux in entite_LOC: #Pour ajouter dans la liste final de lieux 
+            listeLieux.append(lieux)
                 
-    print("//////////////////Répertorisation de tout les Lieux dans une liste : Fait !/////////////////////")
+    print(f"//////////////////Répertorisation de tout les Lieux dans {book} : Fait !/////////////////////")
     return listeLieux
 
 def AnalyseEntitee(book,page_sentiment,pages,listeRetirer):
-    print(f"////////////////////////////////////Livre {book}////////////////////////////////////")
+    print(f"//////////////////Répertorisation de toutes les Entitées dans {book} : En cours... /////////////////////")
     listePersonnages = []
     listeFiltre = []
 
@@ -199,6 +198,7 @@ def Sentiment_page(page):
 
 def Relations(G,listeNomsPersonnages, entity_positions,page_sentiment):
     dictionnaireRelations = {}
+    dictionnairePopularite = {}
     # Parcourir les noms de chaque personnage
     for i in listeNomsPersonnages:
         first_element = list(i)[0] if isinstance(i, set) else i[0]
@@ -220,26 +220,32 @@ def Relations(G,listeNomsPersonnages, entity_positions,page_sentiment):
                                             for group in listeNomsPersonnages:
                                                 if entity2 in group:
                                                     AjoutNoeudsSentimentGraphe(G, first_element, group[0], sentiment)
+                                            
+                                            if first_element not in dictionnairePopularite:
+                                                dictionnairePopularite[first_element] = [0]
+                                            else:
+                                                if(sentiment==1):
+                                                    dictionnairePopularite[first_element][0] += 1
+                                                elif(sentiment==-1):
+                                                    dictionnairePopularite[first_element][0] -= 1
+
     AfficherRelations(dictionnaireRelations)
+    return dictionnairePopularite
                                     
 def AjoutNoeudsSentimentGraphe(G, source, target, sentiment):
-    # Choisir la couleur en fonction de la relation
     if sentiment == 1:
         color = "green"
     elif sentiment == 0:
         color = "grey"
     else:
         color = "red"
-    
-    # Ajouter l'arête avec un attribut de couleur
-    if G.has_edge(source, target):
-        # Si l'arête existe déjà, on augmente le poids (ou on peut garder le même poids)
-        G[source][target]['weight'] += 1
+
+    if G.has_edge(source, target): # Ajouter l'arête avec un attribut de couleur
+        G[source][target]['weight'] += 1 # Si l'arête existe déjà, on augmente le poids (ou on peut garder le même poids)
     else:
         # Sinon, créer une nouvelle arête avec poids 1 et la couleur associée
         G.add_edge(source, target, weight=1, color=color)
-                                       
-                                       
+                                              
 def AjoutNoeudsGraphe(G, listeNomsPersonnages):
     for group in listeNomsPersonnages: # Ajout des nœuds dans le graphe
         group = list(group)
@@ -276,6 +282,16 @@ def AfficherRelations(dictionnaireRelations):
     print("/////////////////Liste de relation de ce livre////////////////////")
     print(dictionnaireRelations)
 
+def CreerClassementPopularite(dictionnairePopularite,book):
+    rank = 1
+    dictionnaireTrier = dict(sorted(dictionnairePopularite.items(), key=lambda item: item[1], reverse=True))
+    with open(f"Ranking/Ranking_({book}).txt", "w") as file:
+        file.write("////////////Ranking////////////\n")
+        for nom, nbPop in dictionnaireTrier.items():
+            file.write(f"{rank} - {nom} - Popularité : {nbPop}\n") 
+            rank +=1
+    
+
 def AnalyseLivre(book,listeLieux):
     G = nx.Graph()
     listeNomsPersonnages = []
@@ -297,14 +313,16 @@ def AnalyseLivre(book,listeLieux):
     for i in range(len(listeNomsPersonnages)):##Pour nettoyer les doublons apparu
         listeNomsPersonnages[i] = list(dict.fromkeys(listeNomsPersonnages[i])) 
 
-    print("/////////////////",book,"////////////////////")
     AfficherVariantes(listeNomsPersonnages)
     AfficherMotsRetirer(listeRetirer)
     
     entity_positions = Association_Position_personnage(pages,listePersonnagesTrier)
-    Relations(G,listeNomsPersonnages,entity_positions,page_sentiment)
+    dictionnairePopularite = Relations(G,listeNomsPersonnages,entity_positions,page_sentiment)
+    CreerClassementPopularite(dictionnairePopularite,book)
     AjoutNoeudsGraphe(G, listeNomsPersonnages)   
     CreerGraphe(G,book)
+    
+    print(f"//////////////////Répertorisation de toutes les Entitées dans {book} : Fait !/////////////////////")
 
 def ExportCVS():# Enregistrement des résultats dans un DataFrame et exportation en CSV
     df = pd.DataFrame(df_dict)
@@ -312,8 +330,8 @@ def ExportCVS():# Enregistrement des résultats dans un DataFrame et exportation
     df.to_csv("./my_submission.csv")
 
 def Extraction():
-    listeLieux=AnalyseLieux()
     for book in books:
+        listeLieux=AnalyseLieux(book)
         AnalyseLivre(book,listeLieux)
     ExportCVS()
 

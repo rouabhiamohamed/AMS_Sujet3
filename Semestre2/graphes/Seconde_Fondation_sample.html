@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Han Pritcher", "label": "Han Pritcher", "names": "Han Pritcher;Pritcher;g\u00e9n\u00e9ral Pritcher", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ebling Mis", "label": "Ebling Mis", "names": "Ebling Mis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bail Channis", "label": "Bail Channis", "names": "Bail Channis;Channis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Cil", "label": "Cil", "names": "Cil", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Narovi", "label": "Narovi", "names": "Narovi", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Premier Orateur", "label": "Premier Orateur", "names": "Premier Orateur", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ebling", "label": "Ebling", "names": "Ebling", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Arkady Darell", "label": "Arkady Darell", "names": "Arkady Darell;Docteur Toran Darell;Darell;docteur Darell;Docteur Darell;Arkady", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Seigneur Stettin", "label": "Seigneur Stettin", "names": "Seigneur Stettin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Oncle Homir", "label": "Oncle Homir", "names": "Oncle Homir;Homir Munn;Homir", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Chhhhhuttt", "label": "Chhhhhuttt", "names": "Chhhhhuttt", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Chhhhhut", "label": "Chhhhhut", "names": "Chhhhhut", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bayta Darell", "label": "Bayta Darell", "names": "Bayta Darell;Darell;Bayta", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Arcadia Darell", "label": "Arcadia Darell", "names": "Arcadia Darell;Darell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pelleas Anthor", "label": "Pelleas Anthor", "names": "Pelleas Anthor;Monsieur Anthor;Anthor;Pelleas", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Joie Turbor", "label": "Joie Turbor", "names": "Joie Turbor;Turbor", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Homir Munn", "label": "Homir Munn", "names": "Homir Munn;Munn;monsieur Munn", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Papa", "label": "Papa", "names": "Papa", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Maman", "label": "Maman", "names": "Maman", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Preem Palver", "label": "Preem Palver", "names": "Preem Palver;Palver", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Ben", "label": "Ben", "names": "Ben", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Tipellum", "label": "Tipellum", "names": "Tipellum", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Palvro", "label": "Palvro", "names": "Palvro", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Elvett Semic", "label": "Elvett Semic", "names": "Elvett Semic;Semic", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dame Callia", "label": "Dame Callia", "names": "Dame Callia;Callia", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Pake", "label": "Pake", "names": "Pake", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Poli", "label": "Poli", "names": "Poli", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Salvor Hardin", "label": "Salvor Hardin", "names": "Salvor Hardin;Hardin", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Rigel", "label": "Rigel", "names": "Rigel", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Korilov", "label": "Korilov", "names": "Korilov", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Devers", "label": "Devers", "names": "Devers", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Poochie", "label": "Poochie", "names": "Poochie", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hober Mallow", "label": "Hober Mallow", "names": "Hober Mallow;Mallow", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Huxlani", "label": "Huxlani", "names": "Huxlani", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Charnus", "label": "Charnus", "names": "Charnus", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Yunker", "label": "Yunker", "names": "Yunker", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Mademoiselle Arcadia", "label": "Mademoiselle Arcadia", "names": "Mademoiselle Arcadia", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Hanto", "label": "Hanto", "names": "Hanto", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Fariboles", "label": "Fariboles", "names": "Fariboles", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Lev Meirus", "label": "Lev Meirus", "names": "Lev Meirus;Meirus", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Loffet", "label": "Loffet", "names": "Loffet", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Kalgan Central", "label": "Kalgan Central", "names": "Kalgan Central", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Marchand", "label": "Marchand", "names": "Marchand", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Thallos", "label": "Thallos", "names": "Thallos", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Santanni", "label": "Santanni", "names": "Santanni", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Korell", "label": "Korell", "names": "Korell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Barbe-Grise", "label": "Barbe-Grise", "names": "Barbe-Grise", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Dixyl", "label": "Dixyl", "names": "Dixyl", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Cenn", "label": "Cenn", "names": "Cenn", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Rossemites", "label": "Rossemites", "names": "Rossemites", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "E.  F.", "label": "E.  F.", "names": "E.  F.", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "T.  V.  Branch\u00e9", "label": "T.  V.  Branch\u00e9", "names": "T.  V.  Branch\u00e9", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Han Pritcher", "to": "Ebling Mis", "width": 3}, {"color": "red", "from": "Han Pritcher", "to": "Hari Seldon", "width": 4}, {"color": "red", "from": "Han Pritcher", "to": "Bail Channis", "width": 5}, {"color": "red", "from": "Han Pritcher", "to": "Cil", "width": 3}, {"color": "green", "from": "Han Pritcher", "to": "Narovi", "width": 3}, {"color": "red", "from": "Han Pritcher", "to": "Premier Orateur", "width": 3}, {"color": "red", "from": "Han Pritcher", "to": "Ebling", "width": 3}, {"color": "green", "from": "Han Pritcher", "to": "Arkady Darell", "width": 2}, {"color": "green", "from": "Han Pritcher", "to": "Seigneur Stettin", "width": 2}, {"color": "green", "from": "Han Pritcher", "to": "Oncle Homir", "width": 2}, {"color": "green", "from": "Han Pritcher", "to": "Chhhhhuttt", "width": 2}, {"color": "green", "from": "Han Pritcher", "to": "Chhhhhut", "width": 2}, {"color": "red", "from": "Ebling Mis", "to": "Hari Seldon", "width": 3}, {"color": "green", "from": "Ebling Mis", "to": "Bail Channis", "width": 3}, {"color": "green", "from": "Ebling Mis", "to": "Premier Orateur", "width": 2}, {"color": "red", "from": "Ebling Mis", "to": "Ebling", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Arkady Darell", "width": 5}, {"color": "green", "from": "Ebling Mis", "to": "Bayta Darell", "width": 4}, {"color": "green", "from": "Ebling Mis", "to": "Arcadia Darell", "width": 2}, {"color": "red", "from": "Ebling Mis", "to": "Pelleas Anthor", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Joie Turbor", "width": 2}, {"color": "red", "from": "Ebling Mis", "to": "Homir Munn", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Papa", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Maman", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Preem Palver", "width": 3}, {"color": "green", "from": "Ebling Mis", "to": "Ben", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Ebling Mis", "to": "Palvro", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Bail Channis", "width": 4}, {"color": "red", "from": "Hari Seldon", "to": "Ebling", "width": 3}, {"color": "red", "from": "Hari Seldon", "to": "Arkady Darell", "width": 5}, {"color": "red", "from": "Hari Seldon", "to": "Bayta Darell", "width": 5}, {"color": "red", "from": "Hari Seldon", "to": "Arcadia Darell", "width": 3}, {"color": "red", "from": "Hari Seldon", "to": "Pelleas Anthor", "width": 3}, {"color": "red", "from": "Hari Seldon", "to": "Elvett Semic", "width": 3}, {"color": "red", "from": "Hari Seldon", "to": "Homir Munn", "width": 5}, {"color": "red", "from": "Hari Seldon", "to": "Oncle Homir", "width": 5}, {"color": "red", "from": "Hari Seldon", "to": "Dame Callia", "width": 4}, {"color": "red", "from": "Hari Seldon", "to": "Pake", "width": 3}, {"color": "green", "from": "Hari Seldon", "to": "Papa", "width": 3}, {"color": "green", "from": "Hari Seldon", "to": "Maman", "width": 3}, {"color": "green", "from": "Hari Seldon", "to": "Preem Palver", "width": 4}, {"color": "red", "from": "Hari Seldon", "to": "Premier Orateur", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Poli", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Salvor Hardin", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Rigel", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Joie Turbor", "width": 2}, {"color": "red", "from": "Hari Seldon", "to": "Korilov", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Devers", "width": 2}, {"color": "red", "from": "Hari Seldon", "to": "Seigneur Stettin", "width": 2}, {"color": "red", "from": "Hari Seldon", "to": "Poochie", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Chhhhhuttt", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Chhhhhut", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Hober Mallow", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Ben", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Hari Seldon", "to": "Palvro", "width": 2}, {"color": "red", "from": "Bail Channis", "to": "Premier Orateur", "width": 3}, {"color": "green", "from": "Bail Channis", "to": "Ebling", "width": 3}, {"color": "grey", "from": "Bail Channis", "to": "Huxlani", "width": 2}, {"color": "grey", "from": "Bail Channis", "to": "Charnus", "width": 2}, {"color": "red", "from": "Bail Channis", "to": "Cil", "width": 2}, {"color": "green", "from": "Bail Channis", "to": "Arkady Darell", "width": 4}, {"color": "green", "from": "Bail Channis", "to": "Bayta Darell", "width": 4}, {"color": "green", "from": "Bail Channis", "to": "Arcadia Darell", "width": 2}, {"color": "grey", "from": "Bail Channis", "to": "Anacr\u00e9on", "width": 2}, {"color": "green", "from": "Narovi", "to": "Yunker", "width": 2}, {"color": "green", "from": "Premier Orateur", "to": "Ebling", "width": 2}, {"color": "green", "from": "Premier Orateur", "to": "Arkady Darell", "width": 4}, {"color": "green", "from": "Premier Orateur", "to": "Bayta Darell", "width": 4}, {"color": "green", "from": "Premier Orateur", "to": "Arcadia Darell", "width": 2}, {"color": "green", "from": "Premier Orateur", "to": "Rigel", "width": 2}, {"color": "red", "from": "Premier Orateur", "to": "Korilov", "width": 2}, {"color": "green", "from": "Ebling", "to": "Arkady Darell", "width": 5}, {"color": "green", "from": "Ebling", "to": "Bayta Darell", "width": 4}, {"color": "green", "from": "Ebling", "to": "Arcadia Darell", "width": 2}, {"color": "red", "from": "Ebling", "to": "Pelleas Anthor", "width": 2}, {"color": "green", "from": "Ebling", "to": "Joie Turbor", "width": 2}, {"color": "red", "from": "Ebling", "to": "Homir Munn", "width": 2}, {"color": "green", "from": "Ebling", "to": "Papa", "width": 2}, {"color": "green", "from": "Ebling", "to": "Maman", "width": 2}, {"color": "green", "from": "Ebling", "to": "Preem Palver", "width": 3}, {"color": "green", "from": "Ebling", "to": "Ben", "width": 2}, {"color": "green", "from": "Ebling", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Ebling", "to": "Palvro", "width": 2}, {"color": "grey", "from": "Arkady Darell", "to": "Pelleas Anthor", "width": 10}, {"color": "green", "from": "Arkady Darell", "to": "Bayta Darell", "width": 5}, {"color": "red", "from": "Arkady Darell", "to": "Poli", "width": 4}, {"color": "red", "from": "Arkady Darell", "to": "Mademoiselle Arcadia", "width": 3}, {"color": "red", "from": "Arkady Darell", "to": "Salvor Hardin", "width": 4}, {"color": "grey", "from": "Arkady Darell", "to": "Joie Turbor", "width": 4}, {"color": "grey", "from": "Arkady Darell", "to": "Elvett Semic", "width": 4}, {"color": "grey", "from": "Arkady Darell", "to": "Homir Munn", "width": 5}, {"color": "grey", "from": "Arkady Darell", "to": "Oncle Homir", "width": 5}, {"color": "red", "from": "Arkady Darell", "to": "Anacr\u00e9on", "width": 3}, {"color": "red", "from": "Arkady Darell", "to": "Dame Callia", "width": 4}, {"color": "red", "from": "Arkady Darell", "to": "Pake", "width": 2}, {"color": "red", "from": "Arkady Darell", "to": "Papa", "width": 4}, {"color": "red", "from": "Arkady Darell", "to": "Maman", "width": 4}, {"color": "green", "from": "Arkady Darell", "to": "Preem Palver", "width": 4}, {"color": "red", "from": "Arkady Darell", "to": "Hanto", "width": 3}, {"color": "red", "from": "Arkady Darell", "to": "Hober Mallow", "width": 5}, {"color": "green", "from": "Arkady Darell", "to": "Fariboles", "width": 2}, {"color": "green", "from": "Arkady Darell", "to": "Ben", "width": 2}, {"color": "green", "from": "Arkady Darell", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Arkady Darell", "to": "Palvro", "width": 2}, {"color": "red", "from": "Arkady Darell", "to": "Lev Meirus", "width": 4}, {"color": "green", "from": "Arkady Darell", "to": "Loffet", "width": 3}, {"color": "green", "from": "Arkady Darell", "to": "Seigneur Stettin", "width": 2}, {"color": "green", "from": "Arkady Darell", "to": "Chhhhhuttt", "width": 2}, {"color": "green", "from": "Arkady Darell", "to": "Chhhhhut", "width": 2}, {"color": "green", "from": "Seigneur Stettin", "to": "Joie Turbor", "width": 3}, {"color": "grey", "from": "Seigneur Stettin", "to": "Dame Callia", "width": 3}, {"color": "red", "from": "Seigneur Stettin", "to": "Poochie", "width": 2}, {"color": "red", "from": "Seigneur Stettin", "to": "Oncle Homir", "width": 3}, {"color": "green", "from": "Seigneur Stettin", "to": "Chhhhhuttt", "width": 2}, {"color": "red", "from": "Seigneur Stettin", "to": "Kalgan Central", "width": 2}, {"color": "green", "from": "Seigneur Stettin", "to": "Papa", "width": 2}, {"color": "green", "from": "Seigneur Stettin", "to": "Maman", "width": 2}, {"color": "green", "from": "Seigneur Stettin", "to": "Chhhhhut", "width": 2}, {"color": "green", "from": "Oncle Homir", "to": "Poli", "width": 3}, {"color": "grey", "from": "Oncle Homir", "to": "Pelleas Anthor", "width": 5}, {"color": "green", "from": "Oncle Homir", "to": "Salvor Hardin", "width": 2}, {"color": "grey", "from": "Oncle Homir", "to": "Joie Turbor", "width": 4}, {"color": "grey", "from": "Oncle Homir", "to": "Elvett Semic", "width": 4}, {"color": "green", "from": "Oncle Homir", "to": "Homir Munn", "width": 4}, {"color": "green", "from": "Oncle Homir", "to": "Devers", "width": 2}, {"color": "green", "from": "Oncle Homir", "to": "Dame Callia", "width": 5}, {"color": "green", "from": "Oncle Homir", "to": "Poochie", "width": 3}, {"color": "green", "from": "Oncle Homir", "to": "Marchand", "width": 3}, {"color": "green", "from": "Oncle Homir", "to": "Thallos", "width": 3}, {"color": "green", "from": "Oncle Homir", "to": "Papa", "width": 3}, {"color": "green", "from": "Oncle Homir", "to": "Maman", "width": 3}, {"color": "grey", "from": "Oncle Homir", "to": "Bayta Darell", "width": 5}, {"color": "grey", "from": "Oncle Homir", "to": "Arcadia Darell", "width": 3}, {"color": "green", "from": "Oncle Homir", "to": "Chhhhhuttt", "width": 2}, {"color": "red", "from": "Oncle Homir", "to": "Pake", "width": 2}, {"color": "red", "from": "Oncle Homir", "to": "Kalgan Central", "width": 2}, {"color": "green", "from": "Oncle Homir", "to": "Chhhhhut", "width": 2}, {"color": "green", "from": "Oncle Homir", "to": "Hober Mallow", "width": 2}, {"color": "red", "from": "Oncle Homir", "to": "Lev Meirus", "width": 3}, {"color": "green", "from": "Chhhhhuttt", "to": "Chhhhhut", "width": 2}, {"color": "red", "from": "Chhhhhut", "to": "Papa", "width": 2}, {"color": "red", "from": "Chhhhhut", "to": "Maman", "width": 2}, {"color": "red", "from": "Bayta Darell", "to": "Poli", "width": 2}, {"color": "grey", "from": "Bayta Darell", "to": "Pelleas Anthor", "width": 7}, {"color": "red", "from": "Bayta Darell", "to": "Mademoiselle Arcadia", "width": 2}, {"color": "red", "from": "Bayta Darell", "to": "Salvor Hardin", "width": 3}, {"color": "grey", "from": "Bayta Darell", "to": "Joie Turbor", "width": 3}, {"color": "grey", "from": "Bayta Darell", "to": "Elvett Semic", "width": 5}, {"color": "grey", "from": "Bayta Darell", "to": "Homir Munn", "width": 6}, {"color": "red", "from": "Bayta Darell", "to": "Anacr\u00e9on", "width": 2}, {"color": "red", "from": "Bayta Darell", "to": "Dame Callia", "width": 5}, {"color": "red", "from": "Bayta Darell", "to": "Pake", "width": 4}, {"color": "red", "from": "Bayta Darell", "to": "Papa", "width": 2}, {"color": "red", "from": "Bayta Darell", "to": "Maman", "width": 2}, {"color": "green", "from": "Bayta Darell", "to": "Preem Palver", "width": 3}, {"color": "red", "from": "Bayta Darell", "to": "Hanto", "width": 2}, {"color": "red", "from": "Bayta Darell", "to": "Hober Mallow", "width": 3}, {"color": "green", "from": "Bayta Darell", "to": "Fariboles", "width": 2}, {"color": "green", "from": "Bayta Darell", "to": "Ben", "width": 2}, {"color": "green", "from": "Bayta Darell", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Bayta Darell", "to": "Palvro", "width": 2}, {"color": "red", "from": "Bayta Darell", "to": "Lev Meirus", "width": 3}, {"color": "green", "from": "Bayta Darell", "to": "Loffet", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Poli", "width": 2}, {"color": "grey", "from": "Arcadia Darell", "to": "Pelleas Anthor", "width": 5}, {"color": "red", "from": "Arcadia Darell", "to": "Mademoiselle Arcadia", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Salvor Hardin", "width": 3}, {"color": "grey", "from": "Arcadia Darell", "to": "Joie Turbor", "width": 4}, {"color": "grey", "from": "Arcadia Darell", "to": "Elvett Semic", "width": 3}, {"color": "grey", "from": "Arcadia Darell", "to": "Homir Munn", "width": 4}, {"color": "red", "from": "Arcadia Darell", "to": "Anacr\u00e9on", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Dame Callia", "width": 3}, {"color": "red", "from": "Arcadia Darell", "to": "Pake", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Papa", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Maman", "width": 2}, {"color": "green", "from": "Arcadia Darell", "to": "Preem Palver", "width": 4}, {"color": "red", "from": "Arcadia Darell", "to": "Hanto", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Hober Mallow", "width": 3}, {"color": "green", "from": "Arcadia Darell", "to": "Fariboles", "width": 2}, {"color": "green", "from": "Arcadia Darell", "to": "Ben", "width": 2}, {"color": "green", "from": "Arcadia Darell", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Arcadia Darell", "to": "Palvro", "width": 2}, {"color": "red", "from": "Arcadia Darell", "to": "Lev Meirus", "width": 3}, {"color": "green", "from": "Arcadia Darell", "to": "Loffet", "width": 2}, {"color": "grey", "from": "Pelleas Anthor", "to": "Joie Turbor", "width": 5}, {"color": "grey", "from": "Pelleas Anthor", "to": "Elvett Semic", "width": 5}, {"color": "grey", "from": "Pelleas Anthor", "to": "Homir Munn", "width": 5}, {"color": "red", "from": "Pelleas Anthor", "to": "Hober Mallow", "width": 5}, {"color": "green", "from": "Pelleas Anthor", "to": "Loffet", "width": 4}, {"color": "red", "from": "Pelleas Anthor", "to": "Mademoiselle Arcadia", "width": 3}, {"color": "red", "from": "Pelleas Anthor", "to": "Salvor Hardin", "width": 4}, {"color": "red", "from": "Pelleas Anthor", "to": "Anacr\u00e9on", "width": 2}, {"color": "red", "from": "Pelleas Anthor", "to": "Dame Callia", "width": 3}, {"color": "grey", "from": "Joie Turbor", "to": "Elvett Semic", "width": 4}, {"color": "grey", "from": "Joie Turbor", "to": "Homir Munn", "width": 4}, {"color": "green", "from": "Joie Turbor", "to": "Maman", "width": 3}, {"color": "green", "from": "Joie Turbor", "to": "Preem Palver", "width": 4}, {"color": "red", "from": "Joie Turbor", "to": "Lev Meirus", "width": 4}, {"color": "green", "from": "Joie Turbor", "to": "Ben", "width": 2}, {"color": "green", "from": "Joie Turbor", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Joie Turbor", "to": "Palvro", "width": 2}, {"color": "green", "from": "Homir Munn", "to": "Poli", "width": 4}, {"color": "grey", "from": "Homir Munn", "to": "Elvett Semic", "width": 4}, {"color": "green", "from": "Homir Munn", "to": "Dame Callia", "width": 5}, {"color": "green", "from": "Homir Munn", "to": "Poochie", "width": 3}, {"color": "green", "from": "Homir Munn", "to": "Marchand", "width": 3}, {"color": "green", "from": "Homir Munn", "to": "Thallos", "width": 3}, {"color": "red", "from": "Homir Munn", "to": "Pake", "width": 2}, {"color": "green", "from": "Homir Munn", "to": "Fariboles", "width": 2}, {"color": "red", "from": "Homir Munn", "to": "Lev Meirus", "width": 3}, {"color": "green", "from": "Papa", "to": "Salvor Hardin", "width": 3}, {"color": "green", "from": "Papa", "to": "Dame Callia", "width": 3}, {"color": "red", "from": "Papa", "to": "Maman", "width": 2}, {"color": "green", "from": "Papa", "to": "Preem Palver", "width": 3}, {"color": "green", "from": "Papa", "to": "Hanto", "width": 2}, {"color": "green", "from": "Papa", "to": "Santanni", "width": 2}, {"color": "green", "from": "Papa", "to": "Korell", "width": 2}, {"color": "green", "from": "Maman", "to": "Salvor Hardin", "width": 3}, {"color": "green", "from": "Maman", "to": "Dame Callia", "width": 3}, {"color": "green", "from": "Maman", "to": "Preem Palver", "width": 3}, {"color": "red", "from": "Maman", "to": "Hanto", "width": 2}, {"color": "green", "from": "Maman", "to": "Santanni", "width": 2}, {"color": "green", "from": "Maman", "to": "Korell", "width": 2}, {"color": "green", "from": "Preem Palver", "to": "Salvor Hardin", "width": 3}, {"color": "green", "from": "Preem Palver", "to": "Hanto", "width": 3}, {"color": "green", "from": "Preem Palver", "to": "Ben", "width": 3}, {"color": "green", "from": "Preem Palver", "to": "Tipellum", "width": 3}, {"color": "green", "from": "Preem Palver", "to": "Palvro", "width": 3}, {"color": "green", "from": "Preem Palver", "to": "Santanni", "width": 2}, {"color": "green", "from": "Preem Palver", "to": "Korell", "width": 2}, {"color": "green", "from": "Ben", "to": "Tipellum", "width": 2}, {"color": "green", "from": "Ben", "to": "Palvro", "width": 2}, {"color": "green", "from": "Tipellum", "to": "Palvro", "width": 2}, {"color": "green", "from": "Dame Callia", "to": "Poli", "width": 2}, {"color": "red", "from": "Dame Callia", "to": "Poochie", "width": 3}, {"color": "red", "from": "Dame Callia", "to": "Pake", "width": 3}, {"color": "red", "from": "Dame Callia", "to": "Kalgan Central", "width": 3}, {"color": "red", "from": "Dame Callia", "to": "Lev Meirus", "width": 3}, {"color": "red", "from": "Dame Callia", "to": "Barbe-Grise", "width": 2}, {"color": "green", "from": "Dame Callia", "to": "Marchand", "width": 2}, {"color": "green", "from": "Dame Callia", "to": "Thallos", "width": 2}, {"color": "green", "from": "Dame Callia", "to": "Fariboles", "width": 2}, {"color": "red", "from": "Salvor Hardin", "to": "Mademoiselle Arcadia", "width": 3}, {"color": "green", "from": "Salvor Hardin", "to": "Santanni", "width": 3}, {"color": "green", "from": "Salvor Hardin", "to": "Korell", "width": 3}, {"color": "green", "from": "Salvor Hardin", "to": "Devers", "width": 2}, {"color": "green", "from": "Salvor Hardin", "to": "Hober Mallow", "width": 2}, {"color": "green", "from": "Devers", "to": "Hober Mallow", "width": 2}, {"color": "red", "from": "Poochie", "to": "Barbe-Grise", "width": 2}, {"color": "green", "from": "Poochie", "to": "Marchand", "width": 2}, {"color": "green", "from": "Poochie", "to": "Thallos", "width": 2}, {"color": "red", "from": "Poochie", "to": "Lev Meirus", "width": 2}, {"color": "grey", "from": "Huxlani", "to": "Charnus", "width": 2}, {"color": "grey", "from": "Huxlani", "to": "Anacr\u00e9on", "width": 2}, {"color": "grey", "from": "Charnus", "to": "Anacr\u00e9on", "width": 2}, {"color": "green", "from": "Santanni", "to": "Korell", "width": 2}, {"color": "green", "from": "Marchand", "to": "Thallos", "width": 2}, {"color": "red", "from": "Dixyl", "to": "Cenn", "width": 2}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
