@@ -17,11 +17,11 @@ analyzer = SentimentIntensityAnalyzer()#Pour Vader
 
 #Liste des livres        
 books = [
-    "Fondation_et_empire_sample"
-    #"Fondation_sample",
-    #"Seconde_Fondation_sample",
-    #"Terre_et_Fondation_sample",
-    #"Fondation_foudroyée_sample"
+    "Fondation_et_empire_sample",
+    "Fondation_sample",
+    "Seconde_Fondation_sample",
+    "Terre_et_Fondation_sample",
+    "Fondation_foudroyée_sample"
 ]
 
 df_dict = {"ID": [], "graphml": []}

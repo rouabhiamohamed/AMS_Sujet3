@@ -1,49 +1,49 @@
 ////////////Ranking////////////
-1 - Hari Seldon - Popularité : [13]
-2 - Siwenna - Popularité : [12]
-3 - Maire Indbur - Popularité : [8]
-4 - Ebling - Popularité : [7]
-5 - Renard - Popularité : [7]
-6 - Han Pritcher - Popularité : [6]
-7 - Newton - Popularité : [6]
-8 - Miran - Popularité : [6]
-9 - Orum Palley - Popularité : [6]
-10 - Mangin - Popularité : [5]
-11 - Ovall Gri - Popularité : [5]
-12 - Yume - Popularité : [4]
-13 - Untel - Popularité : [4]
-14 - Randu - Popularité : [4]
-15 - Mnemon - Popularité : [4]
-16 - Dagobert X - Popularité : [4]
-17 - Daluden IV - Popularité : [3]
-18 - Sire - Popularité : [3]
-19 - Ebling Mis - Popularité : [3]
-20 - Lathan Devers - Popularité : [2]
-21 - Amell Brodrig - Popularité : [2]
-22 - Bobo - Popularité : [2]
-23 - Giganticus - Popularité : [2]
-24 - Hober Mallow - Popularité : [1]
-25 - Stanel VI - Popularité : [1]
-26 - Papa - Popularité : [1]
-27 - Torie - Popularité : [1]
-28 - Anacréon - Popularité : [1]
-29 - Onum Barr - Popularité : [1]
-30 - Iss - Popularité : [0]
-31 - général Sammin - Popularité : [0]
-32 - Inchney - Popularité : [0]
-33 - Loris VI - Popularité : [0]
-34 - Ducem Barr - Popularité : [-1]
-35 - Hardin - Popularité : [-1]
-36 - Forell - Popularité : [-1]
-37 - Magnifico - Popularité : [-1]
-38 - Patricien - Popularité : [-2]
-39 - Cléon II - Popularité : [-2]
-40 - grommela Fran - Popularité : [-2]
-41 - Siwenniens - Popularité : [-3]
-42 - Siwennien - Popularité : [-3]
-43 - Gilmer - Popularité : [-3]
-44 - Jord Commason - Popularité : [-4]
-45 - Ricker - Popularité : [-5]
-46 - général Riose - Popularité : [-6]
-47 - Luk - Popularité : [-6]
-48 - Majesté Impériale - Popularité : [-11]
+1 - Hari Seldon - Popularité : 14
+2 - Siwenna - Popularité : 13
+3 - Maire Indbur - Popularité : 9
+4 - Ebling - Popularité : 8
+5 - Renard - Popularité : 8
+6 - Han Pritcher - Popularité : 7
+7 - Newton - Popularité : 7
+8 - Miran - Popularité : 7
+9 - Orum Palley - Popularité : 7
+10 - Mangin - Popularité : 6
+11 - Ovall Gri - Popularité : 6
+12 - Yume - Popularité : 5
+13 - Untel - Popularité : 5
+14 - Randu - Popularité : 5
+15 - Mnemon - Popularité : 5
+16 - Dagobert X - Popularité : 5
+17 - Daluden IV - Popularité : 4
+18 - Sire - Popularité : 4
+19 - Ebling Mis - Popularité : 4
+20 - Amell Brodrig - Popularité : 3
+21 - Bobo - Popularité : 3
+22 - Giganticus - Popularité : 3
+23 - Hober Mallow - Popularité : 2
+24 - Stanel VI - Popularité : 2
+25 - Papa - Popularité : 2
+26 - Torie - Popularité : 2
+27 - Anacréon - Popularité : 2
+28 - Lathan Devers - Popularité : 1
+29 - Iss - Popularité : 1
+30 - Inchney - Popularité : 1
+31 - Loris VI - Popularité : 1
+32 - Ducem Barr - Popularité : 0
+33 - Hardin - Popularité : 0
+34 - Forell - Popularité : 0
+35 - Magnifico - Popularité : 0
+36 - Onum Barr - Popularité : 0
+37 - Patricien - Popularité : -1
+38 - grommela Fran - Popularité : -1
+39 - général Sammin - Popularité : -1
+40 - Gilmer - Popularité : -2
+41 - Cléon II - Popularité : -3
+42 - Jord Commason - Popularité : -3
+43 - Siwenniens - Popularité : -4
+44 - Siwennien - Popularité : -4
+45 - Ricker - Popularité : -6
+46 - général Riose - Popularité : -7
+47 - Luk - Popularité : -7
+48 - Majesté Impériale - Popularité : -12
