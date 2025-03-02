@@ -1,52 +1,52 @@
 ////////////Ranking////////////
-1 - Preem Palver - Popularité : [18]
-2 - Papa - Popularité : [12]
-3 - Maman - Popularité : [12]
-4 - Ebling Mis - Popularité : [9]
-5 - Ebling - Popularité : [9]
-6 - Joie Turbor - Popularité : [9]
-7 - Ben - Popularité : [8]
-8 - Tipellum - Popularité : [8]
-9 - Palvro - Popularité : [8]
-10 - Bail Channis - Popularité : [7]
-11 - Oncle Homir - Popularité : [7]
-12 - Marchand - Popularité : [6]
-13 - Thallos - Popularité : [6]
-14 - Salvor Hardin - Popularité : [5]
-15 - Chhhhhuttt - Popularité : [5]
-16 - Santanni - Popularité : [5]
-17 - Korell - Popularité : [5]
-18 - Loffet - Popularité : [4]
-19 - Premier Orateur - Popularité : [3]
-20 - Devers - Popularité : [3]
-21 - Chhhhhut - Popularité : [3]
-22 - Narovi - Popularité : [2]
-23 - Seigneur Stettin - Popularité : [2]
-24 - Fariboles - Popularité : [2]
-25 - Arkady Darell - Popularité : [1]
-26 - Rigel - Popularité : [1]
-27 - Poochie - Popularité : [1]
-28 - Hanto - Popularité : [1]
-29 - Hober Mallow - Popularité : [1]
-30 - Huxlani - Popularité : [0]
-31 - Charnus - Popularité : [0]
-32 - Yunker - Popularité : [0]
-33 - Poli - Popularité : [0]
-34 - Elvett Semic - Popularité : [0]
-35 - Homir Munn - Popularité : [0]
-36 - Dixyl - Popularité : [0]
-37 - Cenn - Popularité : [0]
-38 - Han Pritcher - Popularité : [-1]
-39 - Hari Seldon - Popularité : [-1]
-40 - Korilov - Popularité : [-1]
-41 - Barbe-Grise - Popularité : [-1]
-42 - Cil - Popularité : [-2]
-43 - Bayta Darell - Popularité : [-2]
-44 - Anacréon - Popularité : [-3]
-45 - Kalgan Central - Popularité : [-3]
-46 - Arcadia Darell - Popularité : [-3]
-47 - Dame Callia - Popularité : [-4]
-48 - Mademoiselle Arcadia - Popularité : [-5]
-49 - Pelleas Anthor - Popularité : [-8]
-50 - Pake - Popularité : [-8]
-51 - Lev Meirus - Popularité : [-8]
+1 - Preem Palver - Popularité : 19
+2 - Papa - Popularité : 13
+3 - Maman - Popularité : 13
+4 - Joie Turbor - Popularité : 9
+5 - Ben - Popularité : 9
+6 - Tipellum - Popularité : 9
+7 - Palvro - Popularité : 9
+8 - Ebling Mis - Popularité : 8
+9 - Ebling - Popularité : 8
+10 - Marchand - Popularité : 7
+11 - Thallos - Popularité : 7
+12 - Bail Channis - Popularité : 6
+13 - Oncle Homir - Popularité : 6
+14 - Chhhhhuttt - Popularité : 6
+15 - Santanni - Popularité : 6
+16 - Korell - Popularité : 6
+17 - Loffet - Popularité : 5
+18 - Salvor Hardin - Popularité : 4
+19 - Devers - Popularité : 4
+20 - Chhhhhut - Popularité : 4
+21 - Narovi - Popularité : 3
+22 - Seigneur Stettin - Popularité : 3
+23 - Fariboles - Popularité : 3
+24 - Premier Orateur - Popularité : 2
+25 - Arkady Darell - Popularité : 2
+26 - Rigel - Popularité : 2
+27 - Yunker - Popularité : 1
+28 - Poli - Popularité : 1
+29 - Huxlani - Popularité : 0
+30 - Charnus - Popularité : 0
+31 - Elvett Semic - Popularité : 0
+32 - Poochie - Popularité : 0
+33 - Hanto - Popularité : 0
+34 - Hober Mallow - Popularité : 0
+35 - Homir Munn - Popularité : -1
+36 - Dixyl - Popularité : -1
+37 - Cenn - Popularité : -1
+38 - Bayta Darell - Popularité : -1
+39 - Han Pritcher - Popularité : -2
+40 - Hari Seldon - Popularité : -2
+41 - Korilov - Popularité : -2
+42 - Barbe-Grise - Popularité : -2
+43 - Arcadia Darell - Popularité : -2
+44 - Cil - Popularité : -3
+45 - Anacréon - Popularité : -3
+46 - Kalgan Central - Popularité : -4
+47 - Dame Callia - Popularité : -5
+48 - Mademoiselle Arcadia - Popularité : -6
+49 - Pelleas Anthor - Popularité : -8
+50 - Pake - Popularité : -9
+51 - Lev Meirus - Popularité : -9

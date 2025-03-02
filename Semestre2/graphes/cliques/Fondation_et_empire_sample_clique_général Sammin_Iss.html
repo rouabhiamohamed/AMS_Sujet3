@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Iss", "label": "Iss", "names": "Iss", "shape": "dot", "size": 10, "title": "Alias de Iss: Iss"}, {"color": "#97c2fc", "id": "g\u00e9n\u00e9ral Sammin", "label": "g\u00e9n\u00e9ral Sammin", "names": "g\u00e9n\u00e9ral Sammin", "shape": "dot", "size": 10, "title": "Alias de g\u00e9n\u00e9ral Sammin: g\u00e9n\u00e9ral Sammin"}]);
-                  edges = new vis.DataSet([{"color": "red", "from": "Iss", "to": "g\u00e9n\u00e9ral Sammin", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "g\u00e9n\u00e9ral Sammin", "label": "g\u00e9n\u00e9ral Sammin", "names": "g\u00e9n\u00e9ral Sammin", "shape": "dot", "size": 10, "title": "Alias de g\u00e9n\u00e9ral Sammin: g\u00e9n\u00e9ral Sammin"}, {"color": "#97c2fc", "id": "Iss", "label": "Iss", "names": "Iss", "shape": "dot", "size": 10, "title": "Alias de Iss: Iss"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "g\u00e9n\u00e9ral Sammin", "to": "Iss", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

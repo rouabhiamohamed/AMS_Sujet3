@@ -303,7 +303,7 @@ function highlightFilter(filter) {
 
                   // parsing and collecting nodes and edges from the python
                   nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Korilov", "label": "Korilov", "names": "Korilov", "shape": "dot", "size": 10, "title": "Alias de Korilov: Korilov"}, {"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon", "shape": "dot", "size": 10, "title": "Alias de Hari Seldon: Hari Seldon;Seldon"}, {"color": "#97c2fc", "id": "Premier Orateur", "label": "Premier Orateur", "names": "Premier Orateur", "shape": "dot", "size": 10, "title": "Alias de Premier Orateur: Premier Orateur"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Korilov", "to": "Hari Seldon", "width": 1}, {"color": "green", "from": "Korilov", "to": "Premier Orateur", "width": 1}, {"color": "green", "from": "Hari Seldon", "to": "Premier Orateur", "width": 1}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Korilov", "to": "Hari Seldon", "width": 1}, {"color": "red", "from": "Korilov", "to": "Premier Orateur", "width": 1}, {"color": "red", "from": "Hari Seldon", "to": "Premier Orateur", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

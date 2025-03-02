@@ -1,65 +1,65 @@
 ////////////Ranking////////////
-1 - Primo - Popularité : [14]
-2 - Secundo - Popularité : [14]
-3 - Hari Seldon - Popularité : [9]
-4 - Bel Riose - Popularité : [8]
-5 - Toran - Popularité : [7]
-6 - Tertio - Popularité : [7]
-7 - Tope - Popularité : [5]
-8 - Gaï'a - Popularité : [4]
-9 - Dornick - Popularité : [3]
-10 - Thoobing - Popularité : [2]
-11 - Liebel Gennerat - Popularité : [2]
-12 - Dom. - Popularité : [1]
-13 - Hmmm - Popularité : [0]
-14 - Godhisavatta - Popularité : [0]
-15 - Sobhaddartha - Popularité : [0]
-16 - Askone - Popularité : [0]
-17 - J.p. - Popularité : [0]
-18 - Professeur Quintesetz - Popularité : [0]
-19 - Kallo - Popularité : [0]
-20 - Lachic - Popularité : [0]
-21 - Jendippurus Khoratt - Popularité : [-1]
-22 - Evander Sopellor - Popularité : [-2]
-23 - Anacréon - Popularité : [-2]
-24 - Dom-via-Gaïa - Popularité : [-2]
-25 - Eriden - Popularité : [-2]
-26 - Arkady Darell - Popularité : [-2]
-27 - Flavella - Popularité : [-3]
-28 - Bayta Darell - Popularité : [-3]
-29 - Quindor Shandess - Popularité : [-3]
-30 - Sapristi - Popularité : [-3]
-31 - mademoiselle Sura - Popularité : [-3]
-32 - Prononce-les - Popularité : [-3]
-33 - Premier Orateur - Popularité : [-4]
-34 - Premier Fondateur - Popularité : [-4]
-35 - Maître Cherchieur - Popularité : [-4]
-36 - Janov ! - Popularité : [-4]
-37 - Leonis Cheng - Popularité : [-4]
-38 - Hannis - Popularité : [-5]
-39 - Salvor Hardin - Popularité : [-5]
-40 - Janov Pelorat - Popularité : [-5]
-41 - Preem Pal ver - Popularité : [-5]
-42 - Janov - Popularité : [-6]
-43 - Jan - Popularité : [-6]
-44 - Lionokodell - Popularité : [-6]
-45 - Hober Mallow - Popularité : [-7]
-46 - Leslim Gianni - Popularité : [-7]
-47 - Dom - Popularité : [-7]
-48 - Ebling Mis - Popularité : [-8]
-49 - Orateur Gendibal - Popularité : [-9]
-50 - Sura Novi - Popularité : [-9]
-51 - Maire Branno - Popularité : [-10]
-52 - Rufirant - Popularité : [-10]
-53 - Gaïens - Popularité : [-11]
-54 - Foudroyee Gendibal - Popularité : [-11]
-55 - Mamie Supernova - Popularité : [-12]
-56 - Hamienne - Popularité : [-12]
-57 - Gaïen - Popularité : [-12]
-58 - Gendibal Fondation Foudroyee - Popularité : [-13]
-59 - Hamien - Popularité : [-14]
-60 - Liono Kodell - Popularité : [-15]
-61 - Conseiller Compor - Popularité : [-17]
-62 - Oratrice Delarmi - Popularité : [-23]
-63 - Delora Delarmi - Popularité : [-26]
-64 - Golan Trevize - Popularité : [-35]
+1 - Primo - Popularité : 15
+2 - Secundo - Popularité : 15
+3 - Bel Riose - Popularité : 9
+4 - Hari Seldon - Popularité : 8
+5 - Toran - Popularité : 8
+6 - Tertio - Popularité : 8
+7 - Tope - Popularité : 6
+8 - Dornick - Popularité : 4
+9 - Thoobing - Popularité : 3
+10 - Liebel Gennerat - Popularité : 3
+11 - Gaï'a - Popularité : 3
+12 - Kallo - Popularité : 1
+13 - Lachic - Popularité : 1
+14 - Dom. - Popularité : 0
+15 - Hmmm - Popularité : -1
+16 - Godhisavatta - Popularité : -1
+17 - Sobhaddartha - Popularité : -1
+18 - Askone - Popularité : -1
+19 - J.p. - Popularité : -1
+20 - Professeur Quintesetz - Popularité : -1
+21 - Bayta Darell - Popularité : -2
+22 - Quindor Shandess - Popularité : -2
+23 - Jendippurus Khoratt - Popularité : -2
+24 - Evander Sopellor - Popularité : -3
+25 - Premier Orateur - Popularité : -3
+26 - Anacréon - Popularité : -3
+27 - Dom-via-Gaïa - Popularité : -3
+28 - Eriden - Popularité : -3
+29 - Arkady Darell - Popularité : -3
+30 - Flavella - Popularité : -4
+31 - Preem Pal ver - Popularité : -4
+32 - Sapristi - Popularité : -4
+33 - mademoiselle Sura - Popularité : -4
+34 - Prononce-les - Popularité : -4
+35 - Janov - Popularité : -5
+36 - Premier Fondateur - Popularité : -5
+37 - Maître Cherchieur - Popularité : -5
+38 - Janov ! - Popularité : -5
+39 - Leonis Cheng - Popularité : -5
+40 - Jan - Popularité : -5
+41 - Hannis - Popularité : -6
+42 - Salvor Hardin - Popularité : -6
+43 - Janov Pelorat - Popularité : -6
+44 - Lionokodell - Popularité : -7
+45 - Hober Mallow - Popularité : -8
+46 - Orateur Gendibal - Popularité : -8
+47 - Sura Novi - Popularité : -8
+48 - Leslim Gianni - Popularité : -8
+49 - Dom - Popularité : -8
+50 - Ebling Mis - Popularité : -9
+51 - Foudroyee Gendibal - Popularité : -10
+52 - Maire Branno - Popularité : -11
+53 - Rufirant - Popularité : -11
+54 - Gaïens - Popularité : -12
+55 - Gendibal Fondation Foudroyee - Popularité : -12
+56 - Mamie Supernova - Popularité : -13
+57 - Hamienne - Popularité : -13
+58 - Gaïen - Popularité : -13
+59 - Liono Kodell - Popularité : -15
+60 - Hamien - Popularité : -15
+61 - Conseiller Compor - Popularité : -18
+62 - Oratrice Delarmi - Popularité : -24
+63 - Delora Delarmi - Popularité : -25
+64 - Golan Trevize - Popularité : -35

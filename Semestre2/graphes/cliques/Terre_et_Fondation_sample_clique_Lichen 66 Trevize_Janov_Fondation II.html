@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Janov", "label": "Janov", "names": "Janov", "shape": "dot", "size": 10, "title": "Alias de Janov: Janov"}, {"color": "#97c2fc", "id": "Fondation II", "label": "Fondation II", "names": "Fondation II", "shape": "dot", "size": 10, "title": "Alias de Fondation II: Fondation II"}, {"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Janov", "to": "Fondation II", "width": 1}, {"color": "red", "from": "Janov", "to": "Lichen 66 Trevize", "width": 1}, {"color": "red", "from": "Fondation II", "to": "Lichen 66 Trevize", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}, {"color": "#97c2fc", "id": "Janov", "label": "Janov", "names": "Janov", "shape": "dot", "size": 10, "title": "Alias de Janov: Janov"}, {"color": "#97c2fc", "id": "Fondation II", "label": "Fondation II", "names": "Fondation II", "shape": "dot", "size": 10, "title": "Alias de Fondation II: Fondation II"}]);
+                  edges = new vis.DataSet([{"color": "grey", "from": "Lichen 66 Trevize", "to": "Janov", "width": 1}, {"color": "red", "from": "Lichen 66 Trevize", "to": "Fondation II", "width": 1}, {"color": "red", "from": "Fondation II", "to": "Janov", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

@@ -1,70 +1,70 @@
 ////////////Ranking////////////
-1 - Anacréon - Popularité : [26]
-2 - Lewis Pirenne - Popularité : [13]
-3 - Jord Fara - Popularité : [12]
-4 - Grand Maître - Popularité : [11]
-5 - Wienis - Popularité : [10]
-6 - Lepold - Popularité : [10]
-7 - Jord Parma - Popularité : [10]
-8 - Yate Fulham - Popularité : [9]
-9 - Lundin Crast - Popularité : [8]
-10 - Anselme Haut Rodric - Popularité : [7]
-11 - Dorwin - Popularité : [7]
-12 - Askonien - Popularité : [7]
-13 - Maître Marchand - Popularité : [7]
-14 - Grand Prêtre - Popularité : [7]
-15 - Hari Seldon - Popularité : [6]
-16 - Poly Verisof - Popularité : [6]
-17 - Loris - Popularité : [6]
-18 - Jaim Twer - Popularité : [6]
-19 - Tinter - Popularité : [6]
-20 - Publis Manlio - Popularité : [6]
-21 - Salvor Hardin - Popularité : [5]
-22 - Atomo - Popularité : [5]
-23 - Linge Chen - Popularité : [4]
-24 - Bor Alurin - Popularité : [4]
-25 - Eskel Gorov - Popularité : [4]
-26 - Yohan Lee - Popularité : [3]
-27 - Lepold Ier - Popularité : [3]
-28 - Renvoie-les - Popularité : [3]
-29 - Glyptal IV - Popularité : [3]
-30 - Pherl - Popularité : [3]
-31 - Korell - Popularité : [3]
-32 - Gaal - Popularité : [2]
-33 - Limmar Ponyets - Popularité : [2]
-34 - Avakim - Popularité : [1]
-35 - Lucrèce - Popularité : [1]
-36 - Lem Tarki - Popularité : [1]
-37 - Lameth - Popularité : [0]
-38 - prince Lefkin - Popularité : [0]
-39 - Licia - Popularité : [0]
-40 - Drawt - Popularité : [0]
-41 - Tomas Sutt - Popularité : [-1]
-42 - Jan Smite - Popularité : [-1]
-43 - Théo Aporat - Popularité : [-1]
-44 - Askone - Popularité : [-1]
-45 - Hober Mallow - Popularité : [-1]
-46 - Stannel VI - Popularité : [-1]
-47 - Wiscard - Popularité : [-1]
-48 - Primo - Popularité : [-1]
-49 - Cellomet - Popularité : [-2]
-50 - Muller Holk - Popularité : [-2]
-51 - Gorm - Popularité : [-2]
-52 - Smyrnien - Popularité : [-2]
-53 - Sef Sermak - Popularité : [-2]
-54 - Stannell - Popularité : [-2]
-55 - Hmm - Popularité : [-2]
-56 - monsieur Jerril - Popularité : [-3]
-57 - Cléon II - Popularité : [-3]
-58 - Ha'din - Popularité : [-3]
-59 - Pi'enne - Popularité : [-3]
-60 - Walto - Popularité : [-3]
-61 - Orsy - Popularité : [-3]
-62 - Onum Barr - Popularité : [-3]
-63 - Asper Argo - Popularité : [-3]
-64 - Jorane Sutt - Popularité : [-3]
-65 - Gaal Dornick - Popularité : [-4]
-66 - Guère - Popularité : [-7]
-67 - Secundo - Popularité : [-9]
-68 - Commodore - Popularité : [-10]
-69 - Ankor Jael - Popularité : [-13]
+1 - Anacréon - Popularité : 27
+2 - Jord Fara - Popularité : 13
+3 - Lewis Pirenne - Popularité : 12
+4 - Grand Maître - Popularité : 12
+5 - Wienis - Popularité : 11
+6 - Lepold - Popularité : 11
+7 - Jord Parma - Popularité : 11
+8 - Yate Fulham - Popularité : 10
+9 - Lundin Crast - Popularité : 9
+10 - Anselme Haut Rodric - Popularité : 8
+11 - Dorwin - Popularité : 8
+12 - Askonien - Popularité : 8
+13 - Grand Prêtre - Popularité : 8
+14 - Hari Seldon - Popularité : 7
+15 - Poly Verisof - Popularité : 7
+16 - Loris - Popularité : 7
+17 - Tinter - Popularité : 7
+18 - Salvor Hardin - Popularité : 6
+19 - Maître Marchand - Popularité : 6
+20 - Linge Chen - Popularité : 5
+21 - Bor Alurin - Popularité : 5
+22 - Jaim Twer - Popularité : 5
+23 - Publis Manlio - Popularité : 5
+24 - Yohan Lee - Popularité : 4
+25 - Lepold Ier - Popularité : 4
+26 - Renvoie-les - Popularité : 4
+27 - Atomo - Popularité : 4
+28 - Glyptal IV - Popularité : 4
+29 - Pherl - Popularité : 4
+30 - Korell - Popularité : 4
+31 - Gaal - Popularité : 3
+32 - Eskel Gorov - Popularité : 3
+33 - Lucrèce - Popularité : 2
+34 - Lem Tarki - Popularité : 2
+35 - Lameth - Popularité : 1
+36 - Limmar Ponyets - Popularité : 1
+37 - Licia - Popularité : 1
+38 - Drawt - Popularité : 1
+39 - Avakim - Popularité : 0
+40 - Tomas Sutt - Popularité : 0
+41 - Théo Aporat - Popularité : 0
+42 - prince Lefkin - Popularité : 0
+43 - Smyrnien - Popularité : -1
+44 - Sef Sermak - Popularité : -1
+45 - monsieur Jerril - Popularité : -2
+46 - Jan Smite - Popularité : -2
+47 - Askone - Popularité : -2
+48 - Hober Mallow - Popularité : -2
+49 - Stannel VI - Popularité : -2
+50 - Wiscard - Popularité : -2
+51 - Primo - Popularité : -2
+52 - Cellomet - Popularité : -3
+53 - Muller Holk - Popularité : -3
+54 - Gorm - Popularité : -3
+55 - Stannell - Popularité : -3
+56 - Hmm - Popularité : -3
+57 - Cléon II - Popularité : -4
+58 - Ha'din - Popularité : -4
+59 - Pi'enne - Popularité : -4
+60 - Walto - Popularité : -4
+61 - Orsy - Popularité : -4
+62 - Onum Barr - Popularité : -4
+63 - Asper Argo - Popularité : -4
+64 - Jorane Sutt - Popularité : -4
+65 - Gaal Dornick - Popularité : -5
+66 - Guère - Popularité : -8
+67 - Secundo - Popularité : -10
+68 - Commodore - Popularité : -11
+69 - Ankor Jael - Popularité : -14

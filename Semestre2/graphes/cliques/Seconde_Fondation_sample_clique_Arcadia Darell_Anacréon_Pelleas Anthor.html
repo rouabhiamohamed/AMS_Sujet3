@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10, "title": "Alias de Anacr\u00e9on: Anacr\u00e9on"}, {"color": "#97c2fc", "id": "Pelleas Anthor", "label": "Pelleas Anthor", "names": "Pelleas Anthor;Monsieur Anthor;Anthor;Pelleas", "shape": "dot", "size": 10, "title": "Alias de Pelleas Anthor: Pelleas Anthor;Monsieur Anthor;Anthor;Pelleas"}, {"color": "#97c2fc", "id": "Arcadia Darell", "label": "Arcadia Darell", "names": "Arcadia Darell;Darell", "shape": "dot", "size": 10, "title": "Alias de Arcadia Darell: Arcadia Darell;Darell"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Anacr\u00e9on", "to": "Pelleas Anthor", "width": 1}, {"color": "green", "from": "Anacr\u00e9on", "to": "Arcadia Darell", "width": 1}, {"color": "green", "from": "Pelleas Anthor", "to": "Arcadia Darell", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Arcadia Darell", "label": "Arcadia Darell", "names": "Arcadia Darell;Darell", "shape": "dot", "size": 10, "title": "Alias de Arcadia Darell: Arcadia Darell;Darell"}, {"color": "#97c2fc", "id": "Pelleas Anthor", "label": "Pelleas Anthor", "names": "Pelleas Anthor;Monsieur Anthor;Anthor;Pelleas", "shape": "dot", "size": 10, "title": "Alias de Pelleas Anthor: Pelleas Anthor;Monsieur Anthor;Anthor;Pelleas"}, {"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10, "title": "Alias de Anacr\u00e9on: Anacr\u00e9on"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Arcadia Darell", "to": "Pelleas Anthor", "width": 1}, {"color": "red", "from": "Arcadia Darell", "to": "Anacr\u00e9on", "width": 1}, {"color": "red", "from": "Pelleas Anthor", "to": "Anacr\u00e9on", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
