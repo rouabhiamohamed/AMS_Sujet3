@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10, "title": "Alias de Anacr\u00e9on: Anacr\u00e9on"}, {"color": "#97c2fc", "id": "Lem Tarki", "label": "Lem Tarki", "names": "Lem Tarki", "shape": "dot", "size": 10, "title": "Alias de Lem Tarki: Lem Tarki"}, {"color": "#97c2fc", "id": "Sef Sermak", "label": "Sef Sermak", "names": "Sef Sermak;Sermak", "shape": "dot", "size": 10, "title": "Alias de Sef Sermak: Sef Sermak;Sermak"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Anacr\u00e9on", "to": "Lem Tarki", "width": 1}, {"color": "green", "from": "Anacr\u00e9on", "to": "Sef Sermak", "width": 1}, {"color": "green", "from": "Lem Tarki", "to": "Sef Sermak", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Lem Tarki", "label": "Lem Tarki", "names": "Lem Tarki", "shape": "dot", "size": 10, "title": "Alias de Lem Tarki: Lem Tarki"}, {"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10, "title": "Alias de Anacr\u00e9on: Anacr\u00e9on"}, {"color": "#97c2fc", "id": "Sef Sermak", "label": "Sef Sermak", "names": "Sef Sermak;Sermak", "shape": "dot", "size": 10, "title": "Alias de Sef Sermak: Sef Sermak;Sermak"}]);
+                  edges = new vis.DataSet([{"color": "green", "from": "Lem Tarki", "to": "Anacr\u00e9on", "width": 1}, {"color": "green", "from": "Lem Tarki", "to": "Sef Sermak", "width": 1}, {"color": "green", "from": "Anacr\u00e9on", "to": "Sef Sermak", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Primo", "label": "Primo", "names": "Primo", "shape": "dot", "size": 10, "title": "Alias de Primo: Primo"}, {"color": "#97c2fc", "id": "Ma\u00eetre Marchand", "label": "Ma\u00eetre Marchand", "names": "Ma\u00eetre Marchand;Marchand", "shape": "dot", "size": 10, "title": "Alias de Ma\u00eetre Marchand: Ma\u00eetre Marchand;Marchand"}, {"color": "#97c2fc", "id": "Secundo", "label": "Secundo", "names": "Secundo", "shape": "dot", "size": 10, "title": "Alias de Secundo: Secundo"}]);
-                  edges = new vis.DataSet([{"color": "red", "from": "Primo", "to": "Ma\u00eetre Marchand", "width": 1}, {"color": "red", "from": "Primo", "to": "Secundo", "width": 1}, {"color": "red", "from": "Ma\u00eetre Marchand", "to": "Secundo", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Ma\u00eetre Marchand", "label": "Ma\u00eetre Marchand", "names": "Ma\u00eetre Marchand;Marchand", "shape": "dot", "size": 10, "title": "Alias de Ma\u00eetre Marchand: Ma\u00eetre Marchand;Marchand"}, {"color": "#97c2fc", "id": "Primo", "label": "Primo", "names": "Primo", "shape": "dot", "size": 10, "title": "Alias de Primo: Primo"}, {"color": "#97c2fc", "id": "Secundo", "label": "Secundo", "names": "Secundo", "shape": "dot", "size": 10, "title": "Alias de Secundo: Secundo"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Ma\u00eetre Marchand", "to": "Primo", "width": 1}, {"color": "red", "from": "Ma\u00eetre Marchand", "to": "Secundo", "width": 1}, {"color": "red", "from": "Secundo", "to": "Primo", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

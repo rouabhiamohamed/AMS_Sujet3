@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Rigel", "label": "Rigel", "names": "Rigel", "shape": "dot", "size": 10, "title": "Alias de Rigel: Rigel"}, {"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon", "shape": "dot", "size": 10, "title": "Alias de Hari Seldon: Hari Seldon;Seldon"}, {"color": "#97c2fc", "id": "Premier Orateur", "label": "Premier Orateur", "names": "Premier Orateur", "shape": "dot", "size": 10, "title": "Alias de Premier Orateur: Premier Orateur"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Rigel", "to": "Hari Seldon", "width": 1}, {"color": "green", "from": "Rigel", "to": "Premier Orateur", "width": 1}, {"color": "red", "from": "Hari Seldon", "to": "Premier Orateur", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Hari Seldon", "label": "Hari Seldon", "names": "Hari Seldon;Seldon", "shape": "dot", "size": 10, "title": "Alias de Hari Seldon: Hari Seldon;Seldon"}, {"color": "#97c2fc", "id": "Premier Orateur", "label": "Premier Orateur", "names": "Premier Orateur", "shape": "dot", "size": 10, "title": "Alias de Premier Orateur: Premier Orateur"}, {"color": "#97c2fc", "id": "Rigel", "label": "Rigel", "names": "Rigel", "shape": "dot", "size": 10, "title": "Alias de Rigel: Rigel"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Hari Seldon", "to": "Premier Orateur", "width": 1}, {"color": "green", "from": "Hari Seldon", "to": "Rigel", "width": 1}, {"color": "green", "from": "Premier Orateur", "to": "Rigel", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

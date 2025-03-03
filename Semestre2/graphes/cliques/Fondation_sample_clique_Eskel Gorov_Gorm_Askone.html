@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Askone", "label": "Askone", "names": "Askone", "shape": "dot", "size": 10, "title": "Alias de Askone: Askone"}, {"color": "#97c2fc", "id": "Gorm", "label": "Gorm", "names": "Gorm", "shape": "dot", "size": 10, "title": "Alias de Gorm: Gorm"}, {"color": "#97c2fc", "id": "Eskel Gorov", "label": "Eskel Gorov", "names": "Eskel Gorov;Gorov", "shape": "dot", "size": 10, "title": "Alias de Eskel Gorov: Eskel Gorov;Gorov"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Askone", "to": "Gorm", "width": 1}, {"color": "green", "from": "Askone", "to": "Eskel Gorov", "width": 1}, {"color": "green", "from": "Gorm", "to": "Eskel Gorov", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Eskel Gorov", "label": "Eskel Gorov", "names": "Eskel Gorov;Gorov", "shape": "dot", "size": 10, "title": "Alias de Eskel Gorov: Eskel Gorov;Gorov"}, {"color": "#97c2fc", "id": "Gorm", "label": "Gorm", "names": "Gorm", "shape": "dot", "size": 10, "title": "Alias de Gorm: Gorm"}, {"color": "#97c2fc", "id": "Askone", "label": "Askone", "names": "Askone", "shape": "dot", "size": 10, "title": "Alias de Askone: Askone"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Eskel Gorov", "to": "Gorm", "width": 1}, {"color": "red", "from": "Eskel Gorov", "to": "Askone", "width": 1}, {"color": "red", "from": "Askone", "to": "Gorm", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

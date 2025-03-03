@@ -303,7 +303,7 @@ function highlightFilter(filter) {
 
                   // parsing and collecting nodes and edges from the python
                   nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}, {"color": "#97c2fc", "id": "Pu\u00e9ril", "label": "Pu\u00e9ril", "names": "Pu\u00e9ril", "shape": "dot", "size": 10, "title": "Alias de Pu\u00e9ril: Pu\u00e9ril"}, {"color": "#97c2fc", "id": "Munn Li Compor", "label": "Munn Li Compor", "names": "Munn Li Compor", "shape": "dot", "size": 10, "title": "Alias de Munn Li Compor: Munn Li Compor"}]);
-                  edges = new vis.DataSet([{"color": "grey", "from": "Lichen 66 Trevize", "to": "Pu\u00e9ril", "width": 1}, {"color": "grey", "from": "Lichen 66 Trevize", "to": "Munn Li Compor", "width": 1}, {"color": "grey", "from": "Pu\u00e9ril", "to": "Munn Li Compor", "width": 1}]);
+                  edges = new vis.DataSet([{"color": "grey", "from": "Lichen 66 Trevize", "to": "Pu\u00e9ril", "width": 1}, {"color": "grey", "from": "Lichen 66 Trevize", "to": "Munn Li Compor", "width": 1}, {"color": "grey", "from": "Munn Li Compor", "to": "Pu\u00e9ril", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

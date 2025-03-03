@@ -303,7 +303,7 @@ function highlightFilter(filter) {
 
                   // parsing and collecting nodes and edges from the python
                   nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}, {"color": "#97c2fc", "id": "A.  Kendray", "label": "A.  Kendray", "names": "A.  Kendray;Kendray;monsieur Kendray", "shape": "dot", "size": 10, "title": "Alias de A.  Kendray: A.  Kendray;Kendray;monsieur Kendray"}, {"color": "#97c2fc", "id": "Gravi-tique", "label": "Gravi-tique", "names": "Gravi-tique", "shape": "dot", "size": 10, "title": "Alias de Gravi-tique: Gravi-tique"}]);
-                  edges = new vis.DataSet([{"color": "red", "from": "Lichen 66 Trevize", "to": "A.  Kendray", "width": 1}, {"color": "red", "from": "Lichen 66 Trevize", "to": "Gravi-tique", "width": 1}, {"color": "red", "from": "Gravi-tique", "to": "A.  Kendray", "width": 1}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Lichen 66 Trevize", "to": "A.  Kendray", "width": 1}, {"color": "red", "from": "Lichen 66 Trevize", "to": "Gravi-tique", "width": 1}, {"color": "red", "from": "A.  Kendray", "to": "Gravi-tique", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10, "title": "Alias de Anacr\u00e9on: Anacr\u00e9on"}, {"color": "#97c2fc", "id": "Jan Smite", "label": "Jan Smite", "names": "Jan Smite", "shape": "dot", "size": 10, "title": "Alias de Jan Smite: Jan Smite"}, {"color": "#97c2fc", "id": "Poly Verisof", "label": "Poly Verisof", "names": "Poly Verisof;Verisof", "shape": "dot", "size": 10, "title": "Alias de Poly Verisof: Poly Verisof;Verisof"}]);
-                  edges = new vis.DataSet([{"color": "red", "from": "Anacr\u00e9on", "to": "Jan Smite", "width": 1}, {"color": "red", "from": "Anacr\u00e9on", "to": "Poly Verisof", "width": 1}, {"color": "red", "from": "Jan Smite", "to": "Poly Verisof", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Jan Smite", "label": "Jan Smite", "names": "Jan Smite", "shape": "dot", "size": 10, "title": "Alias de Jan Smite: Jan Smite"}, {"color": "#97c2fc", "id": "Anacr\u00e9on", "label": "Anacr\u00e9on", "names": "Anacr\u00e9on", "shape": "dot", "size": 10, "title": "Alias de Anacr\u00e9on: Anacr\u00e9on"}, {"color": "#97c2fc", "id": "Poly Verisof", "label": "Poly Verisof", "names": "Poly Verisof;Verisof", "shape": "dot", "size": 10, "title": "Alias de Poly Verisof: Poly Verisof;Verisof"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Jan Smite", "to": "Anacr\u00e9on", "width": 1}, {"color": "red", "from": "Jan Smite", "to": "Poly Verisof", "width": 1}, {"color": "red", "from": "Anacr\u00e9on", "to": "Poly Verisof", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

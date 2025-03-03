@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "MinTrans", "label": "MinTrans", "names": "MinTrans", "shape": "dot", "size": 10, "title": "Alias de MinTrans: MinTrans"}, {"color": "#97c2fc", "id": "Mitza Lizalor", "label": "Mitza Lizalor", "names": "Mitza Lizalor;Lizalor;madame Lizalor;Mitza", "shape": "dot", "size": 10, "title": "Alias de Mitza Lizalor: Mitza Lizalor;Lizalor;madame Lizalor;Mitza"}, {"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}]);
-                  edges = new vis.DataSet([{"color": "grey", "from": "MinTrans", "to": "Mitza Lizalor", "width": 1}, {"color": "grey", "from": "MinTrans", "to": "Lichen 66 Trevize", "width": 1}, {"color": "red", "from": "Lichen 66 Trevize", "to": "Mitza Lizalor", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}, {"color": "#97c2fc", "id": "Mitza Lizalor", "label": "Mitza Lizalor", "names": "Mitza Lizalor;Lizalor;madame Lizalor;Mitza", "shape": "dot", "size": 10, "title": "Alias de Mitza Lizalor: Mitza Lizalor;Lizalor;madame Lizalor;Mitza"}, {"color": "#97c2fc", "id": "MinTrans", "label": "MinTrans", "names": "MinTrans", "shape": "dot", "size": 10, "title": "Alias de MinTrans: MinTrans"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Lichen 66 Trevize", "to": "Mitza Lizalor", "width": 1}, {"color": "grey", "from": "Lichen 66 Trevize", "to": "MinTrans", "width": 1}, {"color": "grey", "from": "MinTrans", "to": "Mitza Lizalor", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

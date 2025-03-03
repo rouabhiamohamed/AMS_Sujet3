@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Ga\u00efens", "label": "Ga\u00efens", "names": "Ga\u00efens", "shape": "dot", "size": 10, "title": "Alias de Ga\u00efens: Ga\u00efens"}, {"color": "#97c2fc", "id": "Ga\u0027\u00efen", "label": "Ga\u0027\u00efen", "names": "Ga\u0027\u00efen", "shape": "dot", "size": 10, "title": "Alias de Ga\u0027\u00efen: Ga\u0027\u00efen"}, {"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}]);
-                  edges = new vis.DataSet([{"color": "red", "from": "Ga\u00efens", "to": "Ga\u0027\u00efen", "width": 1}, {"color": "red", "from": "Ga\u00efens", "to": "Lichen 66 Trevize", "width": 1}, {"color": "red", "from": "Lichen 66 Trevize", "to": "Ga\u0027\u00efen", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Lichen 66 Trevize", "label": "Lichen 66 Trevize", "names": "Lichen 66 Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Lichen 66 Trevize: Lichen 66 Trevize;Trev"}, {"color": "#97c2fc", "id": "Ga\u00efens", "label": "Ga\u00efens", "names": "Ga\u00efens", "shape": "dot", "size": 10, "title": "Alias de Ga\u00efens: Ga\u00efens"}, {"color": "#97c2fc", "id": "Ga\u0027\u00efen", "label": "Ga\u0027\u00efen", "names": "Ga\u0027\u00efen", "shape": "dot", "size": 10, "title": "Alias de Ga\u0027\u00efen: Ga\u0027\u00efen"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Lichen 66 Trevize", "to": "Ga\u00efens", "width": 1}, {"color": "red", "from": "Lichen 66 Trevize", "to": "Ga\u0027\u00efen", "width": 1}, {"color": "red", "from": "Ga\u0027\u00efen", "to": "Ga\u00efens", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

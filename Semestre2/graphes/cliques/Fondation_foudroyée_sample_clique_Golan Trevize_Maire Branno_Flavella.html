@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Golan Trevize", "label": "Golan Trevize", "names": "Golan Trevize;grommela Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Golan Trevize: Golan Trevize;grommela Trevize;Trev"}, {"color": "#97c2fc", "id": "Maire Branno", "label": "Maire Branno", "names": "Maire Branno;Harlan Branno;Branno;Brann", "shape": "dot", "size": 10, "title": "Alias de Maire Branno: Maire Branno;Harlan Branno;Branno;Brann"}, {"color": "#97c2fc", "id": "Flavella", "label": "Flavella", "names": "Flavella", "shape": "dot", "size": 10, "title": "Alias de Flavella: Flavella"}]);
-                  edges = new vis.DataSet([{"color": "grey", "from": "Golan Trevize", "to": "Maire Branno", "width": 1}, {"color": "red", "from": "Golan Trevize", "to": "Flavella", "width": 1}, {"color": "red", "from": "Maire Branno", "to": "Flavella", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Maire Branno", "label": "Maire Branno", "names": "Maire Branno;Harlan Branno;Branno;Brann", "shape": "dot", "size": 10, "title": "Alias de Maire Branno: Maire Branno;Harlan Branno;Branno;Brann"}, {"color": "#97c2fc", "id": "Golan Trevize", "label": "Golan Trevize", "names": "Golan Trevize;grommela Trevize;Trev", "shape": "dot", "size": 10, "title": "Alias de Golan Trevize: Golan Trevize;grommela Trevize;Trev"}, {"color": "#97c2fc", "id": "Flavella", "label": "Flavella", "names": "Flavella", "shape": "dot", "size": 10, "title": "Alias de Flavella: Flavella"}]);
+                  edges = new vis.DataSet([{"color": "grey", "from": "Maire Branno", "to": "Golan Trevize", "width": 1}, {"color": "red", "from": "Maire Branno", "to": "Flavella", "width": 1}, {"color": "red", "from": "Flavella", "to": "Golan Trevize", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Poochie", "label": "Poochie", "names": "Poochie", "shape": "dot", "size": 10, "title": "Alias de Poochie: Poochie"}, {"color": "#97c2fc", "id": "Dame Callia", "label": "Dame Callia", "names": "Dame Callia;Callia", "shape": "dot", "size": 10, "title": "Alias de Dame Callia: Dame Callia;Callia"}, {"color": "#97c2fc", "id": "Barbe-Grise", "label": "Barbe-Grise", "names": "Barbe-Grise", "shape": "dot", "size": 10, "title": "Alias de Barbe-Grise: Barbe-Grise"}]);
-                  edges = new vis.DataSet([{"color": "red", "from": "Poochie", "to": "Dame Callia", "width": 1}, {"color": "red", "from": "Poochie", "to": "Barbe-Grise", "width": 1}, {"color": "red", "from": "Dame Callia", "to": "Barbe-Grise", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Dame Callia", "label": "Dame Callia", "names": "Dame Callia;Callia", "shape": "dot", "size": 10, "title": "Alias de Dame Callia: Dame Callia;Callia"}, {"color": "#97c2fc", "id": "Poochie", "label": "Poochie", "names": "Poochie", "shape": "dot", "size": 10, "title": "Alias de Poochie: Poochie"}, {"color": "#97c2fc", "id": "Barbe-Grise", "label": "Barbe-Grise", "names": "Barbe-Grise", "shape": "dot", "size": 10, "title": "Alias de Barbe-Grise: Barbe-Grise"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Dame Callia", "to": "Poochie", "width": 1}, {"color": "red", "from": "Dame Callia", "to": "Barbe-Grise", "width": 1}, {"color": "red", "from": "Barbe-Grise", "to": "Poochie", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
