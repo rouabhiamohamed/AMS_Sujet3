@@ -17,11 +17,11 @@ analyzer = SentimentIntensityAnalyzer()#Pour Vader
 
 #Liste des livres        
 books = [
-    "Fondation_et_empire_sample",
-    "Fondation_sample",
-    "Seconde_Fondation_sample",
-    "Terre_et_Fondation_sample",
-    "Fondation_foudroyée_sample"
+    "Fondation_et_empire_sample"
+    #"Fondation_sample",
+    #"Seconde_Fondation_sample",
+    #"Terre_et_Fondation_sample",
+    #"Fondation_foudroyée_sample"
 ]
 
 df_dict = {"ID": [], "graphml": []}
@@ -81,27 +81,24 @@ def Tri_Parasite(listePersonnagesTrier,listeRetirer):
         listePersonnagesTrier.remove(p)
         listeRetirer.append(p)
 
-def Ranger_Par_Noms(listePersonnagesTrier,listeNomsPersonnages):                                    
+def Ranger_Par_Noms(listePersonnagesTrier, listeNomsPersonnages):                                    
     for nom in listePersonnagesTrier:
-        variantesNoms = [nom]  # Utiliser une liste pour stocker les variantes
+        variantesNoms = [nom] # Créer une liste de variantes à partir du nom actuel
         for autreNom in listePersonnagesTrier:
-            if (len(nom.split()) >= 2 and autreNom != nom and (autreNom in nom.split()[-1] or nom.split()[-1] in autreNom)):  # Vérifier si c'est une variante
-                if autreNom not in variantesNoms:  # Ajouter uniquement si ce n'est pas déjà présent
-                    variantesNoms.append(autreNom)
-        # Vérifier si une liste équivalente n'est pas déjà dans listeNomsPersonnages
-        if not any(sorted(variantesNoms) == sorted(existing) for existing in listeNomsPersonnages):
-            listeNomsPersonnages.append(variantesNoms) 
-    
-def Ranger_Par_Prenoms(listeNomsPersonnages):                                                                     
+            if nom != autreNom and len(nom.split()) >= 2 and any(part in autreNom for part in nom.split()[-1:]): # Vérifier si les noms sont des variantes (partage d'une partie du dernier nom)
+                    if autreNom not in variantesNoms:
+                        variantesNoms.append(autreNom)
+        
+        if not any(set(variantesNoms) == set(existing) for existing in listeNomsPersonnages): # Ajouter la liste de variantes si elle n'est pas déjà présente dans `listeNomsPersonnages`
+            listeNomsPersonnages.append(variantesNoms)
+ 
+def Ranger_Par_Prenoms(listeNomsPersonnages):
     for index, variantesNoms in enumerate(listeNomsPersonnages):
-        for variantesNomsAAjouter in listeNomsPersonnages[:]:  # Copie de la liste pour éviter les problèmes
-            if(len(variantesNomsAAjouter)==1 and len(variantesNoms)>1):
-                trouver = False
-                for nomsAComparer in variantesNoms :
-                    if variantesNomsAAjouter[0] in nomsAComparer and not trouver:
-                        trouver = True
-                        listeNomsPersonnages[index].append(variantesNomsAAjouter[0])    
-
+        if len(variantesNoms) > 1: # Vérifier si le personnage a plus d'une variante de nom
+            for variantesNomsAAjouter in [v for v in listeNomsPersonnages if len(v) == 1]: # Parcourir la liste des autres variantes
+                if any(variantesNomsAAjouter[0] in nom for nom in variantesNoms): # Si le prénom à ajouter est une sous-partie d'un des noms de variantes
+                    listeNomsPersonnages[index].append(variantesNomsAAjouter[0])
+    
 # Pour séparer les alias avec les mêmes noms de famille, mais pas les mêmes prénoms    
 def Separation_Alias(listeNomsPersonnages):                                                                     
     fin=False
@@ -116,8 +113,8 @@ def Separation_Alias(listeNomsPersonnages):
                     for personnageAComparer in variantesNoms:
                         if len(personnageAComparer.split()) >= 2 and len(personnageAComparer.split()[0])>2 and personnage!=personnageAComparer:
                             docPrenom1 = nlp(personnage)
-                            tokenPrenom1 = [word.upos for sent in docPrenom1.sentences for word in sent.words]
                             docPrenom2 = nlp(personnageAComparer)
+                            tokenPrenom1 = [word.upos for sent in docPrenom1.sentences for word in sent.words]
                             tokenPrenom2 = [word.upos for sent in docPrenom2.sentences for word in sent.words]
                             if personnage.split()[0] != personnageAComparer.split()[0] and \
                                 ("PROPN" in tokenPrenom1[0] and "PROPN" in tokenPrenom2[0]):
@@ -125,15 +122,13 @@ def Separation_Alias(listeNomsPersonnages):
                                 nomDeFamille = personnageAComparer.split()[-1]
                                 fin=False
                                 
-                for personnageARajouter in variantesNoms:
+                for personnageARajouter in variantesNoms:# Ajouter des prénoms à la listeDeNomsSimple si ce sont des sous-ensembles d'un nom existant
                     if len(personnageARajouter.split()) == 1 and personnageARajouter not in listeDeNoms:
-                        # Vérifier si personnageARajouter est un sous-ensemble de nomAComparer
-                        for nomAComparer in listeDeNoms:
-                            if personnageARajouter in nomAComparer:
-                                listeDeNomsSimple.append(personnageARajouter)
+                        if any(personnageARajouter in nomAComparer for nomAComparer in listeDeNoms):
+                            listeDeNomsSimple.append(personnageARajouter)
                 listeDeNomsConcatenee = listeDeNoms + listeDeNomsSimple
-                # Enlever les éléments de listeDeNomsConcatenee de la liste originale
-                for elem in listeDeNomsConcatenee:
+                
+                for elem in listeDeNomsConcatenee:# Enlever les éléments de listeDeNomsConcatenee de la liste originale
                     if elem in variantesNoms and elem != nomDeFamille:
                         variantesNoms.remove(elem)
                         
@@ -160,8 +155,7 @@ def AnalyseLieux(book):
             if entitee.get_label('ner').value == 'LOC':  # Vérifier si l'entité est un lieu
                 entite_LOC.append(entitee.text)
         for lieux in entite_LOC: #Pour ajouter dans la liste final de lieux 
-            listeLieux.append(lieux)
-                
+            listeLieux.append(lieux)                
     print(f"//////////////////Répertorisation de tout les Lieux dans {book} : Fait !/////////////////////")
     return listeLieux
 
@@ -208,12 +202,10 @@ def Relations(G,listeNomsPersonnages, entity_positions,page_sentiment):
             dictionnaireRelations[first_element] = []
             dictionnaireDegree[first_element] = {}
             
-        for j in i:  # Parcourt chaque alias (variantes) du personnage
-            entity1 = j
+        for entity1 in i:  # Parcourt chaque alias (variantes) du personnage
             for k in listeNomsPersonnages:
-                for l in k:
-                    if k != i and j!=l and (j not in k) and (l not in i):  # Assurer que ce sont deux personnages distincts : k != i -> pour éviter les relations entre une même personne, j!=l and (j not in k) and (l not in i)-> éviter une relations avec quelqu'un qui a le même nom de famille
-                        entity2 = l
+                for entity2 in k:
+                    if k != i and entity1!=entity2 and (entity1 not in k) and (entity2 not in i):  # Assurer que ce sont deux personnages distincts : k != i -> pour éviter les relations entre une même personne, j!=l and (j not in k) and (l not in i)-> éviter une relations avec quelqu'un qui a le même nom de famille
                         degree = 0  # Initialisation du degree pour cette paire spécifique
                         arrete = False
                         for pos1 in entity_positions[entity1]:
