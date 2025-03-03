@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   asimov-app:
     build:
@@ -10,4 +8,4 @@ services:
       - .:/app
     ports:
       - "5000:5000"
-    command: ["python", "Asimov.py"]
+    command: ["python", "Asimov_Final.py"]

@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Installer les dépendances Python
-RUN pip install stanza networkx pandas flair pyvis
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Télécharger le modèle Stanza pour le français
 RUN python -c "import stanza; stanza.download('fr')"
@@ -17,4 +17,4 @@ RUN python -c "import stanza; stanza.download('fr')"
 RUN python -c "from flair.models import SequenceTagger; SequenceTagger.load('flair/ner-french')"
 
 # Définir la commande par défaut pour exécuter le script
-CMD ["python", "Asimov.py"]
+CMD ["python", "Asimov_Final.py"]
