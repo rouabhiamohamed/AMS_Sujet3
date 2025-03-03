@@ -303,7 +303,7 @@ function highlightFilter(filter) {
 
                   // parsing and collecting nodes and edges from the python
                   nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Poly Verisof", "label": "Poly Verisof", "names": "Poly Verisof;Verisof", "shape": "dot", "size": 10, "title": "Alias de Poly Verisof: Poly Verisof;Verisof"}, {"color": "#97c2fc", "id": "Lucr\u00e8ce", "label": "Lucr\u00e8ce", "names": "Lucr\u00e8ce", "shape": "dot", "size": 10, "title": "Alias de Lucr\u00e8ce: Lucr\u00e8ce"}, {"color": "#97c2fc", "id": "Wienis", "label": "Wienis", "names": "Wienis", "shape": "dot", "size": 10, "title": "Alias de Wienis: Wienis"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Poly Verisof", "to": "Lucr\u00e8ce", "width": 1}, {"color": "green", "from": "Poly Verisof", "to": "Wienis", "width": 1}, {"color": "green", "from": "Lucr\u00e8ce", "to": "Wienis", "width": 1}]);
+                  edges = new vis.DataSet([{"color": "green", "from": "Poly Verisof", "to": "Lucr\u00e8ce", "width": 1}, {"color": "green", "from": "Poly Verisof", "to": "Wienis", "width": 1}, {"color": "green", "from": "Wienis", "to": "Lucr\u00e8ce", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

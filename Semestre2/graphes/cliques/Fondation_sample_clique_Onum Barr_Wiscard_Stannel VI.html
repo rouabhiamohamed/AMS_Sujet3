@@ -302,8 +302,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Onum Barr", "label": "Onum Barr", "names": "Onum Barr;Barr", "shape": "dot", "size": 10, "title": "Alias de Onum Barr: Onum Barr;Barr"}, {"color": "#97c2fc", "id": "Stannel VI", "label": "Stannel VI", "names": "Stannel VI", "shape": "dot", "size": 10, "title": "Alias de Stannel VI: Stannel VI"}, {"color": "#97c2fc", "id": "Wiscard", "label": "Wiscard", "names": "Wiscard", "shape": "dot", "size": 10, "title": "Alias de Wiscard: Wiscard"}]);
-                  edges = new vis.DataSet([{"color": "green", "from": "Onum Barr", "to": "Stannel VI", "width": 1}, {"color": "green", "from": "Onum Barr", "to": "Wiscard", "width": 1}, {"color": "green", "from": "Wiscard", "to": "Stannel VI", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Stannel VI", "label": "Stannel VI", "names": "Stannel VI", "shape": "dot", "size": 10, "title": "Alias de Stannel VI: Stannel VI"}, {"color": "#97c2fc", "id": "Onum Barr", "label": "Onum Barr", "names": "Onum Barr;Barr", "shape": "dot", "size": 10, "title": "Alias de Onum Barr: Onum Barr;Barr"}, {"color": "#97c2fc", "id": "Wiscard", "label": "Wiscard", "names": "Wiscard", "shape": "dot", "size": 10, "title": "Alias de Wiscard: Wiscard"}]);
+                  edges = new vis.DataSet([{"color": "red", "from": "Stannel VI", "to": "Onum Barr", "width": 1}, {"color": "red", "from": "Stannel VI", "to": "Wiscard", "width": 1}, {"color": "red", "from": "Wiscard", "to": "Onum Barr", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

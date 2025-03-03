@@ -80,19 +80,6 @@ for book in books:
                 if word.upos == "PROPN":
                     texte = texte.replace(word.text, word.text.capitalize())  # Remplacer par la version capitalisée
     
-
-    # Parcours des phrases et mots du texte analysé
-        #for sent in doc.sentences:
-          #  for word in sent.words:
-                # Vérifie si le mot est en majuscules et contient plus de deux lettres
-           #     if word.text.isupper() and len(word.text) > 2:
-                    # Analyser le mot en majuscules
-            #        docMaj = nlp(word.text)
-                    # Mettre le mot en majuscules avec la première lettre en majuscule
-              #      motEnMaj = word.text.capitalize()
-                    # Vérifie si le mot est un nom propre (PROPN) dans le texte analysé
-               #     if (wordMaj.upos == "PROPN" for sentMaj in docMaj.sentences for wordMaj in sentMaj.words):
-                #        texte = texte.replace(word.text, motEnMaj)  # Remplace le mot en majuscules par sa version corrigée
     # Sauvegarde du texte traité
     with open(f"Textes_Processed/{book}.txt", "w") as file:
         file.write(texte)  # Écriture du texte traité dans un fichier de sortie
